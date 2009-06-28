@@ -1,0 +1,142 @@
+- generelt
+  - Computer Science vs. Media Computation...
+    - studieformaal the second
+    - studie-kursus-udkast the first
+    - book the second
+  - GUI...
+    - maybe ajax...
+- Week structure
+  - Week 1 intro
+    - def, import, 
+    - intro 1-2
+    - images 3
+  - Week 2 images
+    - more on images 3-4
+    - Debugging, program development, 9
+  - Week 3 images2
+    - More on images 4-5
+    - performance (13)
+    - abstraction, map (color) (img+histogram)
+    - Project 1...
+  - Week 4 - text, functions
+    - text, lists, html 10-11 sxml, recursion on structure, start on functional programming, visitor pattern, 14
+  - Week 5 - hashtables,objects
+    - performance 13
+      - repetition week 3
+      - hash tables
+    - styles of programming
+      - objects, 14
+    - more on modules
+  - Week 6
+    - Javascript, - what have we learned in python, how does it look in another language, linking with html
+    - buffer
+
+- Introduction to programming
+  - Capip: 1-2
+  - Exercises: install jes - hello world, random oracle, 
+  - variable, def, 
+- Images
+  - Capip: 3-5
+  - gimp-py
+  - perception, eye-rgb
+  - pixels
+  - performance - large blur... summing
+  - gauss...
+  - formats, jpg, png
+- (Sound)
+  - Capip: 6-8
+  - maybe a bit on sound and music...
+  - fft, 
+- Program development, testing, debugging
+  - Capip: 9
+  - ++extra material...
+  - how-to-think
+- Tekst, lister, traeer, strukturer
+  - Capip: 10, 11
+- Funktionsorienteret programmering
+  - Capip: 12, 14
+- Syntax vs. semantik
+  - JavaScript
+
+- Week 7
+  - NB: shannon-weaver in parallel course... tvaerfaglighed via forbindelse til dette...
+- Programmering
+  - Uge 1
+    - Introduktion til programmering
+      - programmeringssprog
+      - python
+    - Forelaesning
+      - intro
+        - generelt
+        - programmering og python
+      - data
+        - bits og bytes
+        - datatyper
+          - strenge
+          - tal
+          - billeder
+          - lyd 
+          - lister
+          - tabeller
+      - python
+        - kald af funktioner
+        - import af moduler
+          - online dokumentation...
+        - literals
+          - strenge
+          - lister
+        - definition af funktioner
+          - docstrings
+          - reading a program...
+      - opgaver
+        - kunstige ord, saetninger 
+      - eksempel
+        - navnequiz
+  - 1b
+  - 2a
+  - 2b
+  - 3a
+  - 3b
+  - 4a
+  - 4b
+  - 5a
+  - 5b
+  - 6a
+  - 6b
+---------
+  - Mailadderesse på forlægger
+  - værktøj
+    - version control system
+    - bugtracking
+  - Tvaerfaglig
+    - koordinering med grundlaeggende kommunikation
+  - syntax vs semantik
+    - indhold vs. praesentation
+    - programmeringsbegreber vs. syntax
+      - evt. python+javascript
+  - laerebog
+    - JES
+      - turtle-issue
+      - ny udgave non-javacript
+  - opgave ideer
+    - rapportgenerering
+  - SQL -> B-trae og hashtabel, lagerhieraki
+  - cache-hierakier
+  - forelaesning 2/1hr, start+slut
+  - test - unittest
+  - dokumentation
+  - design af programmer, problemlosning
+  - videos/screencasts
+  - open source, cc-licenser, digitale rettigheder og privacy
+  - skildpaddegraik
+  - code review
+  - det didaktiske spil, aabenhed, eksplicit
+  - patterns
+  - entropy/information-theory, 7+-2, channels, bits
+  - bog-version
+  - eksempel-kode
+  - creative commons/public domain for undervisningsmateriale
+  - fold-apply / map-reduce
+  - debugging
+  - variables roller, patterns
+  - programmeringstilgange, tdd
