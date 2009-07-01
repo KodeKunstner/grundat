@@ -34,51 +34,104 @@
 \paragraph{Status:}
 
 
-\subsection{Uge 1 -- Introduktion}
-Hvad er datalogi, hvor er det sjovt/praktisk. 
-I gang med programmering, introduktion til python og JES.
-Start på digitale billeder, hvad er det for noget, oplæg til eksperimentering.
-\setcounter{tocdepth}{1}
+\setcounter{tocdepth}{2}
 \tableofcontents
 \section{Overblik}
-\begin{tabular}{cp{7em}p{15em}p{5em}}
-Uge&Emne&Indhold&Litteratur\\
-1&Introduktion& variable, simple funktioner & Guz1-3\\
-2&Billeder& for, if, dokumentation & Guz3-4, evt. noter\\
-3&Billeder& & Guz4-5,13, evt. noter\\
-4&Tekst og datastrukturer& & Guz10-11,14 \\
-5&Hashtabeller og objekter& & 14, evt. noter\\
-6&JavaScript (syntaks vs. semantik), repetition& & Guz10-11,13, evt. noter\\
-\end{tabular}
-\section{Udgangspunkt og læringsmål}
+%\begin{tabular}{cp{7em}p{15em}p{5em}}
+%Uge&Emne&Indhold&Litteratur\\
+%1&Introduktion& variable, simple funktioner & Guz1-3\\
+%2&Billeder& for, if, dokumentation & Guz3-4, evt. noter\\
+%3&Billeder& & Guz4-5,13, evt. noter\\
+%4&Tekst og datastrukturer& & Guz10-11,14 \\
+%5&Hashtabeller og objekter& & 14, evt. noter\\
+%6&JavaScript (syntaks vs. semantik), repetition& & Guz10-11,13, evt. noter\\
+%\end{tabular}
 
-\section{Overordnet design}
-\section{Plan}
-\subsection{Introduktion til programmering }
-\subsection{Introduktion (uge 1)}
+\section{Semesterplan}
+\subsection{Introduktion til programmering (uge 1.1)}
 
-\paragraph{Formål/indhold:}
-Komme i gang med programmeringen. Variable og funktioner. Introduktion til billeder.
+\subsubsection{Uge 1.1}
 
-\paragraph{Forelæsninger:} 
+\paragraph{Forelæsning:} 
 Introduktion til kurset og programmering generelt.
 Eksempler på hvor datalogi er sjovt/praktisk.
 Introduktion til JES. 
 Udtryk, variable, funktionsdefinitioner.
 
 \paragraph{Øvelser:}
-Installer JES, at eksperimentere og komme i gang med programmeringen.
-Øvelser fra bogen: 2.2, 2.3, 2.4. 1.5, 1.2, 1.3
+Installer JES, at eksperimenter og kom i gang med programmeringen.
+Øvelser fra bogen: 2.2, 2.3, 2.4, 2.1, 1.5, 1.2, 1.3 (Så mange som I kan nå)
+
+\paragraph{Litteratur:} Guz 1-2
 
 
-\subsection{Billeder (uge 1-3) }
+\subsection{Billeder (uge 1.2-3.2) }
+%\paragraph{Formål/indhold:}
+%Grundlæggende programmering: løkker, betingelser, redskaber til programmering.
+%Representation af billeder.
 
-Billeder vil være objektet i forbindelse med den videre formidling.
 
-I slutningen af uge 1, introduceres billeder og farver kort, med instruktion i at eksperimentere med disse. 
+\subsubsection{Uge 1.2}
+\paragraph{Forelæsning:} 
+Introduktion til representation af billeder og farver i computeren. Lidt om dokumentation, docstrings, kommentarer.
+
+\paragraph{Øvelser:}
+Øvelser fra bogen: 2.1, 3.1
+Lille pixelbaseret tegning, i.e. smiley (forståelse af position af pixels, samt grundlæggende farver) 
+Åben opgave: Lav et program der genererer eller ændrer et billede, tag eventuelt udgangspunkt i nogle af opgaverne 3.3-3.10
+
+\paragraph{Litteratur:} Guz 2-3, noter om dokumentation
+
+\subsubsection{Uge 2.1}
+\paragraph{Forelæsning:} 
+For-løkker, ranges, betingelser.
+At læse kode/code review. 
+Grafikeksempler, opfølgning på afleveringer.
+
+\paragraph{Øvelser:} 
+Review and rewrite recipe 28.
+Gå sammen i grupper, og kig på afleveringerne fra sidste gang, udleverede kodeeksempler, samt opg. 3.2, 4.2, 4.3, 4.7, 4.8.
+
+
+\paragraph{Litteratur:} Guz 3-4, noter om (uformelle!) code reviews
+
+\subsubsection{Uge 2.2}
+\paragraph{Forelæsning:} 
+
+Diskussion/demo af dele af kapitel 4, filtre, blur.
+Opfølgning på øvelser -  lidt om debugging og programdesign.
+Kort introduktion til versionskontrolsystemer som værktøj(nb: hav også mere detaljeret webcast om dette).
+Generalisering af blur, skala.
+
+\paragraph{Øvelser:}
+Åben opgave: Lav et programmer der ændrer et billeder, foreslag:
+Træk en uskarp, formørket udgave af billedet fra det selv. Tag evt. udgangspunkt i 
+4.1, 4.6, og 4.10.
+Byg evt. videre på øvelsen i uge 1.2
+
+\paragraph{Litteratur:} Guz 4
+\subsubsection{Uge 3.1}
+\paragraph{Forelæsning:} 
+Opfølgning på øvelser, debugging med udgangspunkt i "Træk en uskarp, formørket udgave af billedet fra det selv."
+Smagsprøve på performance via den generaliserede blur.
+Debugging og programdesign.
+
+\paragraph{Øvelser:}
+9.1, 9.2, 
+\paragraph{Litteratur:} Guz 5, 9
+
+
+\paragraph{Litteratur:} 
+\subsubsection{Uge 3.2}
+\paragraph{Forelæsning:} 
+Afrunding af billeder, repetition.
+Evt. start på lister i billedkontekst.
+\paragraph{Øvelser:}
+Åben opgave: Lav et programmer der ændrer et billeder,
+byg evt. videre på øvelsen i uge 1.2
+\paragraph{Litteratur:} Guz 1-5,9
 
 \subsection{Lister og tekst (uge 4)}
-
 
 \subsection{Hashtabeller og objekter (uge 5)}
 \subsection{JavaScript samt repetition (uge 6)}
