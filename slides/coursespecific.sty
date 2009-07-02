@@ -1,0 +1,57 @@
+
+\newcommand*{\kursusaar}{2008}
+\newcommand*{\kursusaarstid}{E}
+\newcommand*{\kursussemester}{\kursusaarstid\kursusaar}
+
+\newcommand*{\kursus}{Data \& Algorithms, \kursussemester{}}
+\newcommand*{\kursusugedag}{Friday}
+\newcommand*{\formatday}[2]{#1 #2, \kursusaar}
+\newcommand*{\ugedag}[1]{%
+\ifcase#1
+Zero                                           %0
+\or\kursusugedag{} \formatday{October}{31}   %1
+\or\kursusugedag{} \formatday{November}{7}   %2
+\or\kursusugedag{} \formatday{November}{13}   %3
+\or\kursusugedag{} \formatday{November}{20}      %4
+\or\kursusugedag{} \formatday{November}{27}      %5
+\or\kursusugedag{} \formatday{December}{4}     %6
+\or\kursusugedag{} \formatday{December}{11}     %7
+\or\kursusugedag{} \formatday{December}{18}     %8
+\or\kursusugedag{} \formatday{November}{12}    %9
+\or\kursusugedag{} \formatday{November}{19}    %10
+\or\kursusugedag{} \formatday{November}{26}    %11
+\or\kursusugedag{} \formatday{December}{3}     %12
+\or\kursusugedag{} \formatday{December}{10}    %13
+\or\kursusugedag{} \formatday{December}{17}    %14
+\else Not defined
+\fi
+}
+\newcommand*{\undervisernavn}{Ken~Friis~Larsen \& Jakob~Grue~Simonsen}
+\newcommand*{\undervisernavne}{\undervisernavn{} (\underviseremail{})}
+\newcommand*{\underviseremail}{\url{kflarsen@diku.dk} \& \url{simonsen@diku.dk}}
+\newcommand*{\underviserkontor}{4C06}
+\newcommand*{\hjaelpelaerere}{}
+%\newcommand{\url}[1]{\texttt{#1}} ; clashes with hyperref package
+\newcommand*{\kursushjem}{http://www.itu.dk/courses/DSDS/\kursussemester}
+\newcommand*{\kursushjemmeside}[1]{\kursushjem/#1}
+\newcommand*{\problemset}[1]{\kursushjem/ps/ps#1.html}
+\newcommand*{\Lecture}{1}
+
+% Beamer specific stuff
+\date[]{\ugedag{\Lecture}\\Lecture \Lecture}
+
+\title
+{\kursus}
+
+\subtitle
+{Lecture \Lecture} % (optional)
+
+\author[\undervisernavn{}]{\undervisernavn{}\\ \underviseremail{}}
+
+
+\institute[DIKU] % (optional, but mostly needed)
+{Department of Computer Science}
+
+
+
+

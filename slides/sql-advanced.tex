@@ -1,0 +1,980 @@
+\documentclass[dvipsnames]{beamer}
+
+
+\usepackage{preamble}
+\usepackage{coursespecific}
+\renewcommand*{\IncludeAnswers}{1}
+\renewcommand*{\Lecture}{2}
+\subtitle{SQL}
+
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage{}
+\end{frame}
+
+\begin{frame}
+  \frametitle{Previously On Data \& Algorithms}
+
+\begin{itemize}
+\item We use \intro{\sql} to manipulate and query our databases
+\item \intro{\texttt{CREATE TABLE}} for creating tables
+\item \intro{\texttt{INSERT}}, \intro{\texttt{DELETE}}, and
+  \intro{\texttt{UPDATE}} for manipulating our data.
+\item \intro{\texttt{SELECT}} for query our data
+  \begin{itemize}
+  \item we use \intro{\texttt{*}} for selecting all \emph{columns}; or we
+    select columns by explicit naming them
+  \item we use \intro{\texttt{WHERE}} to select which \emph{rows} we
+    want in the result
+  \item we can \emph{join} tables dynamically in queries with
+    \intro{\texttt{,}} (or \intro{\texttt{JOIN}})
+  \end{itemize}
+
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{\sql{} Continued}
+
+\begin{itemize}
+\item Queries with computed fields
+\item Aggregation and grouping with \texttt{GROUP BY}
+\item Combination of \texttt{GROUP BY} and \texttt{HAVING}
+\item Left and right controlled joining: \texttt{LEFT JOIN} and
+  \texttt{RIGHT JOIN}
+\item Indexes and efficiency
+\item Creating indexes (\texttt{CREATE INDEX}) and unique indexes
+\item Naming tables in queries, self-joins
+%\item Which tables does the database contain?
+%\item Loading data from a file
+%\item Database design
+%\item Normal forms
+\end{itemize}
+\end{frame}
+
+
+% \begin{frame}[fragile=singleslide]
+% \frametitle{Real Databases---RDBMS's (the ACID test)} 
+
+% %A good database system will pass  ``the ACID test'':
+
+% \begin{itemize}
+% \item \intro{\textbf{A}tomicity:} either \emph{all} the effects of a
+%   transaction are recorded, or \emph{nothing} is recorded
+% \begin{itemize}
+% \item When transferring money between accounts: either \emph{both}
+%   accounts are updated, or \emph{none} of them are
+% \end{itemize}
+
+% \item \intro{\textbf{C}onsistency:} transactions change the database
+%   from one legal state to another legal state
+% \begin{itemize}
+% \item The sum of a customer's accounts must be positive
+% \end{itemize}
+
+% \item \intro{\textbf{I}solation:} a transaction's effects are
+%   invisible for other transactions until it commits
+% \begin{itemize}
+% \item Transferring between accounts while generating total balance
+%   reports concurrently
+% \end{itemize}
+
+% \item \intro{\textbf{D}urability:} committed transactions survive
+%   future system crashes
+% \begin{itemize}
+% \item When a customer has gotten his cash deposit receipt, the deposit
+%   will not disappear due to server crashes
+% \end{itemize}
+
+% \end{itemize}
+% \end{frame}
+
+
+% \begin{frame}
+%   \frametitle{ACID Properties}
+  
+%   \begin{itemize}
+%   \item The ACID properties are for eliminating certain classes of
+%     error (or rather to make it possible to avoid them).
+
+%   \item The ACID properties are important for database supported web
+%     sites, because web sites inherently have concurrent users. 
+
+%   \item The ACID properties are especially important for sites with
+%     critical data.
+
+%   \item MySQL tables can be created to pass the ACID test, by using
+%     InnoDB table type.  But at a performance cost.
+
+%   \item Databases that do not fully pass the ACID test may still be
+%     useful for sites where data is not critical.
+%   \end{itemize}
+% \end{frame}
+
+
+
+% \begin{frame}
+
+% \frametitle{Example: Course Data}
+% \begin{small}
+%   \begin{tabular}{@{}l@{}l}
+%     \textbf{Students:} &
+%     \begin{tabular}{|l|l|l|}\hline
+%       sname & sid & address\\\hline
+%       Ole Olesen & L1234 & Hjemmevej 7\\
+%       Rikke Richardsen & L2345 & Udvej 9\\
+%       Søren Sørensen & J0007 & I dybet 13\\
+%       Ulrikka Funder & B7117 & Skovvej 11\\\hline
+%       % INSERT INTO Student (sname,sid,address) VALUES ('Ole Olesen',
+%       % 'L1234', 'Hjemmevej 7'), ('Rikke Richardsen', 'L2345', 'Udvej
+%       % 9'), ('Søren Sørensen', 'J0007', 'I dybet 13'), ('Ulrikka
+%       % Funder', 'B7117', 'Skovvej 11');
+%     \end{tabular}\\
+%     \\
+
+%     \textbf{Courses:} &
+%     \begin{tabular}{|l|l|l|}\hline
+%       cid & cname & teacher\\\hline
+%       DSDS & Introduction to Scripting, \dots & Ken Friis Larsen \\
+%       GP & Introduction to Programming & Thomas Hildebrandt \\
+%       XML & XML Processing & Lars Birkedal \\ \hline
+%       % INSERT INTO Courses (cid,cname,teacher) VALUES ('DSDS', 'Web
+%       % Publishing with Databases', 'Martin Elsman'), ('GP',
+%       % 'Introduction to Programming', 'Morten Rhiger'), ('XML', 'XML
+%       % Processing', 'Thomas Hildebrandt'); INSERT INTO Courses
+%       % (cid,cname,teacher) VALUES ('ISKS', 'Advanced Language
+%       % Implementation', 'Martin Elsman');
+%     \end{tabular}\\
+%     \\
+
+%     \textbf{Signup:} &
+%     \begin{tabular}{|l|l|}\hline
+%       sid & cid\\\hline
+%       L1234 & DSDS\\
+%       L2345 & DSDS\\
+%       J0007 & DSDS\\
+%       J0007 & GP\\
+%       L2345 & GP\\\hline
+%       % INSERT INTO Signup (sid,cid) VALUES ('L1234','DSDS'),
+%       % ('L2345','DSDS'), ('J0007','DSDS'), ('J0007','GP'),
+%       % ('L2345','GP');
+%     \end{tabular}
+%   \end{tabular}
+% \end{small}
+% \end{frame}
+
+% \begin{frame}[fragile=singleslide]
+% \frametitle{Creating Tables Using \texttt{create table} Commands}
+
+% \begin{verbatim}
+%   CREATE TABLE Students (sname VARCHAR(80), 
+%                          sid VARCHAR(10) NOT NULL, 
+%                          address VARCHAR(80));
+
+%   CREATE TABLE Courses (cid VARCHAR(10) NOT NULL, 
+%                         cname VARCHAR(80), 
+%                         teacher VARCHAR(80));
+
+%   CREATE TABLE Signup (sid VARCHAR(10) NOT NULL, 
+%                        cid VARCHAR(10) NOT NULL);
+ 
+%   INSERT INTO Students (sname,sid,address) 
+%   VALUES ('Ole Olesen', 'L1234', 'Hjemmevej 7'), 
+%          ('Rikke Richardsen', 'L2345', 'Udvej 9'), 
+%          ('Søren Sørensen', 'J0007', 'I dybet 13'), 
+%          ('Ulrikka Funder', 'B7117', 'Skovvej 11');
+%   ...
+% \end{verbatim}
+
+% \end{frame}
+
+\begin{frame}[fragile] 
+\frametitle{SELECT In Different Contexts}
+  \begin{itemize}[<+->]
+  \item As a calculator:
+    \begin{small}
+\begin{verbatim}
+  SELECT 23 + 19;
+  SELECT name, gdp / population FROM BBC;
+\end{verbatim}
+    \end{small}
+  \item In \texttt{WHERE} clauses:
+    \begin{small}
+\begin{verbatim}
+  SELECT name, population FROM BBC
+  WHERE population > (SELECT population*20 FROM BBC 
+                      WHERE name = 'Denmark');
+  SELECT name, region FROM BBC
+  where region IN (SELECT region FROM BBC 
+                   WHERE name IN ('India', 'Iran'));
+\end{verbatim}
+    \end{small}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Aggregated Results}
+
+  \begin{itemize}[<+->]
+  \item Display the total number of countries in the database:
+    \begin{small}
+\begin{verbatim}
+  SELECT COUNT(*) FROM BBC;
+\end{verbatim}
+    \end{small}
+
+  \item Fields can be named or renamed using \intro{\texttt{AS}}:
+    \begin{small}
+\begin{semiverbatim}
+  SELECT COUNT(*) \intro{AS number_of_countries} FROM BBC;
+  SELECT name, gdp / population \intro{AS gdc} FROM BBC;
+\end{semiverbatim}
+    \end{small}
+
+
+  \item The number of countries in each region:
+    \begin{small}
+\begin{verbatim}
+  SELECT region, COUNT(name) FROM BBC 
+  GROUP BY region;
+\end{verbatim}
+    \end{small}
+  \end{itemize}
+\end{frame}
+
+\begin{frame}\frametitle{Standard Aggregation Functions}
+
+\begin{center}
+\begin{tabular}{ll}\hline\hline
+\textbf{Name} & \textbf{Meaning}\\\hline
+\texttt{COUNT}(expression) & Number of values \\
+\texttt{MIN}(expression) & Smallest value (or \texttt{NULL}) \\
+\texttt{MAX}(expression) & Largest value (or \texttt{NULL}) \\
+\texttt{SUM}(expression) & The sum of the values (or \texttt{NULL}) \\
+\texttt{AVG}(expression) & The average of the values \\\hline\hline
+\end{tabular}
+\end{center}
+
+
+The function \texttt{COUNT}, for instance, only counts the number of
+non-\texttt{NULL} values.
+  
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Another Example: Expenses At A Hospital}
+
+\begin{columns}[t]
+  \begin{column}{.5\textwidth}
+    \begin{footnotesize}
+\begin{verbatim}
+CREATE TABLE Expenses (
+  kind   TEXT NOT NULL,
+  pgroup TEXT NOT NULL,
+  year   INT NOT NULL,
+  value  INT NOT NULL
+);
+
+INSERT INTO Expenses
+VALUES ('Salary', 'Doctors', 2004, 490000);
+INSERT INTO Expenses
+VALUES ('Salary', 'Nurses', 2005, 1500000);
+...
+\end{verbatim}
+  \end{footnotesize}
+\end{column}
+
+  \begin{column}{.5\textwidth}
+    \texttt{Expenses} \\
+    \begin{footnotesize}
+      \begin{tabular}{|l|l|l|r|}\hline
+        kind     & pgroup        & year & value \\\hline
+        Salary   & Doctors & 2004 & 490,000.- \\ 
+        Salary   & Nurses       & 2005 & 1,500,000.- \\
+        Salary   & Doctors & 2005 & 500,000.- \\
+        Coffee   & Doctors & 2006 & 800.- \\
+        Coffee   & Nurses       & 2006 & 300.- \\
+        Salary   & Nurses       & 2006 & 1,600,000.- \\
+        Salary   & Doctors & 2006 & 510,000.- \\
+        \hline
+      \end{tabular}
+    \end{footnotesize}
+  \end{column}
+\end{columns}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{More Aggregation And \texttt{GROUP BY}}
+  
+\begin{itemize}
+
+\item Aggregation and \texttt{GROUP BY} can be used for generating sub-totals.
+
+
+\item Example: Total expenses grouped by personnel group, kind, and year for
+  the years 2005--2005:
+\begin{small}
+\begin{verbatim}
+  SELECT pgroup, kind, year, SUM(value) 
+  FROM Expenses
+  WHERE 2005 <= year AND year <= 2006 
+  GROUP BY pgroup, kind, year; 
+\end{verbatim}
+\end{small}
+    
+\item \Question{How do we find, for each year, the total expenses of each kind?}{\texttt{SELECT year, kind, SUM(value) FROM Expenses\\ GROUP BY year, kind;}}
+  
+\item \Question{How do we find, for each year, the total expenses for each
+  personnel group?}{\texttt{SELECT year, pgroup, SUM(value) FROM Expenses \\
+    GROUP BY year, pgroup;}} 
+
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Conditions In Groupings}
+
+\begin{itemize}
+
+\item<1-> What if we don't want (kind, pgroup, year)-combinations
+  where the sum of expenses is less than 1,000,000? 
+
+\item<1-> We cannot use \texttt{WHERE SUM(value) >= 1000000} (because
+  the sum is not yet calculated).
+
+\item<2-> Instead, we can add \texttt{HAVING SUM(value) >= 1000000} after
+  \texttt{GROUP BY}:
+\begin{footnotesize}
+\begin{verbatim}
+  SELECT kind, pgroup, year, SUM(value) FROM Expenses
+  WHERE 2005 <= year AND year <= 2006 
+  GROUP BY kind, pgroup, year
+  HAVING SUM(value) >= 1000000;
+\end{verbatim}
+\end{footnotesize}
+
+\item<3-> \Question[4]{Consider the country example: How can you use
+    \mbox{\texttt{GROUP BY \ldots{} HAVING}} construct to find the
+    regions with at least 20 countries?}{\texttt{SELECT regions
+      FROM BBC \\GROUP BY region
+      \\HAVING COUNT(name) >= 20;}}
+
+% SELECT cname FROM Courses, Signup WHERE Courses.cid = Signup.cid GROUP BY Courses.cid HAVING COUNT(sid) >= 3;
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{A Database With Food And Breakfast Habits}
+  
+\begin{columns}[t]
+\begin{column}{.5\textwidth}
+\textbf{Dairy} \\
+\begin{footnotesize}
+\begin{tabular}{|l|r|r|r|}\hline 
+   item    &     weight &  energy &  fat \\ \hline
+   Semiskimmed &    200 &    400  &   3 \\
+   Gaio     &       200 &    500  &   3 \\
+   Skimmed     &    200 &    300  &   1 \\
+   Buttermilk &     200 &    300  &   1 \\
+   Cheasy &         200 &    325  &   1 \\
+   A38 &            200 &    550  &   7 \\
+   Cultura &        200 &    550  &   7 \\
+   Fruit yoghurt &  200 &    750  &   6 \\ 
+   Ymer &           200 &    600  &   7 \\
+   Ylette &         200 &    500  &   4 \\ \hline
+ \end{tabular}
+\end{footnotesize}
+%CREATE TABLE Dairy (item VARCHAR(100) NOT NULL, weight INT NOT NULL, energy INT NOT NULL, fat INT NOT NULL);
+%INSERT INTO Dairy (item,weight,energy,fat) VALUES ('Semiskimmed', 200, 400 , 3), ('Gaio' , 200, 500 , 3), ('Skimmed' , 200, 300 , 1), ('Buttermilk', 200, 300 , 1), ('Cheasy', 200, 325 , 1), ('A38', 200, 550 , 7), ('Cultura', 200, 550 , 7), ('Fruit yoghurt', 200, 750 , 6), ('Ymer', 200, 600 , 7), ('Ylette', 200, 500 , 4);
+\end{column}
+\begin{column}{.4\textwidth}
+\textbf{Morning} \\
+\begin{footnotesize}
+  \begin{tabular}{|l|r|r|}\hline
+    name  &  item           & weight \\ \hline
+    Ole   &  Semiskimmed    & 400 \\
+    Ole   &  Fruit yoghurt  & 175 \\
+    Ole   &  Brie           &  50 \\
+    Ole   &  Butter         &  16 \\
+    Hanne &  Cheasy         & 200 \\
+    Hanne &  Skimmed        &  45 \\ \hline
+    % CREATE TABLE Morning (name VARCHAR(100) NOT NULL, item
+    % VARCHAR(100) NOT NULL, weight INT NOT NULL); INSERT INTO Morning
+    % VALUES ('Ole', 'Semiskimmed', 400), ('Ole', 'Fruit yoghurt',
+    % 175), ('Ole', 'Brie', 50), ('Ole', 'Butter', 16), ('Hanne',
+    % 'Cheasy', 200), ('Hanne', 'Skimmed', 400);
+  \end{tabular}
+\end{footnotesize}
+\end{column}  
+\end{columns}
+
+\begin{itemize}
+\item The Dairy table contains item names, portion sizes (gms),
+  energy content (kJ) and fat (gms) per portion.
+
+\item The Morning table contains persons, items and quantities (gms).
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Computations In \sql{}-Queries}
+
+\begin{itemize}    
+
+\item<+-> You can write simple mathematical expressions in
+  \sql{}-queries.  Find the energy and fat content for each person and
+    item:
+\begin{footnotesize}
+\begin{verbatim}
+ SELECT name, Morning.item,
+        Morning.weight/Dairy.weight * Dairy.energy AS energy,
+        Morning.weight/Dairy.weight * Dairy.fat AS fat
+ FROM Morning, Dairy
+ WHERE Dairy.item = Morning.item;
+\end{verbatim}
+\end{footnotesize}
+
+
+\item<+-> Calculate the total energy- and fat intake of each person
+\begin{footnotesize}
+\begin{verbatim}
+ SELECT name,
+        SUM(Morning.weight/Dairy.weight * Dairy.energy) AS energy,
+        SUM(Morning.weight/Dairy.weight * Dairy.fat) AS fat
+ FROM Morning, Dairy
+ WHERE Dairy.item = Morning.item
+ GROUP BY name;
+\end{verbatim}
+\end{footnotesize}
+
+
+\item<3-> The properties of the items and the personal data can be stored
+  separately.
+  
+\item<3-> With \sql{} you can merge and perform calculations of the data.
+
+\item<3-> It is quite cumbersome to do the same with spreadsheets.
+
+\item<4-> Are there any problems with these queries?
+% What about the Brie!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Example: Course Data}
+\begin{small}
+  \begin{tabular}{@{}l@{}l}
+    \texttt{Students:} &
+    \begin{tabular}{|l|l|l|}\hline
+      sname & sid & address\\\hline
+      Ole Olesen & L1234 & Hjemmevej 7\\
+      Rikke Richardsen & L2345 & Udvej 9\\
+      Søren Sørensen & J0007 & I dybet 13\\
+      Ulrikka Funder & B7117 & Skovvej 11\\\hline
+    \end{tabular}\\
+    \\
+
+    \texttt{Courses:} &
+    \begin{tabular}{|l|l|l|}\hline
+      cid & cname & teacher\\\hline
+      DAT2 & Data \& Algorithms & Ken Friis Larsen \\
+      DAT1 & Introduction to programming & Jakob Grue Simonsen \\ \hline
+      FP   & Functional programming & Jakob Grue Simonsen \\ \hline
+    \end{tabular}\\
+    \\
+
+    \texttt{Signup:} &
+    \begin{tabular}{|l|l|}\hline
+      sid & cid\\\hline
+      L1234 & DAT2\\
+      L2345 & DAT2\\
+      J0007 & DAT2\\
+      J0007 & FP\\
+      L2345 & FP\\\hline
+    \end{tabular}
+  \end{tabular}
+\end{small}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Joining Only Includes Rows With At Least One match}
+
+\begin{itemize}
+\item<+-> Display the student IDs of students that have signed up for each
+  course:
+  \begin{small}
+\begin{verbatim}
+   SELECT cname, sid
+   FROM Courses, Signup
+   WHERE Courses.cid = Signup.cid;
+\end{verbatim}
+  \end{small}
+
+
+\item<+-> Or: for each course, display the \emph{number} of students:
+
+  \begin{small}
+\begin{verbatim}
+   SELECT cname, COUNT(sid)
+   FROM Courses, Signup
+   WHERE Courses.cid = Signup.cid
+   GROUP BY cname;
+\end{verbatim}
+  \end{small}
+
+
+\item<+-> Problem: only courses with students are shown.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Include All Rows From The Left Table: \texttt{LEFT JOIN}}
+  
+\begin{itemize}
+\item<+-> Using \texttt{LEFT JOIN} all rows of the left table are
+  included, even those that do not match any rows in the right table.
+  \begin{footnotesize}\color<1>{gray}
+\begin{semiverbatim}
+   SELECT Courses.cname, Signup.sid
+   FROM Courses \textcolor{black}{LEFT JOIN} Signup \textcolor{black}{ON} Courses.cid = Signup.cid;
+\end{semiverbatim}
+  \end{footnotesize}
+
+
+\item<+-> Display the number of students for each course:
+  \begin{footnotesize}
+\begin{verbatim}
+   SELECT cname, COUNT(sid)
+   FROM Courses LEFT JOIN Signup ON Courses.cid = Signup.cid
+   GROUP BY cname;
+\end{verbatim}
+  \end{footnotesize}
+
+
+\item<+-> Display courses with less than two students:
+  \begin{footnotesize}
+\begin{verbatim}
+   SELECT cname, COUNT(sid)
+   FROM Courses LEFT JOIN Signup ON Courses.cid = Signup.cid
+   GROUP BY cname HAVING COUNT(sid) < 2;
+\end{verbatim}
+  \end{footnotesize}
+
+  % SELECT cname, COUNT(sid) as c FROM Courses LEFT JOIN Signup ON
+  % Courses.cid = Signup.cid GROUP BY cname HAVING c < 2;
+
+
+\item<4-> A normal join would forget courses with no students, so \texttt{LEFT
+    JOIN} is important!
+
+  % SELECT cname, COUNT(sid) FROM Courses, Signup WHERE Courses.cid =
+  % Signup.cid GROUP BY cname HAVING COUNT(sid) < 2;
+
+\item<4-> Correspondingly, \texttt{RIGHT JOIN} includes all rows from the
+  right table, even those without a matching left table row.
+
+\item<4-> \texttt{LEFT JOIN} and \texttt{RIGHT JOIN} are collectively known as
+  \texttt{OUTER JOIN}.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide]
+\frametitle{How Long Time Does A Query Take?}
+
+\begin{itemize}
+\item A join of two tables can take a long time to process.
+
+\item Basically, each row in the one table must be matched with each
+ row of the other.
+
+\item So 10,000 rows in the one table and 10,000 in the
+  other will require 10,000 * 10,000 = 100,000,000 comparisons.
+
+\item This takes a long time.  When \texttt{Large1} and
+  \texttt{Large2} each contain 10,000 lines, the following takes about
+  30 seconds:
+\begin{small}
+\begin{verbatim}
+   SELECT COUNT(id) 
+   FROM Large1, Large2 
+   WHERE Large1.id = Large2.id.
+\end{verbatim}
+\end{small}
+  
+\item Using \emph{indexes} on \texttt{Large1.id} and
+  \texttt{Large2.id} it takes about 0.05 seconds; that is 400 times faster.
+
+\item So the more rows, the more important is it to use indexes.
+  
+\item With 1,000,000 rows in each table, indexes will increase
+  query speed by a factor of 15,000.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{What Is An Index?}
+
+\begin{itemize}
+\item An index is a ``telephone book'' for each column of a table.
+
+
+\item In ordinary telephone books the following is true:
+
+  \begin{itemize}
+  \item It is hard to find the owner of a given number, because the
+    numbers are not listed in order.
+
+  \item Conversely, it is easy to find the number of a given owner,
+    because the names are sorted alphabetically. 
+  \end{itemize}
+
+
+\item Using an index, you can find a specific value using just $\log_2(N)$
+  comparisons when there are $N$ possible values.
+
+
+\item Example: The National Register contains roughly 5,000,000
+  persons (rows) in one table.
+
+
+\item Locating a CPR number without using the index: 2,500,000 comparisons
+  on average.
+
+
+\item Locating a CPR number using the index: $\log_2(\mbox{5,000,000}) = 22.3$
+  comparisons on average.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Creating Indexes On Table Columns}
+
+\begin{itemize}  
+\item A table can have indexes on all fields
+\item Creating an index on the \texttt{id} field in the
+  \texttt{Large1} table:
+
+\begin{small}
+\begin{verbatim}
+   CREATE INDEX Large1_id ON Large1 (id);
+\end{verbatim}
+\end{small}
+    
+\item You can require that each value in a column may occur at most once:
+
+\begin{small}
+\begin{verbatim}
+   CREATE UNIQUE INDEX Students_sid ON Students (sid);
+\end{verbatim}
+\end{small}
+
+This index will make it impossible to assign the same ID to two
+students.  Try it!
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{Indexes On Combination Of Columns}
+  \begin{itemize}
+  \item A table can also have indexes on combinations of fields
+ 
+\item You can make indexes combining several fields:
+\begin{small}
+\begin{verbatim}
+   CREATE UNIQUE INDEX Signup_sid_cid ON Signup (sid, cid);
+\end{verbatim}
+\end{small}
+
+This makes lookups of column combinations much faster than just having
+indexes on the individual columns.
+
+\item What is the consequence of the \texttt{unique} in the
+\verb+Signup_sid_cid+ index?
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Primary Keys}
+
+\begin{itemize}  
+\item A \intro{primary key} is a combination of fields that \intro{uniquely
+  determine a row of the table}. Typically, the primary key is also the
+  main vehicle for looking up rows of the table.
+
+\item Examples: \texttt{sid} is the primary key of \texttt{Students},
+\texttt{cid} is the primary key of \texttt{Courses} and \texttt{(sid, cid)}
+is the primary key of \texttt{Signup}.
+
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{Declaring Primary Keys}
+  \begin{itemize}
+  \item You can declare the primary key when you create the table:
+\begin{footnotesize}
+\begin{semiverbatim}
+  CREATE TABLE Students (sname TEXT NOT NULL,
+                         sid VARCHAR(10) \textbf{PRIMARY KEY}, 
+                         address TEXT NOT NULL);
+\end{semiverbatim}
+\end{footnotesize}
+
+\item For multicolumn primary keys, each column
+  must be \texttt{not null} and \texttt{primary key} is written just once:
+\begin{footnotesize}
+\begin{semiverbatim}
+  CREATE TABLE Signup (sid VARCHAR(10) NOT NULL, 
+                       cid VARCHAR(10) NOT NULL,
+                       \textbf{PRIMARY KEY (sid, cid)});
+\end{semiverbatim}
+\end{footnotesize}
+
+\item The following holds for primary keys:
+\begin{itemize}
+\item All columns in the primary key are automatically \texttt{NOT
+    NULL} (well, not in SQLite).
+\item A \texttt{UNIQUE INDEX} is automatically created on the
+  combination of columns of the primary key.
+\end{itemize}
+
+  \end{itemize}
+\end{frame}
+
+
+% \begin{frame}[fragile=singleslide]
+
+% \frametitle{Generating Unique ID Numbers In MySQL}
+
+
+% \begin{itemize}
+% \item In MySQL you can use \intro{\texttt{AUTO\_INCREMENT}} to generate fresh
+%   ID numbers automatically when inserting new rows into a table:
+%   \begin{footnotesize}
+% \begin{semiverbatim}
+% CREATE TABLE Persons (
+%    person_id INT \textbf{AUTO_INCREMENT} PRIMARY KEY,
+%    name      TEXT NOT NULL
+%  );
+% CREATE TABLE Phone_numbers (
+%    person_id INT NOT NULL,
+%    phone     VARCHAR(20) NOT NULL
+% );
+% CREATE TABLE Emails (
+%    person_id INT NOT NULL,
+%    email     TEXT NOT NULL
+% );
+
+% \textbf{INSERT INTO Persons (name) VALUES ('Ken Friis Larsen');}
+% \textbf{INSERT INTO Persons (name) VALUES ('Mads Tofte');}
+% \end{semiverbatim}
+%   \end{footnotesize}
+
+
+% \item (Other database systems provide similar functionality)
+
+% \end{itemize}
+% \end{frame}
+
+
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Naming Tables In Queries, Self-Joins}
+
+\begin{itemize}
+\item We would like to find all pairs of courses that are taught by
+  the same teacher.
+
+\item i.e., find all pairs (\texttt{c1}, \texttt{c2}) of courses where
+  the teacher of \texttt{c1} is identical to that of \texttt{c2}.
+  
+\item This can be done by joining the \texttt{Courses}-table with
+  itself (self-join).
+
+\item You can name the tables in a join by writing a new name (e.g.,
+  \texttt{c1}) after the table name:
+
+\begin{small}
+\begin{verbatim}
+  SELECT c1.cid, c2.cid 
+  FROM Courses c1, Courses c2 
+  WHERE c1.teacher = c2.teacher;
+\end{verbatim}
+\end{small}
+    
+%\item The query yields too many results:\\
+%Both (15341, 15311) and (15311, 15341), and also rows like
+%(10188,10188).
+    
+  \item Add \texttt{AND c1.cid < c2.cid} to exclude extraneous rows.
+\end{itemize}
+\end{frame}
+
+
+% \begin{frame}[fragile=singleslide]
+% \frametitle{Which Tables Does The Database Contain?}
+
+% \begin{itemize}
+% \item Display my tables:
+%   \begin{small}
+% \begin{verbatim}
+%    SHOW TABLES;
+% \end{verbatim}
+%   \end{small}
+
+
+% \item Display the names and types of table columns:
+%   \begin{small}
+% \begin{verbatim}
+%    SHOW FIELDS FROM Table;
+% \end{verbatim}
+%   \end{small}
+
+
+% \item Display the contents of a table:
+%   \begin{small}
+% \begin{verbatim}
+%    SELECT * FROM Table;
+% \end{verbatim}
+%   \end{small}
+
+
+% \item Loading data into a table from a text file
+%   \begin{small}
+% \begin{verbatim}
+%   LOAD DATA LOCAL INFILE "wwwstats.txt" INTO TABLE Weblog;
+% \end{verbatim}
+%   \end{small}
+% \end{itemize}
+% \end{frame}
+
+\begin{frame}
+\frametitle{Constructing Database Supported Web Sites} 
+
+\begin{enumerate}[Step 1:]
+  \item Make a data model
+    \begin{itemize}
+    \item Which information should be stored and how should it be
+      represented?
+    \item Activity: write \texttt{CREATE TABLE} queries.
+    \end{itemize}
+
+
+  \item Develop data transactions
+    \begin{itemize}
+    \item How do we insert data into the database?
+    \item How do we extract data from the database?
+    \item Activity: Write sample \sql{} queries \textcolor{gray}{and perhaps wrap these
+      in Python functions}
+    \end{itemize}
+
+
+  \item \textcolor{gray}{Construct site-map and web-forms for implementing data transactions}
+
+
+
+  \item \textcolor{gray}{Code Python-files for implementing data transactions in the
+    site-map}
+
+\end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Example: A Mailing List} 
+
+\begin{itemize}
+\item We want to create a mailing list system: we want to be able to
+  create a list of names and emails for distributing emails.
+
+\item \textbf{Step 1: The data model}
+
+\begin{small}
+\begin{verbatim}
+CREATE TABLE Maillist (
+  id         INT AUTO_INCREMENT PRIMARY KEY,
+  email      varchar(100) NOT NULL,
+  name       text NOT NULL
+);
+\end{verbatim}
+\end{small}
+
+\item The same common list is maintained by all people using the system.
+
+\item The only information stored are the names and email addresses.
+
+\item We insist that the name as well as the email address are present.
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Example: A Mailing List---Continued} 
+
+\begin{itemize}
+\item \textbf{Step 2: Data transactions}
+
+
+\item The system is required to support the following kinds of data
+  transactions:
+  \begin{itemize}
+  \item List all persons on the mailling list:
+    \begin{small}
+\begin{verbatim}
+SELECT email, name FROM Maillist;
+\end{verbatim}
+    \end{small}
+  \item Inserting new emails and names:
+    \begin{small}
+\begin{semiverbatim}
+INSERT INTO Maillist (email,name) VALUES
+  ('kflarsen@diku.dk', 'Ken Friis Larsen');
+INSERT INTO Maillist (email,name) VALUES
+  ('simonsen@diku.dk', 'Jakob Grue Simonsen');
+\end{semiverbatim}
+    \end{small}
+  \end{itemize}
+\item We will extend these system requirements later
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Next time}
+
+\begin{itemize}
+\item Hooking up SQL and Python
+\item HTML and CSS
+\item Web applications with Python
+  % \item Websites that are databases
+\end{itemize}
+
+\end{frame}
+
+\end{document}

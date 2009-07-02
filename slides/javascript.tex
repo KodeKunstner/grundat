@@ -1,0 +1,397 @@
+\documentclass[svgnames,handout]{beamer}
+
+\usepackage{preamble}
+\usepackage{coursespecific}
+%\renewcommand*{\IncludeAnswers}{1}
+
+\renewcommand*{\Lecture}{12}
+\subtitle{JavaScript}
+\author{Ken Friis Larsen\\\scriptsize (Some slides prepared together
+  with Henning Niss)}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage{}
+\end{frame}
+
+
+% \begin{frame} 
+% \frametitle{Today's Script}
+% \begin{itemize}
+% \item Manipulating HTML pages through DOM
+% \item Ajax architecture
+% \item Intelligent clients
+% \end{itemize}
+% \end{frame}
+
+
+
+\begin{frame} 
+\frametitle{JavaScript---Not Just For Web Applications}
+
+\begin{itemize}
+\item Windows batch scripting (Active Scripting)
+\item Dashboard Widgets (Mac OS X Tiger)
+\item Vista Widgets
+\item Greasemonkey scripts (Firefox)
+\item Unity3D game engine scripting
+\item ActionScript is an other dialect of ECMAScript
+\item PDF documents can contain JavaScript
+\item Scripting of Adobe Photoshop
+\item Can be (and is) embedded as scripting language for applications
+  that needs it
+\end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}[fragile] 
+\frametitle{Manipulating HTML In JavaScript}
+
+\begin{itemize}
+\item We modify an HTML page in JavaScript by modifying the
+  \intro{Document Object Model} (DOM)
+\item The DOM is a hierarchical tree representation of an HTML document
+\item Each node corresponds to either an \intro{element node}
+  (corresponding to an HTML element) or a \intro{text node}
+  (corresponding to the text in an HTML element).
+\item We manipulate the DOM tree in two ways:
+  \begin{itemize}
+  \item By adding, removing, and modifying nodes
+  \item By manipulating the CSS style of nodes
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}\frametitle{DOM Navigation}
+
+  \begin{itemize}
+  \item Navigation based on the id attribute or the tag name:
+    \begin{itemize}
+    \item \texttt{\textit{elem}.getElementById("homer")}: get the child
+      element with id \texttt{homer}
+    \item \texttt{\textit{elem}.getElementsByTagName("tag")}: get
+      array of child elements with tag name \texttt{tag}
+    \item (often we just use \texttt{document} as element)
+    \end{itemize}
+
+  \item Navigation based on a node (\texttt{n} is a node in the
+    DOM tree):
+    \begin{itemize}
+    \item \texttt{n.parentNode}: parent of the node;
+    \item \texttt{n.childNodes}: array of all children;
+    \item \texttt{n.firstChild}: the first child;
+    \item \texttt{n.lastChild}: the last child;
+    \item \texttt{n.childNodes[i]}: the \texttt{i}'th child.
+    \end{itemize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}\frametitle{DOM Manipulation}
+
+Adding children to a node (\texttt{n} is a node in the DOM tree):
+\begin{itemize}
+\item \texttt{n.appendChild(new)}: add a node after all children;
+\item \texttt{n.insertBefore(new,old)}: add a node before a child;
+\item \texttt{n.replaceChild(new,old)}: replace a child;
+\item \texttt{n.removeChild(old)}: remove a child.
+\end{itemize}
+
+\medskip{}
+Frames and Tables have special DOM methods for convenience. 
+\end{frame}
+
+
+
+\begin{frame}[fragile]  
+\frametitle{Using DOM}
+\begin{footnotesize}
+\begin{semiverbatim}\color<2->{gray}
+<html><head><title>Dated Titulation</title>
+<script type="text/javascript" >
+function titulate(male, name) \{ ... \}
+{\color<2->{black}function addParaTo(text, div) \{
+   var out = \intro<2->{document.getElementById}(div);
+   var par = \intro<2->{document.createElement}("p");
+   par.appendChild(\intro<2->{document.createTextNode}( text ));
+   out.appendChild(par);
+\}}
+function titulateWithDate(name, out) \{
+   var today = Date();
+   var text = "Hi "+titulate(true, name)+ " at " + today;
+   addParaTo(text, out)
+\}
+</script></head><body>
+  <h1>Dated Titulation</h1>
+<div id="output"></div>
+<script type="text/javascript" >
+titulateWithDate("Ken Friis Larsen", "output");
+</script></body></html>
+\end{semiverbatim}
+\end{footnotesize}
+\end{frame}
+
+
+
+\begin{frame}[fragile] 
+\frametitle{Multiplication Table By DOM}
+  
+\begin{itemize}
+\item File \texttt{multdom.js}
+  \begin{footnotesize}
+\begin{semiverbatim}
+function add_multcells( table, rows, cols ) \{
+  for( var r = 1; r <= rows; r = r + 1 ) \{
+    var row = table.\intro{insertRow}(table.rows.length);
+    for( var c = 1; c <= cols; c++ ) \{
+      var cell = row.\intro{insertCell}(row.cells.length);
+      var content = \intro{document.createTextNode}( r * c );
+      cell.\intro{appendChild}(content);
+    \}
+  \}
+\}      
+\end{semiverbatim}
+  \end{footnotesize}
+\item File \texttt{simplemulttable2.html}
+\begin{footnotesize}
+\begin{semiverbatim}
+\color{gray}<html><head><title>Simple Multiplication Table</title>
+<script type="text/javascript" src="multdom.js" ></script>
+</head><body><h1>Multiplication Table</h1>
+  <table border="1px" \textcolor{black}{id="multtab"}></table> 
+  <script type="text/javascript">
+    \textcolor{black}{var tab = document.getElementById("multtab");}
+    add_multcells( tab, 10, 5 );
+  </script></body></html>      
+\end{semiverbatim}
+  \end{footnotesize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile=singleslide] 
+\frametitle{Setting The Style From JavaScript}
+
+\begin{itemize}
+\item To manipulate the CSS style on a DOM element from JavaScript, we
+  use the \intro{\texttt{style}} property.
+\begin{semiverbatim}
+\footnotesize\color{gray}function validate_and_warn( s, warning_id ) \{
+  var warning = document.getElementById(warning_id);
+  if ( validate_int(s) ) \{
+    \textcolor{black}{warning.style.visibility = "hidden";}
+    return true;
+  \} else \{
+    \textcolor{black}{warning.style.visibility = "visible";}
+    return false;
+  \}\}
+\end{semiverbatim}
+
+\item Or, if we want to change the CSS class of a DOM element, we use
+  the \intro{\texttt{className}} property
+\begin{semiverbatim}
+\footnotesize\color{gray}function zebra( table ) \{
+  for ( var i = 0; i < table.rows.length; i++ ) \{
+    if( i % 2 == 0 ) \{
+      \textcolor{black}{table.rows[i].className = "oddrow";}
+    \}
+  \}\}
+\end{semiverbatim}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide]
+ \frametitle{Moving Things With Time-Outs}
+ \begin{footnotesize}
+\begin{semiverbatim}\color{gray}
+<html><head><title>Magic Box</title>
+<style type="text/css">
+ .magic \{ position: absolute; ... \}
+</style>
+<script type="text/javascript" >
+{\color{black} var pos = 0;
+ function moveBox() \{
+   var box = document.getElementById("box");
+   pos += 5;
+   box.style.left = pos + "px";
+ \}}
+</script></head><body>
+  <h1>The Magic Box</h1>
+  <div id="box" class="magic"><p>Lo and Behold</p></div>
+  <script type="text/javascript" >
+  {\color{black}\intro{setInterval}(moveBox, 100);}
+  </script>
+</body></html>
+\end{semiverbatim}
+ \end{footnotesize}
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Interaction With Forms}
+
+\begin{itemize}
+\item Just like we can use \texttt{setInterval} to get a function
+  called with a specific interval, we ask to get a JavaScript function
+  called when \intro{user interaction event} happens. 
+
+\item That the user clicks on a button, for instance.
+\begin{semiverbatim}
+  <input type="submit" value="Titulate!" 
+         \intro{onclick="return inputchanged();"} />
+\end{semiverbatim}
+
+\item We can read or change the content of an text-input field by
+  using the \texttt{value} attribute
+\begin{semiverbatim}
+  var name = document.getElementById("name");
+  if ( name.\intro{value} != "" ) \{ ... \}
+\end{semiverbatim}
+\end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}[fragile]  
+\frametitle{Getting Input From The User}
+\begin{footnotesize}
+\begin{semiverbatim}\color<2->{gray}
+<html><head><title>Dynamic Titulation</title>
+<script type="text/javascript" >
+function titulate(male, name) \{ ... \}
+function addParaTo(text, div) \{ ... \}
+function titulateWithDate(name, out) \{ ... \}
+{\color<2->{black}function inputReady() \{
+  var name = document.getElementById("name");
+  if ( name.value != "" ) \{ titulateWithDate(name.value, "output"); \}
+  return false;
+\}}
+</script></head><body>
+  <h1>The Titulator 2</h1>
+  <form name="titulator">
+  Name: <input type="text" name="name" id="name" />
+  <input type="submit" value="Titulate!" 
+         \intro<2->{onclick="return inputReady();}" /> 
+  </form> 
+  <div id="output"></div>
+</body></html>
+\end{semiverbatim}
+\end{footnotesize}
+\end{frame}
+
+
+
+\begin{frame}[fragile=singleslide] 
+\frametitle{Multiplication Table---Now With CSS}
+\begin{tiny}
+\begin{verbatim}
+<html><head><title>Dynamic Multiplication Table With CSS Tricks</title>
+<style type="text/css">
+  .warning { ... ;  visibility: hidden; }
+  .oddrow { background-color: silver; }
+</style>
+<script type="text/javascript" src="multcss.js" ></script>
+<script type="text/javascript">
+...
+function inputchanged() {
+  var cols = document.getElementById("cols");
+  var rows = document.getElementById("rows");
+  if ( cols.value != "" && rows.value != "" 
+    && validate_and_warn(cols.value, "colswarning") 
+    && validate_and_warn(rows.value, "rowswarning")) {   
+     var tab = document.getElementById("multtab");
+     clear_table( tab );
+     add_multcells( tab, rows.value, cols.value );
+     zebra( tab );
+  }
+}
+</script></head>
+<body> <h1>Dynamic Multiplication Table</h1>
+  <form >
+  Rows: <input type="text" name="rows" id="rows" onchange="inputchanged()" /> 
+  <span id="rowswarning" class="warning">Number of rows must be an integer. 
+  <img src="angry.png" /></span>
+  <br />
+  Columns: <input type="text" name="cols" id="cols" onchange="inputchanged()" />
+  <span id="colswarning" class="warning">Number of columns must be an integer.
+  <img src="angry.png" /></span>
+  </form> 
+  <table border="1px" id="multtab"></table>
+</body></html>
+\end{verbatim}
+\end{tiny}
+\end{frame}
+
+
+
+\begin{frame}[fragile=singleslide] 
+\frametitle{Shopping List With DOM}
+
+\begin{scriptsize}
+\begin{verbatim}
+<html><head><title>Shopping Basket</title>
+ <script type="text/javascript">
+ function addToBasket() {
+   var item = this;
+   var li = item.parentNode;
+   var ul = li.parentNode;
+   var basket = document.getElementById("basket");
+   basket.appendChild(item);
+   item.onclick = null;
+   ul.removeChild(li);
+ }
+ function addOnClicks() {
+   var list = document.getElementById("list");
+   var items = list.getElementsByTagName("li");
+   for( var i = 0; i < items.length; i++) {
+     items[i].firstChild.onclick = addToBasket;
+   }}       
+ </script>
+ <body onload="addOnClicks()"><h1>Shopping List</h1>
+  <ul id="list">
+  <li><span id="beer">Beer</span></li> <li><span id="chips">Chips</span></li>
+  <li><span id="fish">Fish</span></li> <li><span id="salted">Salted Peanuts</span></li></ul> <hr>
+  <h1>Basket</h1>
+  <div id="basket"></div> </body></html>
+\end{verbatim}
+\end{scriptsize}  
+\end{frame}
+
+
+\begin{frame}[fragile] 
+\frametitle{Radio Buttons And Check-boxes}
+
+\begin{itemize}
+\item Like text-input fields radio buttons have an \texttt{value} attribute.
+\item We can read or set the state of an radio button using the
+  \texttt{checked} attribute.
+\item When we give a group radio buttons the same name, the browser
+  collects them in an array with that name.
+\begin{semiverbatim}\footnotesize{}
+ function reportSex() \{
+    for(var i = 0; i < document.questionnaire.sex.length; i += 1) \{
+      var s = document.questionnaire.sex[i];
+      if( s.checked ) \{
+         alert("You are: "+s.value);
+      \}
+    \}
+ \}    
+\end{semiverbatim}
+\item And similar for check boxes
+\end{itemize}
+
+  
+\end{frame}
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 

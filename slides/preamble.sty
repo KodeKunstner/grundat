@@ -1,0 +1,65 @@
+\usepackage[english]{babel}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{textcomp}
+\usepackage{bera}
+\usepackage{colortbl}
+\usepackage{tikz}
+\usepackage{pgflibraryshapes}
+\usepackage{xspace}
+\usepackage{pifont}
+\usepackage{ifthen}
+
+\newcommand*{\Stack}[2][c]{
+  \begin{tabular}{@{}#1@{}}
+    #2
+  \end{tabular}}
+
+
+\newcommand*{\darkblue}{\color{darkblue}}
+\newcommand*{\Notice}{\textcolor{orange}{\ding{229}}}
+
+
+\newcommand*{\IncludeAnswers}{0}
+
+\newcommand{\RawAnswer}[2][+(1)]{\uncover<#1-|  handout:\IncludeAnswers>{#2}}
+
+\newenvironment{RawAnswerEnv}[1][+(1)]{%
+  \begin{uncoverenv}<#1-| handout:\IncludeAnswers>}{\end{uncoverenv}}
+
+
+\newcommand{\Question}[3][+(1)]{#2\RawAnswer[#1]{%
+    \begin{itemize}\item #3\end{itemize}}}
+
+\newcommand{\Answer}[2][+(1)]{\ensuremath{\underline{%
+      \mbox{\RawAnswer[#1]{\usebeamercolor{frametitle}\textcolor{fg}{#2}}}}}}
+
+
+\newcommand*{\intro}[1]{{\usebeamercolor{frametitle}\textcolor{fg}{#1}}}
+
+\newcommand*{\sql}{SQL}
+
+\newcommand*{\examplefile}[1]{{\rm\texttt{#1}}}
+
+
+\mode<presentation>
+{
+  \usetheme{default}
+%  \useoutertheme{infolines}
+}
+\setbeamersize{text margin left=1em,text margin right=1em}
+\setbeamertemplate{footline}
+{
+  \leavevmode%
+  \hbox{%
+  \begin{beamercolorbox}[wd=\paperwidth,ht=2.25ex,dp=1ex,right]{date in head/foot}%
+    \usebeamerfont{date in head/foot}\insertshortdate{}\hspace*{2em}
+    \insertframenumber{} / \inserttotalframenumber\hspace*{2ex}
+  \end{beamercolorbox}}%
+  \vskip0pt%
+}
+\setbeamertemplate{navigation symbols}{}

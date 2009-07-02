@@ -1,0 +1,354 @@
+\documentclass[dvipsnames]{beamer}
+
+\usepackage{preamble}
+\usepackage{coursespecific}
+%\renewcommand*{\IncludeAnswers}{1}
+
+\renewcommand*{\Lecture}{13}
+\subtitle{Introduction To JavaScript}
+
+
+\begin{document}
+
+\begin{frame}
+  \titlepage{}
+\end{frame}
+
+\begin{frame} 
+\frametitle{Today's Script}
+
+\begin{itemize}
+\item How does JavaScript fit in to out architecture, and what does it
+  look like.
+\item What can JavaScript be used for
+\item Manipulating HTML in JavaScript
+\item JIT Validation with JavaScript
+\end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Three-tier Architecture}
+  \begin{center}
+    \begin{tikzpicture}[thick,>=stealth]
+    \footnotesize
+    \fill[blue!25] (-1.5,-.8) rectangle (5.5,2.3);
+    \path 
+    (-5,2) node[draw,ellipse,minimum size=10mm](Client1) {Browser}
+    (-5,0) node[draw,ellipse,minimum size=10mm](Client2) {Browser}
+    (0,1.5) node[draw,rectangle,minimum size=10mm,fill=white,
+                 text width=8em, text centered](WS) {Web Server\\(Apache)}
+    (-.8,0) node[draw,rectangle,minimum size=10mm,fill=white,
+                 text width=3em, text centered](PHP) {PHP file}
+    (1,0) node[draw,rectangle,minimum size=10mm,fill=white,
+                 text width=3em, text centered](HTML) {HTML file}
+    (4,1.5) node[draw,rectangle,,minimum size=10mm,fill=white,
+                 text width=8em, text centered](DB) {Database Server\\(MySQL)}
+    ;
+    \only<1|handout:0>{
+      \draw[<->] (Client1) -- node[above,sloped]{HTML} (WS);
+      \draw[<->] (Client2) -- node[above,sloped]{HTML} (WS);    
+    }
+    \only<2->{
+      \draw[<->] (Client1) -- node[above,sloped]{HTML/JavaScript} (WS);
+      \draw[<->] (Client2) -- node[above,sloped]{HTML/JavaScript} (WS);
+    }
+    \draw[<->] (Client1) -- node[below,sloped]{HTTP} (WS);
+    \draw[<->] (Client2) -- node[below,sloped]{HTTP} (WS);    
+    \draw[<->] (WS) -- node[above]{SQL} (DB);
+    \draw[->] (PHP) -- (WS);
+    \draw[->] (HTML) -- (WS);
+    \end{tikzpicture}
+  \end{center}
+
+
+\begin{itemize}[<+->]
+\item We still have a three-tier architecture
+\item JavaScript/AJAX changes nothing
+  \begin{itemize}
+  \item It is just GUI bling
+  \end{itemize}
+\item JavaScript/AJAX changes everything
+  \begin{itemize}
+  \item We now have ``intelligent'' clients
+  \end{itemize}
+
+\item We should still \emph{never} trust data from the users.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{History Repeats Itself}
+  
+  \begin{small}
+\begin{semiverbatim}\color{gray}
+<html><head><title>Hello JavaScript World</title></head>
+<body>
+ {\color{black}<script type="text/javascript">
+  document.writeln("<p>Hi There,</p>");
+  document.writeln("<p>Greetings from a JavaScript script</p>");   
+ </script>} 
+</body>
+</html>
+\end{semiverbatim}
+  \end{small}
+
+  \begin{itemize}
+  \item The JavaScript code is kept in a \intro{\texttt{<script>}}
+    element with the \intro{\texttt{type }attribute} set to
+    \texttt{text/javascript}
+  \item The \texttt{<script>} element can be placed
+    \begin{itemize}
+    \item \intro{in the \texttt{<body>} element}, when the JavaScript
+      dynamically create the page content
+    \item \intro{in the \texttt{<head>} elements}, when we define functions
+      to be called later.
+    \item \intro{in separate files}, when we have more than a trivial amount
+      of code
+    \end{itemize}
+  \item We can use \intro{\texttt{document.writeln}} to dynamically
+    write to the page.
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide] 
+\frametitle{History Really Repeats Itself}
+
+\begin{footnotesize}
+\begin{semiverbatim}\color{gray}
+<html><head><title>Oooh, Now With Function Calls</title>
+{\color{black}<script type="text/javascript" >
+function titulate( $male, $name ) \{
+  if ( $male ) \{
+    return "Mr. " + $name;
+  \} else \{
+    return "Mrs. " + $name;
+  \}
+\}
+</script>}
+</head>
+<body>
+ {\color{black}<script type="text/javascript">
+  var today = Date();
+  document.writeln("<h1>Hi "
+                  + titulate( true, "Ken Friis Larsen")+"</h1>");
+  document.writeln("<p>You loaded this webpage at " + today + "</p>");     
+ </script>}
+</body></html>
+\end{semiverbatim}%$
+\end{footnotesize}
+\end{frame}
+
+\begin{frame} 
+\frametitle{Some Differences Between PHP and JavaScript}
+
+\begin{itemize}
+\item In JavaScript variables must be declared with
+  \intro{\texttt{var}}
+\item In JavaScript variables \emph{can} begin with a dollar sign, but
+  they \emph{don't have to}.
+\item In JavaScript you join two strings with \intro{\texttt{+}}
+\item JavaScript don't have multiline strings
+\item JavaScript don't expand variables inside strings
+\item In JavaScript we modify the document in the browser rather
+  sending it
+\item (Completely different OO system, but fortunately that is outside
+  the scope of this course)
+\end{itemize}  
+\end{frame}
+
+
+
+\begin{frame}[fragile] 
+\frametitle{Loops In JavaScript}
+  
+\begin{itemize}[<+->]
+
+\item The file \texttt{mult.js}:
+  \begin{footnotesize}
+\begin{verbatim}
+function multcells( rows, cols ) {
+  var result = "";
+  for( var r = 1; r <= rows; r = r + 1 ) {
+    result += "<tr>";
+    for( var c = 1; c <= cols; c++ ) {
+      result += '<td align="right">' + (r*c) + "</td>";
+    }
+    result += "</tr>";
+  }
+  return result; 
+}      
+\end{verbatim}
+  \end{footnotesize}
+
+\item The file \texttt{simplemulttable.html}%
+\begin{footnotesize}%
+\begin{semiverbatim}
+\color{gray}<html><head><title>Simple Multiplication Table</title>
+\textcolor{black}{<script type="text/javascript" \intro{src="mult.js"} ></script>}
+</head><body>
+  <h1>Multiplication Table</h1>
+  <table border="1px">
+  <script type="text/javascript">
+    \textcolor{black}{document.writeln( multcells(5,5) );}
+  </script></table></body></html>
+\end{semiverbatim}
+\end{footnotesize}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame} 
+\frametitle{History}
+
+\begin{itemize}
+\item Early 1995, Netscape hired Brendan Eich to make LiveScript for
+  version 2.0 of the browser
+\item Late 1995, Netscape and Sun made a deal, and LiveScript was
+  renamed JavaScript
+\item August 1996, Microsoft introduced JScript in version 3.0 of Internet
+  Explorer
+\item November 1996, Netscape submitted the JavaScript specification
+  to ECMA International for standardization.
+\item June 1997, ECMAScript (ECMA-262) first edition released.
+\item June 1998, ECMAScript second edition
+\item December 1999, ECMAScript third edition.  Corresponds roughly
+  to JavaScript version 1.5
+\item Work in progress, ECMAScript fourth edition.
+\end{itemize}
+  
+\end{frame}
+
+
+\begin{frame} 
+\frametitle{JavaScript---Not Just For Web Applications}
+
+\begin{itemize}
+\item Windows batch scripting (Active Scripting)
+\item Dashboard Widgets (Mac OS X Tiger)
+\item Vista Widgets
+\item Greasemonkey scripts (Firefox)
+\item Unity3D game engine scripting
+\item ActionScript is an other dialect of ECMAScript
+\item PDF documents can contain JavaScript
+\item Scripting of Adobe Photoshop
+\item Can be (and is) embedded as scripting language for applications
+  that needs it
+\end{itemize}
+  
+\end{frame}
+
+
+\begin{frame}[fragile] 
+\frametitle{Manipulating HTML In JavaScript}
+
+\begin{itemize}
+\item We modify an HTML page in JavaScript by modifying the
+  \intro{Document Object Model} (DOM)
+\item The DOM is a hierarchical tree representation of an HTML document
+\item Each node corresponds to either an \intro{element node}
+  (corresponding to an HTML element) or a \intro{text node}
+  (corresponding to the text in an HTML element).
+\item We manipulate the DOM tree in two ways:
+  \begin{itemize}
+  \item By adding, removing, and modifying nodes
+  \item By manipulating the CSS style of nodes
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile] 
+\frametitle{Multiplication Table By DOM}
+  
+\begin{itemize}
+\item File \texttt{multdom.js}
+  \begin{footnotesize}
+\begin{semiverbatim}
+function add_multcells( table, rows, cols ) \{
+  for( var r = 1; r <= rows; r = r + 1 ) \{
+    var row = table.\intro{insertRow}(table.rows.length);
+    for( var c = 1; c <= cols; c++ ) \{
+      var cell = row.\intro{insertCell}(row.cells.length);
+      var content = \intro{document.createTextNode}( r * c );
+      cell.\intro{appendChild}(content);
+    \}
+  \}
+\}      
+\end{semiverbatim}
+  \end{footnotesize}
+\item File \texttt{simplemulttable2.html}
+\begin{footnotesize}
+\begin{semiverbatim}
+\color{gray}<html><head><title>Simple Multiplication Table</title>
+<script type="text/javascript" src="multdom.js" ></script>
+</head><body><h1>Multiplication Table</h1>
+  <table border="1px" \textcolor{black}{id="multtab"}></table> 
+  <script type="text/javascript">
+    \textcolor{black}{var tab = document.getElementById("multtab");}
+    add_multcells( tab, 10, 5 );
+  </script></body></html>      
+\end{semiverbatim}
+  \end{footnotesize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[fragile] 
+\frametitle{Attaching JavaScript To Events}
+
+\begin{footnotesize}
+\begin{semiverbatim}
+<html><head><title>Dynamic Multiplication Table</title>
+<script type="text/javascript" src="multdom.js" ></script>
+<script type="text/javascript">
+function inputchanged() \{
+  var cols = document.getElementById("cols");
+  var rows = document.getElementById("rows");
+  if ( cols.value != "" && rows.value != "" 
+    && validate_int(cols.value) && validate_int(rows.value)) \{   
+     var tab = document.getElementById("multtab");
+     clear_table( tab );
+     add_multcells( tab, rows.value, cols.value );
+  \}
+\}
+</script></head><body>
+  <h1>Dynamic Multiplication Table</h1>
+  <form action="doesnotexists.php" >
+  Rows: <input type="text" name="rows" id="rows" 
+         \intro{onchange="inputchanged()}" /><br />
+  Collumns: <input type="text" name="cols" id="cols" 
+             \intro{onchange="inputchanged()}" />
+</form><table border="1px" id="multtab"></table></body></html>    
+\end{semiverbatim}
+\end{footnotesize}
+  
+\end{frame}
+
+
+\begin{frame} \frametitle{Next Time}
+
+  \begin{itemize}
+  \item Changing the CSS style of an element
+  \item AJAX
+    \begin{itemize}
+    \item That is, some computations at the client some at the server.
+    \end{itemize}
+  \item Exam from Spring 2006
+  \end{itemize}
+  
+\end{frame}
+
+
+
+\end{document}
+
+%%% Local Variables: 
+%%% mode: latex
+%%% TeX-master: t
+%%% End: 
+
+% LocalWords:  JavaScript ActionScript ECMAScript PDF CSS

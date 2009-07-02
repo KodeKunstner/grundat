@@ -1,0 +1,1101 @@
+\documentclass[dvipsnames]{beamer}
+
+\mode<presentation>
+{
+  \usetheme{default}
+%  \useoutertheme{infolines}
+}
+
+\setbeamertemplate{navigation symbols}{}
+\usepackage{preamble}
+\usepackage{coursespecific}
+
+
+\renewcommand*{\Lecture}{3}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage{}
+\end{frame}
+
+
+\begin{frame}
+
+\frametitle{Today's Subjects}
+
+\begin{itemize}
+\item General course information
+\item Weekly exercises and the exam
+\item Course content and motivation
+\item Web publishing and Web applications
+\item Detailed course content
+\item HTML in 21 minutes
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{General Course Information}
+
+\begin{itemize}
+\item \textbf{Course Goal:} To learn about advanced Web techniques for
+  developing realistic, useful Web sites, involving information
+  interchange with a database.
+
+\item \textbf{Teacher:} \undervisernavne{}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Online Information}
+  \begin{itemize}
+  \item \textbf{The course home page} is \url{\kursushjemmeside}
+  \item The home page for the course contains a detailed lecture plan,
+    exercises, latest news, and other important course information.
+  \item The lecture plan contains links to slides
+  \item \textbf{Keep an eye} on the course home page throughout the
+    semester.
+  \item \textbf{When:} lectures \kursusugedag{} 17.00--19.00; exercises
+    19.00--21.00
+  \item Please ask questions during the lectures
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{You Will Need}
+
+\begin{itemize}
+\item \textbf{The course book:} ``Web Database Applications with PHP
+  and MySQL'', which is available in the book store
+  (Samfundslitteratur, beside the Information Desk) or can be ordered
+  from Amazon (\url{http://www.amazon.dk}).
+\item \textbf{Notes}, which are available from the course home page
+  \begin{itemize}
+ \item \emph{HTML overview}, Peter Sestoft and Ken~Friis~Larsen.
+ \end{itemize}
+\item \textbf{Related Literature}
+  \begin{itemize}
+  \item \textit{Head First HTML}, Freeman \& Freeman. O'Reilly 2006.
+  \item \emph{Start på PHP}, Thomas G. Kristensen. IDG Forlag 2001. In Danish.
+  \item \emph{Start på SQL}, F. D. Rolland. IDG Forlag 1998. In Danish.
+%  \item \emph{HTML-codes for unusual characters and symbols}, MIT/W3C.  
+\end{itemize}
+\item \textbf{An account} at the ITU network.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Weekly Exercises}
+
+\begin{itemize}
+\item To learn productively, you must try out things yourself!
+\item Reading guide: Read the course book and notes prior to each lecture.
+\item Exercises start next week after the lecture.
+\item Problem set solutions must be handed in one week after the
+  exercise, at the latest.
+\item Problem set solutions are commented and marked the following week.
+\item Please: \textbf{Finish the exercises} in good time before the deadlines.
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Exam, Curriculum, and Exercise Content}
+
+\begin{itemize}
+\item You are properly in good shape for the exam if you pass most of the
+  problem sets. \textbf{But the problem set are not mandatory.}
+\item The exam is a 4-hour written exam; all non-electronic 
+  aids are allowed.
+\item The problem sets can be solved individually or in groups.
+\item The exercises cover:
+  \begin{itemize}
+  \item Static HTML
+  \item Web programming with PHP
+  \item Regular expressions
+  \item Database programming with SQL
+  \item Web sites constructed with HTML, PHP, and SQL
+  \end{itemize}
+\item The curriculum (pensum) is the course book (the pages specified
+  in the lecture plan), the note about HTML, a research article,
+  problem sets, and the lecture slides. Adjustments of the curriculum
+  will appear during the course.
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Course Content and Motivation}
+
+\begin{itemize}
+\item Web publishing demands generalists:
+  
+  \begin{small}
+    %\begin{quote}
+      \textit{text processing, photography, publishing, system administration,
+      database knowledge, understanding of user interfaces,
+      programming experience, knowledge about design methodologies,
+      \ldots.}
+    %\end{quote}
+  \end{small}
+\item State of departure: Static Web sites (HTML)
+
+
+\item How can we construct more interesting sites:
+\begin{itemize}
+\item Sites that does computations for you
+  \begin{itemize}
+  \item Tax computation
+  \item Games
+  \end{itemize}
+\item Sites that are databases (dynamic HTML with database access)
+  \begin{itemize}
+  \item ITU's project base
+  \item extratasty.com
+  \item Amazon 
+  \end{itemize}
+\item Combinations \ldots
+\end{itemize}
+
+
+\item Popular and useful sites can be constructed with little means!
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Web Publishing}
+
+\begin{itemize}
+\item Web publishing is often associated with content similar to what
+  is contained in magazines. Examples are product catalogues, news
+  services, and so on.
+  
+\item Web applications are distinguished by solving a particular problem
+  for a user. For instance: a todo-list, comment service, book
+  ordering, ticket ordering, and so on.
+
+\item Start by asking what a user is interested in!
+
+\item What can you do to enrich a user?
+
+\item Avoid:
+\begin{itemize}
+\item entry tunnel, exit tunnel
+\item flashy slow graphics
+\end{itemize}
+
+\item Support multiple views on content:
+\begin{itemize}
+\item For instance, allow user comments...
+\end{itemize}
+\end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Web Applications}
+
+From desktop applications to web applications (sometimes called web
+services).
+
+
+Examples:
+\begin{itemize}
+\item Calendar system
+\item Email (\url{http://gmail.google.com})
+\item Text processing and version control
+\item Project management
+%\item CourseGrader
+\item Course evaluation
+\item Blogs (\url{http://wordpress.org})
+\item \ldots
+\end{itemize}
+
+Bugs and errors in Web-based programs can be fixed immediately!
+\end{frame}
+
+
+
+% \begin{frame}
+% \frametitle{Development of static Web sites}
+
+% \begin{columns}
+%   \begin{column}{.6\textwidth}
+% \begin{itemize}
+% \item Draw a site map
+% \item Give structure to content; add names to files. 
+% \begin{itemize}
+% \item Think about how secondary files (such as images) should be
+%   organized.
+% \end{itemize}
+% \item Construct an ``only-text'' site.
+% \item Hire a graphics designer!?
+% \item Construct a maintenance plan. How is content updated?
+% \begin{itemize}
+% \item Is it possible to delegate responsibility to those who write the
+%   content or is it necessary with a central ``Home Page Department?''
+% \end{itemize}
+% \item Construct periodical user tests---functional tests and usability
+%   tests
+% \end{itemize}    
+%   \end{column}
+%   \begin{column}{.39\textwidth}
+%     \begin{center}
+%       \includegraphics[width=\textwidth]{Images/14_1}
+%     \end{center}
+%   \end{column}
+% \end{columns}
+
+
+%\begin{small}
+%Billede: \url{http://www.photo.net/wtr/thebook/napkin/14.1.gif}
+%\end{small}
+
+%\end{tabular}
+
+%\end{frame}
+
+
+
+% \begin{frame}
+% \frametitle{Version Control}
+
+% Problem:
+
+% \begin{small}
+%   \begin{itemize}
+%   \item \textbf{Joe} downloads \textbf{Version A} of a document at 9
+%     am from the company Web site and uses a whole day editing the
+%     document.
+%   \item \textbf{Tina} downloads \textbf{Version A} at 1 pm and
+%     corrects a spelling mistake.
+%   \item \textbf{Tina} uploads the document (\textbf{Version B}) to the
+%     server at 1:10 pm.
+%   \item \textbf{Joe} uploads his document (\textbf{Version C}) to the
+%     server at 5 pm.
+%   \end{itemize}
+% \end{small}
+% Tina's correction to the page is gone! \textbf{Version C} does not
+% contain the correction in \textbf{Version B}!
+
+% Solutions: ``locking'' of files with emails, Emacs, CVS, Subversion,\ldots.
+
+% CVS: \url{http://www.cvshome.org/}\\
+% Subversion: \url{http://subversion.tigris.org/}
+% \end{frame}
+
+
+\begin{frame}
+\frametitle{Detailed Course Content}
+
+\begin{itemize}
+\item Writing and understanding HTML (HyperText Markup Language)
+\item Programming in PHP (PHP Hypertext Preprocessor)
+\item Communicating with a database using SQL (Structured Query Language)
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Server-Side Web Scripting---A Three-tier Architecture}
+
+\begin{center}
+  \begin{tikzpicture}[thick,>=stealth]
+    \small
+    \fill[blue!25] (-1.5,.6) rectangle (5.5,1.8);
+    \path 
+    (-4.5,1.2) node[draw,ellipse,minimum size=10mm](Client) {Client}
+    (0,1.2) node[draw,rectangle,minimum size=10mm,fill=white](WS) {Web Server}
+    (4,1.2) node[draw,rectangle,,minimum size=10mm,fill=white](DB) {Database Server}
+    ;
+    \draw[<-] (Client.north east) -- node[fill=white]{1} (WS.north west);
+    \uncover<2->{\draw[->] (Client) -- node[fill=white]{2} (WS);}
+    \uncover<3->{\draw[<->] (WS) -- node[fill=blue!25]{3} (DB);}
+    \uncover<4->{\draw[->] (WS.south west) -- node[fill=white]{4} (Client.south east);}
+
+  \end{tikzpicture}
+\end{center}
+
+
+\begin{enumerate}
+\item A client obtains an HTML page with an HTML form from a Web server.
+\item<2-> The client completes the HTML form, and sends it back to the
+  Web server.
+\item<3-> The Web server executes a program that processes data from
+  the client, for instance by updating a database.
+\item<4-> The Web server sends an HTML page back to the client.
+\end{enumerate}
+
+% If the HTML code is simple and does not contain too much JavaScript,
+% the page can be shown by most browsers.
+
+% The HTML code is normally presented quickly by the browser, but the
+% user interface is not like a normal desktop program.
+\end{frame}
+
+
+
+\begin{frame}
+  \frametitle{Why Learn To Program?}
+  \begin{itemize}
+  \item Better understanding of possibilities and limitations of dynamic
+    Web pages
+  \item Necessary condition for development of advanced Web sites
+  \item Better possibilities for imagining new types of Web sites
+  \item<+-> Programming can be a fun outlet for creative activities
+  \item<+-> Programming is POWER
+  \item<+-> Programming is LOVE 
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Why Learn PHP?}
+
+  \begin{itemize}
+  \item PHP is well suited for developing dynamic Web sites.
+    
+  \item PHP is freely available as a module for the open source Web
+    server Apache.
+    
+  \item PHP is good at manipulating strings (and therefore good for
+    Web programming).
+    
+  \item PHP is supported by many hosting companies.  
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Special (Domain-Specific) Language: SQL}
+
+\intro{SQL:} A language for sending data back and forth between a
+program and a database.
+\begin{footnotesize}
+\begin{verbatim}
+ SELECT navn, addr FROM names ORDER BY name;
+ INSERT INTO names (name, addr) VALUES ('Iris', 'Gallevej 435');
+\end{verbatim}
+\end{footnotesize}
+Most database vendors use their own SQL dialect---but in many cases, the
+differences are trivial.
+
+\end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Example SQL}
+
+Given a table \texttt{students} with student data
+
+\begin{tabular}{|l|l|l|}\hline
+lastname & firstname & studentid\\\hline
+Olesen & Peter & L2143\\
+Hansen & Erika & J0007\\
+Funder & Ulrik & Hg0014\\\hline
+\end{tabular}
+
+As an example, we can ask about first name and last name, sorted after
+last name, first name:
+
+\begin{footnotesize}
+\begin{verbatim}
+    SELECT firstname, lastname 
+    FROM students 
+    ORDER BY lastname, firstname;
+\end{verbatim}
+\end{footnotesize}
+
+It is possible to add a new row to the table:
+\begin{footnotesize}
+\begin{verbatim}
+    INSERT INTO students (lastname, firstname, studentid) 
+    VALUES ('Fong', 'Joe', 'JF0032');
+\end{verbatim}
+\end{footnotesize}
+
+It is possible to delete one or more rows:
+\begin{footnotesize}
+\begin{verbatim}
+    DELETE FROM students 
+    WHERE lastname = 'Fong';
+\end{verbatim}
+\end{footnotesize}
+\ldots and much more
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Special (Domain-Specific) Language: HTML}
+  
+  \intro{HTML:} For describing the structure of hypertext and
+  (partly) the layout.
+
+  Example (\examplefile{hello.html}):
+
+\begin{footnotesize}
+\begin{verbatim}
+ <html>
+  <head><title>Hello</title>
+  </head>
+  <body>
+    Hello Students
+  </body>
+ </html>
+\end{verbatim}
+\end{footnotesize}
+
+Browsers do not normally require HTML to be strictly correct
+HTML---but you should write correct HTML anyway!
+
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Why Should You Care About Learning HTML?}
+
+\begin{itemize}
+  
+\item To be certain that a Web site works with all browsers
+  
+\item There are things that cannot be done with a WYSIWYG HTML editor
+  
+\item To reuse HTML code written by others
+  
+\item WYSIAYG = What You See Is All You Get; sometimes HTML editors
+  generate unnecessary HTML
+  
+\item For Web programming, one writes programs that \emph{generate}
+  HTML; so Web programming requires that one understands HTML
+
+\end{itemize}
+\end{frame}
+
+
+% \begin{frame}
+%   \frametitle{Why Use An HTML Editor?}
+
+%   Why use a HTML editor like Microsoft Frontpage, DreamWeaver, or Nvu rather
+%   than writing the HTML by hand?
+
+%   \begin{uncoverenv}<2->
+%     \begin{itemize}
+%     \item It always generate correct HTML (or so it should)
+%     \item One can learn HTML from it (but be aware of browser specific
+%       code)
+%     \item It is easier to get going
+%     \end{itemize}
+%   \end{uncoverenv}
+% \end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{HTML in 21 minutes}
+
+A legal HTML document (\examplefile{legal.html}):
+
+\begin{small}
+\begin{verbatim}
+<html>
+  <head>
+     <title>Ken's Page</title>
+  </head>
+  <body>
+    <h2>Ken's Marvellous Home Page</h2>
+      I teach the
+      <a href="http://www.itu.dk/courses/DSDS/E2006/">
+       World's best course
+      </a> (with some really nice looking students).
+  </body>
+</html>
+\end{verbatim}
+\end{small}
+
+\begin{itemize}
+\item Try to format HTML code nicely and consistent
+
+\item Write the HTML code yourself
+
+\item Later we shall construct programs that generate HTML code
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{General Page Layout}
+
+You should know about the following tags in HTML:
+
+\begin{itemize}
+\item Headings: \texttt{<h1>}\ldots \texttt{</h1>}, \ldots, \texttt{<h4>}\ldots \texttt{</h4>}
+\item Rules: \texttt{<hr />}
+\item Paragraphs and line breaks: \texttt{<p>}\ldots \texttt{</p>},
+  \texttt{<br />}
+\item Quotes: \texttt{<blockquote>}\ldots \texttt{</blockquote>}
+\item Centering: \texttt{<center>}\ldots \texttt{</center>}
+\item Bold text: \texttt{<b>}\ldots \texttt{</b>}
+\item Italic text: \texttt{<i>}\ldots \texttt{</i>}
+\item Underlined text: \texttt{<u>}\ldots \texttt{</u>}
+\item Ordered lists: \texttt{<ol>}\ldots \texttt{</ol>}
+\item Unordered lists: \texttt{<ul>}\ldots \texttt{</ul>}
+\item List items: \texttt{<li>}\ldots \texttt{</li>}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Hyper Links, Tables, and Images}
+\begin{itemize}
+\item Hyper links: \texttt{<a href="link">name</a>}
+\item Local \emph{named} hyper links: \texttt{<a
+    name="thename">}\ldots\texttt{</a>}
+\item References to a name: \texttt{<a href="index.html\#thename">The Name</a>}
+\item Mail-to links: \texttt{<a href="mailto:kfl@itu.dk">kfl@itu.dk</a>}
+\item Tables: \texttt{<table>}\ldots \texttt{</table>}, \texttt{<tr>}\ldots
+  \texttt{</tr>}, \texttt{<th>}\ldots \texttt{</th>} and \texttt{<td>}\ldots
+  \texttt{</td>}
+\item Images: \texttt{<img src="pluto.jpg" />}
+\item Colors: use Cascading Style Sheets (CSS)
+\end{itemize}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{HTML forms}
+  
+A form can contain text areas (\verb+<textarea>+),
+input fields (\verb+<input>+), and menus (\verb+<select>+)
+
+Example: \examplefile{formular.html} (and \examplefile{formular2.html})
+
+\begin{verbatim}
+   <form action="mailto:kfl@itu.dk" 
+         method="post" enctype="text/plain">
+     ... more code ...
+     <input type="reset" value="Start Over!" />
+     <input type="submit" value="Send Form" />
+   </form>
+\end{verbatim}
+
+Attributes to the \verb+<form>+ tag:
+
+\begin{itemize}
+\item \verb+action="mailto:kfl@itu.dk"+:\\ the completed form is sent
+  by email
+  
+\item \verb+method="post"+ should be used when the completed form is
+  sent by email
+  
+\item \verb+enctype="text/plain"+ sends the form as ordinary text
+  (not encoded)
+\end{itemize}
+
+A click on \verb+<input type="submit" value="Send Form" />+ sends the
+completed form.
+
+A click on \verb+<input type="reset" value="Start Over" />+ resets all
+fields, text areas, and menues.
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Text Areas --- \texttt{<textarea>}}
+  
+  In a text area (\verb+<textarea>+) any text can be written:
+
+\begin{verbatim}
+   <textarea name="comments" rows="5" cols="80">
+     Write your comments here!
+   </textarea>
+\end{verbatim}
+
+The attributes:
+
+\begin{itemize}
+\item \verb+name+ specifies a name for the field
+
+\item \verb+rows+ specifies the number of lines (rows) in the text area
+  
+\item \verb+cols+ specifies the number of characters (columns) in each
+  line in the text area
+\end{itemize}
+
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Input Fields --- \texttt{<input>} Text and Passwords}
+  
+  The attribute \verb+type+ determines the type of the input field:
+
+\begin{itemize}
+\item Single-line text areas:\\
+\verb+<input type="text" name="lastname" />+
+
+
+\item Passwords, which are not to be displayed by the browser:\\
+  \verb+<input type="password" name="studentid" />+
+  
+\end{itemize}
+\end{frame}
+ 
+
+\begin{frame}[fragile]
+\frametitle{Input Fields --- \texttt{<input>} Check Boxes and Buttons }
+  
+  More \texttt{input} types:
+
+\begin{itemize}
+\item Check boxes, possibly more
+  than one item can be checked at a time:
+  \begin{small}
+\begin{verbatim}
+<input type="checkbox" name="paper" value="nytimes" /> 
+<input type="checkbox" name="paper" value="wpost" />
+<input type="checkbox" name="paper" value="guardian" />
+\end{verbatim}  
+  \end{small}
+
+\item Radio buttons, only one item can be checked at a time:
+  \begin{footnotesize}
+\begin{verbatim}
+<input type="radio" name="sex" value="male" />
+<input type="radio" name="sex" value="female" checked="yes" />
+\end{verbatim}
+  \end{footnotesize}
+\item Button for resetting a form:
+  \begin{small}
+\begin{verbatim}
+<input type="reset" ... />
+\end{verbatim}
+  \end{small}
+\item Button for sending a completed form:
+  \begin{small}
+\begin{verbatim}
+<input type="submit" ... />
+\end{verbatim}
+  \end{small}
+\end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{Menu Choices, \texttt{<select>}}
+
+\begin{itemize}
+\item A drop-down menu, which allows the user so choose between a
+  series of items (+<option>+):
+  \begin{small}
+\begin{verbatim}
+<select name="order">
+  <option value="9">Pepperoni Pizza</option>
+  <option value="70">Pizza Bambino</option>
+  <option value="47">Chicken Dipper (9 pieces)</option>
+</select>
+\end{verbatim}
+  \end{small}
+\item The attribute \verb+multiple+ in the \verb+<select>+ tag allows
+  the user to choose more than one item.
+\end{itemize}
+
+
+\textbf{Complete form}
+
+\begin{itemize}
+\item Bare, with no layout structure: \examplefile{formular.html}
+\item An example course evaluation with a nicer lay-out (using
+  \verb+<table>+): \examplefile{formular2.html}
+\end{itemize}
+
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Completed Questionnaire, When Sent By Email}
+
+\textbf{With} \verb+enctype="text/plain"+:
+
+\begin{small}
+\begin{verbatim}
+ lastname=Olsen
+ studentid=da4567
+ sex=male
+ paper=guardian
+ comments=This is not a nice questionnaire.
+ order=9
+\end{verbatim}
+\end{small}
+
+
+\textbf{Without} \verb+enctype="text/plain"+:
+
+\begin{small}
+\begin{verbatim}
+ lastname=Olsen&studentid=da4567&sex=male&paper=guardian
+ &comments=This+is+not+a+nice+questionnaire.&order=9
+\end{verbatim}
+\end{small}
+\end{frame}
+
+\begin{frame}[fragile]
+\frametitle{Find five bugs}
+
+In an HTML document without consistent indentation:
+\begin{footnotesize}
+\begin{verbatim}
+  <html><head><title>Hello</title></head>Hello<center>great page<p>
+  this is in <b>bold<i> and italics</html>
+\end{verbatim}
+\end{footnotesize}
+\begin{uncoverenv}<2->
+  In an HTML document with consistent indentation:
+  \begin{footnotesize}
+\begin{verbatim}
+  <html>
+    <head>
+      <title>Hello</title>
+    </head>
+    Hello
+    <center>
+      great page
+      <p>
+      this is in <b>bold<i> and italics
+  </html>
+\end{verbatim}
+  \end{footnotesize}
+  Firefox shows this document without errors! Or does it?
+\end{uncoverenv}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{Cascading Style Sheets (CSS)}
+  
+  \begin{itemize}
+  \item We don't want to mix the logical \intro{structure} with the
+    \intro{presentation} of our webpages
+    \begin{itemize}
+    \item Use HTML for the \emph{logical} structure
+    \item Use Cascading Style Sheets (CSS) for the presentation
+    \end{itemize}
+  \item Advantages of CSS
+    \begin{itemize}
+    \item We get a consistant look of our pages
+    \item We only have to change the layout in one place
+    \item We can tailor the presentation to different devices (medias)
+      by using different style sheets
+    \end{itemize}
+\end{itemize}
+  
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{CSS Structure}
+  
+  \begin{itemize}
+  \item A style sheet consists of a set of \intro{rules}.  Each rule
+    consists of a \intro{selector} and a set of \intro{styles}. A
+    style set a \intro{property} to a given \intro{value}.
+
+  \item Example of a CSS rule with two styles:
+    \begin{small}
+\begin{verbatim}
+  p { background-color: red;
+      border: 3px solid gray;
+  }
+\end{verbatim}
+        This rule specifies that all \texttt{<p>} elements should have
+        a red background and a boder that is three pixels think,
+        solid, and gray. 
+      \end{small}
+
+    \item We can style multiple elements by using a comma in the selector:
+      \begin{small}
+\begin{verbatim}
+  h1, h2 { border-bottom: thin solid blue; }
+\end{verbatim}
+        This rules specifies that both \texttt{<h1>} and \texttt{<h2>}
+        elements should have a thin, solid, blue border at the bottom.
+      \end{small}
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{CSS Continued}
+
+  \begin{itemize}
+  \item If we want \texttt{<a>} links in \texttt{<h2>} headings to be
+    orange, but \emph{only} those links, we need a \intro{decendant
+    selector}:
+    \begin{small}
+\begin{verbatim}
+  h2 a { color: orange; }
+\end{verbatim}
+    \end{small}
+
+  \item We can put our CSS in a \texttt{<style>} element in the
+    \texttt{<head>} element of our document:
+    \begin{footnotesize}\color{gray}
+\begin{semiverbatim}
+  <html>
+  <head>...
+    {\color{black}<style type="text/css">
+      ...
+    </style>}
+  </head>
+\end{semiverbatim}
+    \end{footnotesize}
+  \item Or we can put it in an external file, say,
+    \texttt{styling.css}.  And then include it in the \texttt{<head>}
+    instead:
+    \begin{footnotesize}\color{gray}
+\begin{semiverbatim}
+  <html>
+  <head>...
+    {\color{black}<link rel="stylesheet" type="text/css" href="styling.css">}
+  </head>
+\end{semiverbatim}
+    \end{footnotesize}
+    Which is better, because then we can reuse the CSS.
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}[fragile]
+  \frametitle{Giving Our Form Some Style}
+  
+  \begin{itemize}
+  \item Say, we want our form to have a blue background, white text, a
+    grey dotted border, and nice wide margins.
+
+  \item Thus, we add the following \intro{\texttt{style} element} to the
+    \texttt{head} of our HTML form:
+    \begin{footnotesize}\color{gray}
+\begin{semiverbatim}
+<html>
+<head><title>Form Example</title>
+{\color{black}<style type="text/css">
+  body \{ background-color: blue;
+         color: white;
+         margin-left: 20%;
+         margin-right: 20%;
+         border: 3px dotted gray;
+         padding: 10px 10px 10px 10px;
+  \}
+</style>}
+</head>
+<body>
+<h1>Questionnaire</h1>
+...
+</body>
+\end{semiverbatim}
+    \end{footnotesize}
+  \end{itemize}
+\end{frame}
+
+
+\begin{frame}[fragile]
+  \frametitle{Style An Element With Some Class}
+
+  \begin{itemize}
+  \item What if we want one of our elements to stand out?
+  \item<2-> Add a \intro{\texttt{class}} attribute:
+    \begin{small}\color{gray}
+      \begin{semiverbatim}
+<p \textcolor{black}{class="thesexquestion"}>
+Enter sex: Male <input type="radio" ...
+      \end{semiverbatim}
+    \end{small}
+  \item<3-> Add a rule for the class in the \texttt{style} element:
+    \begin{small}\color{gray}
+\begin{semiverbatim}
+<style type="text/css">
+  body \{ ... \}
+  \textcolor{black}{.thesexquestion \{ 
+     background-color: rgb(50%, 0%, 0%);
+  \}}
+</style>
+\end{semiverbatim}
+    \end{small}
+    (Selectors for classes starts with a '.')
+  \item<4->  Use \intro{\texttt{<div>}} and \intro{\texttt{<span>}}
+    elements to give extra structure to your page if needed.
+    \begin{itemize}
+    \item Use \texttt{<div>} for big blocks spanning multible
+      paragraphs and/or headings.
+    \item Use \texttt{<span>} for highlighting some inline texts, like
+      a word or a sentence.
+    \end{itemize}
+  \end{itemize}
+
+
+
+\end{frame}
+
+
+
+
+
+% \begin{frame}
+% \frametitle{Some HTML Rules}
+
+% \begin{itemize}
+% \item Avoid large tables for page layout (difficult and slow for
+%   browsers to render).
+% \item Be careful with redefinitions of link colors.%\item så lidt formattering som muligt
+% \item Make it possible for the user to construct black-and-white
+%   printouts (e.g., some web browsers prints white text on a blue
+%   background as white text on a white background!)
+% \item Think about the user's screen as a limited resource. 
+% \item Avoid the use of frames (frames do not work well with printing,
+%   bookmarks, or email).
+% \item Remember to give your HTML pages a title (used for bookmarks,
+%   e.g.)
+% \end{itemize}
+
+% A goal could be that both Firefox and Internet Explorer
+% can show your page.
+
+% What about WebTV, Palm Pilots, mobile phones, \ldots
+
+% \end{frame}
+
+% \begin{frame}
+% \frametitle{More Web Design Rules}
+
+% \begin{itemize}
+% \item Let information be the user interface: By a click on an
+%   informative word, the user is sent to a page with more in-depth
+%   information about the concept (avoid ``here-links'').
+% \item Provide users with a wide, flat overview of the Web site,
+%   instead of a sequential or deep tree structure.
+% \item Organize your Web site according to user interests, instead of
+%   after the internal organization.
+% \item Why use icons for navigations when words are more intuitive and
+%   take up less space?
+% \item Construct long documents instead of wide documents.
+% \item Remember to put a link back to the index page on every page ---
+%   for instance, to support users coming from search engines.
+% %\item Udstyr dit web-site med en fuldtekst søgemaskine---og sørg
+% %  for, at den holder statistik med de ord, som den ikke kan finde svar
+% %  på.
+% \item Add contact information to your pages.
+% %\item A vertical menu on a page takes less space than a horizontal
+% %  menu
+% \end{itemize}
+% \end{frame}
+
+
+
+% \begin{frame}
+% \frametitle{Use of Applets for Updating a Database}
+
+% \begin{center}
+%   \begin{tikzpicture}[thick,>=stealth]
+%     \small
+%     \fill[blue!25] (-1.5,.6) rectangle (5.5,1.8);
+%     \path 
+%     (-4.5,1.2) node[draw,ellipse,minimum size=10mm](Client) {Client}
+%     (0,1.2) node[draw,rectangle,minimum size=10mm,fill=white](WS) {Web Server}
+%     (4,1.2) node[draw,rectangle,,minimum size=10mm,fill=white](DB) {Database Server}
+%     ;
+%     \draw[<-] (Client) -- node[fill=white]{1} (WS);
+%     \uncover<2->{\draw[<->] (Client) .. controls +(-40:20mm) and +(-120:20mm)
+%       .. 
+%      node[fill=white]{2} (DB);}
+%   \end{tikzpicture}
+% \end{center}
+% % \begin{center}
+% % \includegraphics[width=10cm]{Images/applet}
+% % \end{center}
+
+% \begin{enumerate}
+% \item A client obtains an HTML page and an associated applet from a Web server.
+% \item<2-> The client starts executing the applet as a program; requests
+%   and updates are send directly to the database.
+% \end{enumerate}
+
+% \begin{uncoverenv}<3->
+%   Comments:
+%   \begin{itemize}
+%   \item Applets work well only on newer browsers and applets take a
+%     long time to download.
+
+%   \item On the other hand, they can be more interactive.
+  
+%   \item We do not discuss applets and other similar technologies
+%     (e.g., Flash) in this course.
+
+% \end{itemize}
+%   \end{uncoverenv}
+
+% \end{frame}
+
+% \begin{frame}[fragile]
+% \frametitle{What is a Programming Language?}
+
+% \begin{itemize}
+% \item A programming language is a notation for instructing a computer
+%   what to do (i.e., a notation for programs).
+  
+% \item There are many different programming languages, including: PHP,
+%   Perl, Tcl, Standard ML, Java, C\#, C, C++, Erlang, Haskell, Pascal,
+%   Forth, Fortran, Prolog, Ada, Python, Common~Lisp, Scheme, \ldots
+% \end{itemize}
+
+% \end{frame}
+
+% \begin{frame}[fragile]
+%   \frametitle{Programmers needs to be careful to get the syntax right!}
+
+% \begin{itemize}
+% \item A computer is normally very pedantic. 
+
+% \item This issue is particularly frustrating to novice programmers.
+% \end{itemize}
+
+% Example: A Correct PHP command:
+
+% \begin{verbatim}
+%    echo "I'm alive!";
+% \end{verbatim}
+
+% A very wrong PHP command:
+
+% \begin{verbatim}
+%    Echo "I'm alive!;
+% \end{verbatim}
+
+% Experienced programmers are good at locating errors.
+
+% \end{frame}
+
+
+\begin{frame}[fragile]
+\frametitle{Introduction to Problem Set 1}
+
+\begin{itemize}
+\item HTML home page
+\item HTML course overview with tables and links
+\item Use of HTML forms
+\end{itemize}
+
+\textbf{Material}
+\begin{itemize}
+\item Problem Set: \url{\problemset{1}}
+\item Sestoft and Larsen's HTML overview:
+   \url{\kursushjemmeside{html.html}}
+  \end{itemize}
+\end{frame}
+
+\end{document}
+

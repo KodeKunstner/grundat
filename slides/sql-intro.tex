@@ -1,0 +1,807 @@
+\documentclass[dvipsnames,handout]{beamer}
+
+\usepackage{preamble}
+\usepackage{coursespecific}
+%\renewcommand*{\IncludeAnswers}{1}
+
+\renewcommand*{\Lecture}{1}
+\subtitle{Introduction To \sql{}}
+
+%\newcommand*{\sql}{SQL}
+
+\begin{document}
+
+\begin{frame}
+  \titlepage{}
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Today's Subjects}
+
+\begin{itemize}
+\item General course information
+\item Course content and motivation
+\item Computers are good at:
+  \begin{itemize}
+  \item calculations
+  \item storing and retrieving data
+  \item (showing pretty pictures)
+  \end{itemize}
+
+\item Databases are great for storing and retrieving data
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{General Course Information}
+
+\begin{itemize}
+\item \textbf{Course Goal:} A tour of important topics in Computer
+  Science.  Enabling you to make \emph{informed} choices about data
+  structures and algorithms, and to give you enough knowledge and
+  understand to seek more information on you own.
+
+\item \textbf{Teachers:} \undervisernavne{}
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{You Will Need}
+
+\begin{itemize}
+\item \textbf{The course book:} ``How to think like a Computer
+  Scientist - Learning with Python'', by Allen Downey, Jeffrey Elkner,
+  and Chris Meyers. Green Tea Press.
+\item \textbf{Notes and slides}, which will be made available from the
+  course homepage.
+\item \textbf{Related Literature}
+  \begin{itemize}
+  \item \textit{Head First HTML}, Freeman \& Freeman. O'Reilly 2006.
+  \item \emph{Start på SQL}, F. D. Rolland. IDG Forlag 1998. In Danish.
+%  \item \emph{HTML-codes for unusual characters and symbols}, MIT/W3C.  
+\end{itemize}
+\item \textbf{An account} at the KUA network.
+\end{itemize}
+\end{frame}
+
+% \begin{frame}
+% \frametitle{Weekly Exercises}
+
+% \begin{itemize}
+% \item To learn productively, you must try out things yourself!
+% \item Reading guide: Read the course book and notes prior to each lecture.
+% \item Exercises start this week after the lecture.
+% \item Problem set solutions must be handed in one week after the
+%   exercise, at the latest.
+% \item Problem set solutions are commented and marked the following week.
+% \item Please: \textbf{Finish the exercises} in good time before the deadlines.
+% \end{itemize}
+% \end{frame}
+
+
+\begin{frame} \frametitle{Today's Problem}
+  \begin{Large}
+    How should we store data on a computer?
+  \end{Large}
+
+  \begin{itemize}
+  \item In text files?
+  \item As spreadsheets?
+  \item As XML files?
+  \end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}[fragile]
+\frametitle{The File System As A Database} 
+
+The pros and cons of using the file system as a database are:
+
+\textbf{Pros:}
+
+\begin{itemize}
+\item No need for extra software
+\item The solution is easy to understand---data is stored as text in files:
+\begin{footnotesize}
+\begin{verbatim}
+    kflarsen@diku.dk         Ken Friis Larsen
+    simonsen@diku.dk         Jakob Grue Simonsen
+    gates@microsoft.com      Bill Gates
+\end{verbatim}
+\end{footnotesize}
+\end{itemize}
+
+
+\textbf<+->{Cons:}
+
+\begin{itemize}
+\item<+-> Immediate performance problems (linear seek)
+\item<+-> No abstraction from the data representation
+\item<+-> Problems handling concurrent users
+\item<+-> No standard for integration with other systems
+\item<+-> Problems handling errors
+\end{itemize}
+
+\uncover<.->{You end up constructing what companies have been good at since the
+60'es: (R)DBMSs.
+}
+\end{frame}
+
+
+\begin{frame} \frametitle{When To Use A Database}
+  \begin{itemize}
+  \item  When you have lots of data
+  \item When you need to ask complex questions:
+    \begin{itemize}
+    \item ``Find all the teachers that are teaching courses with less
+      than 10 students, and where more that 30\% does not pass the
+      course or the percentage of female students are greater than 65\%''
+    \item Relational database optimised for answering such questions
+    \end{itemize}
+  \item Many people try to use spreadsheets as simple databases
+    \begin{itemize}
+    \item Works for small data sets like course grades
+    \item But they don't scale up, and search capabilities are
+      primitive
+    \end{itemize}
+  \item Increasingly common to store images, video clips, and other
+    data in the database.
+  \end{itemize}
+\end{frame}
+
+
+
+
+
+\begin{frame}
+\frametitle{Database Terminology}
+  
+\begin{itemize}
+\item A \intro{relational database} consists of a collection of named
+  \intro{tables} (sometimes called \intro{relations}).
+
+\item A \intro{table} consists of two parts:
+
+  \begin{itemize}
+  \item A \intro{schema} (= table description):
+  
+    \begin{itemize}
+    \item The schema determines the shape of the table, and is rarely
+      changed.
+
+    \item The schema indicates which \intro{columns} (= fields =
+      attributes) the table consists of, and which \intro{type} each
+      field has.
+    \end{itemize}
+  \item A collection of \intro{records} (= table rows):
+  
+    \begin{itemize}
+    \item The collection of records constitute the \intro{contents} of
+      the table; it can change over time.
+  
+    \item Each record contains a set of \intro{values} for the fields of
+      the record.
+
+    \item The order of the records in the table is insignificant.
+    \end{itemize}
+  \end{itemize}
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+
+\frametitle{Example: Course Data}
+%\renewcommand{\arraystretch}{1}
+\begin{small}
+\begin{tabular}{@{}l@{}l}
+  \texttt{Student:} &
+  \begin{tabular}{@{}|l|l|l|}\hline
+    sname & sid & address\\\hline
+    Ole Olesen & L1234 & Hjemmevej 7\\
+    Rikke Richardsen & L2345 & Udvej 9\\
+    Søren Sørensen & J0007 & I dybet 13\\
+    Ulrikka Funder & B7117 & Skovvej 11\\\hline
+  \end{tabular}\\
+  \\
+
+  \texttt{Course:}
+  &
+  \begin{tabular}{@{}|l|l|l|}\hline
+    cid & cname & teacher\\\hline
+    DAT2 & Data \& Algorithms & Ken Friis Larsen \\
+    DAT1 & Introduction to programming & Jakob Grue Simonsen \\ \hline
+  \end{tabular}\\
+  \\
+
+  \texttt{Signup:} &
+  \begin{tabular}{@{}|l|l|}\hline
+    sid & cid\\\hline
+    L1234 & DAT2\\
+    L2345 & DAT2\\
+    J0007 & DAT2\\
+    J0007 & DAT1\\
+    L2345 & DAT1\\\hline
+  \end{tabular}
+\end{tabular}
+\end{small}
+\end{frame}
+
+
+
+\begin{frame}[squeeze]
+\frametitle{The Secret Weapon Of Relational Databases: Queries}
+
+    \begin{itemize}
+    \item Base data in a relational database lies in \intro{tables}.
+
+    \item Data extraction and manipulation is done using
+      \intro{queries}.
+
+    \item You only need to consider the \emph{tables} in the
+      beginning when designing.
+
+      E.g.: Student, Course, Signup, Examination, Teacher, Room,
+      \ldots
+
+    \item You can always add new kinds of queries as they are needed.
+     
+      E.g.: Compute the pass rate for all courses, grouped by study
+      lines and immatriculation year.
+
+    \end{itemize}
+
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Example: Address Book, First Attempt}
+
+\begin{itemize}
+\item We want a small database with contact information: email and
+  work phone number
+
+\item<+-> For our first attempt we might try to keep all the information
+  in one table:
+
+  \texttt{Persons:}\\
+  \begin{tabular}{|l|l|l|}
+    \hline
+    email & name & phone\\\hline
+    kflarsen@diku.dk & Ken Friis Larsen & 35 32 14 24 \\
+    simonsen@diku.dk & Jakob Grue Simonsen & 35 32 14 39 \\
+    \hline
+  \end{tabular}
+
+\item<+-> But what if we also want to keep track of a direct phone number
+  \begin{itemize}
+  \item<+-> and mobile number,
+  \item<+-> and home number,
+  \item<+-> and private mobile number, and \ldots
+  \end{itemize}
+\item<+-> A better design is to keep persons in one table and phone
+  numbers in an other table.
+
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Example: Address Book, Second Attempt}
+
+%\renewcommand{\arraystretch}{0.9}
+
+\begin{itemize}
+\item An excerpt of the table \texttt{Persons}:\\
+  \begin{small}
+    \begin{tabular}{|l|l|}\hline
+      email & name \\ \hline
+      kflarsen@diku.dk & Ken Friis Larsen \\
+      simonsen@diku.dk & Jakob Grue Simonsen \\ \hline
+    \end{tabular}
+  \end{small}
+
+
+\item An excerpt of the table \texttt{Phone\_numbers}:\\
+  \begin{small}
+    \begin{tabular}{|l|l|}\hline
+      email & phone\\ \hline
+      simonsen@diku.dk & 35 32 14 39 \\
+      kflarsen@diku.dk & 35 32 14 24 \\
+      kflarsen@diku.dk & 51 95 65 45 \\ \hline
+    \end{tabular}
+  \end{small}
+
+\item Each person, uniquely identified by an email address, can be
+  assigned more than one phone number.
+
+  \begin{tikzpicture}[thick]\footnotesize
+    \path
+    (0,0) node[draw] (P) {Persons}
+    +(-1,0) node [draw,ellipse,anchor=east] (name) {name}
+    +(0,-.8) node [draw,ellipse] (email) {email}
+    (4,0) node[draw] (PN) {Phone\_numbers}
+    +(2.5,0) node [draw,ellipse] (phone) {phone}
+    +(0,-.8) node [draw,ellipse] (phemail) {email}
+    ;
+    \draw (P) -- node[above,very near end] {M} (PN);
+    \draw (name) -- (P);
+    \draw (email) -- (P);
+    \draw (phone) -- (PN);
+    \draw (phemail) -- (PN);
+  \end{tikzpicture}
+
+
+
+%   \begin{tikzpicture}\footnotesize
+%     \path[inner sep=0pt] 
+%      (0,0) node (PN) {%
+%       \begin{tabular}{@{}|l|@{}}
+%         \hline
+%         {Phone\_numbers} \\\hline
+%         phone\\
+%         email\\\hline
+%       \end{tabular}}
+%      (4,0) node (P) {%
+%       \begin{tabular}{@{}|l|@{}}
+%         \hline
+%         {Persons} \\\hline
+%         email\\
+%         name\\\hline
+%       \end{tabular}};
+%      \path (PN.east) +(.25,0) node[inner sep=0pt] (Helper){};
+%      \draw (P) -- (PN);
+%      \draw (Helper) -- (PN.5);
+%      \draw (Helper) -- (PN.-5);
+%    \end{tikzpicture}
+
+    %\includegraphics[width=7cm]{Images/mailDB}
+    % \begin{tikzpicture}[x=100mm,y=100mm]
+    %   \input{Images/mailDB.tikz}
+    % \end{tikzpicture}
+
+%\item The fork indicates a \emph{one to many} relation.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}[squeeze]
+\frametitle{The \sql{} Query Language}
+
+  \begin{itemize}
+  \item Relational database queries are written in \sql{}
+    (Structured Query Language).
+
+  \item \sql{} was invented by IBM together with relational
+    databases around 1970.
+
+  \item \sql{} is used nowadays in most serious database systems
+    (Oracle, DB2, Postgres, SQLite, MySQL, MS SQLServer, \ldots).
+    Unfortunately, each system has its own vendor-specific deviations
+    from the \sql{} standard.
+
+  \item In MS Access one often constructs queries in a query grid, but
+    this is converted into \sql{} requests.
+  \end{itemize}
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{The Database System MySQL And SQLite}
+
+  \begin{itemize}
+  \item This course uses the database systems SQLite and (maybe)
+    MySQL.  They are robust and efficient free systems available at
+    \url{www.sqlite.org} and \url{www.mysql.com}.
+    
+  \item Both are extremely widespread and are used by private
+    organisations as well as industry.
+    
+  \end{itemize}
+\end{frame}
+
+
+
+\begin{frame}
+\frametitle{Overview of the most important \sql{}-commands}
+
+\begin{block}{Data Definition Language (data structure design)}
+  \begin{itemize}
+  \item \intro{\texttt{CREATE TABLE}} creates a new table
+  \item \intro{\texttt{CREATE [UNIQUE] INDEX}} adds an (unique) index to a table
+  \item \intro{\texttt{DROP TABLE}} deletes a table
+  \item \intro{\texttt{ALTER TABLE}} adds or changes table columns
+  \end{itemize}
+\end{block}
+
+\begin{block}{Data Manipulation Language (data manipulation)}
+  \begin{itemize}
+  \item \intro{\texttt{SELECT}} extracts, merges and computes data
+  \item \intro{\texttt{INSERT INTO \ldots{} VALUES (\ldots{})}} inserts an
+    individual record into a table
+  \item \intro{\texttt{INSERT INTO \ldots{} SELECT \ldots{}}} inserts records
+    from a query into a table
+  \item \intro{\texttt{DELETE FROM}} removes records from a table
+  \item \intro{\texttt{UPDATE} \ldots{} SET} changes records already in a table
+  \end{itemize}
+\end{block}
+\end{frame}
+
+
+\begin{frame}
+  \frametitle{\sql{} And Case Sensitivity}
+  
+  \begin{itemize}
+  \item \sql{} usually does not distinguish between upper- and
+    lowercase letters.
+
+
+  \item However, MySQL is case sensitive in table names (a
+    \texttt{Students} table is different from a \texttt{students}
+    table). SQLite is \emph{not} case sensitive.
+
+
+  \item In this course I'll mostly write \sql{} commands in UPPERCASE
+    letters, Capitalise table names, and write column names in
+    lowercase letters.
+
+  \end{itemize}
+
+\end{frame}
+
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Data Definition Language} 
+
+\begin{itemize}
+
+\item Example of \texttt{CREATE TABLE} commands:
+\begin{small}
+\begin{verbatim}
+  CREATE TABLE Persons (
+     email  varchar(100) NOT NULL,
+     name   varchar(100) NOT NULL
+  );
+  CREATE TABLE Phone_numbers (
+     email  varchar(100) NOT NULL,
+     phone  varchar(20) NOT NULL
+  );
+\end{verbatim}
+\end{small}
+\item \texttt{NOT NULL} means that whenever data is entered into the
+  table, this field must not be empty.
+  
+\item \texttt{varchar(100)} means that in every record, this field can
+  contain at most 100 characters.
+
+\item The intention is that the \texttt{email} column in the
+  \texttt{Phone\_numbers} table \emph{refers} to a corresponding
+  column in the \texttt{Persons} table: There \emph{ought to}
+  exist a row in \texttt{Persons} where the \texttt{email} field
+  contains the same value as \texttt{email}.
+\end{itemize}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Primary Keys}
+
+\begin{itemize}  
+\item A \intro{primary key} is a combination of fields that \intro{uniquely
+  determine a row of the table}. Typically, the primary key is also the
+  main vehicle for looking up rows of the table.
+
+\item Example: \texttt{email} is the primary key of \texttt{Persons}
+\end{itemize}
+\end{frame}
+
+
+
+
+\begin{frame}[fragile=singleslide]
+  \frametitle{Declaring Primary Keys}
+  \begin{itemize}
+  \item You can declare the primary key when you create the table:
+\begin{footnotesize}
+\begin{semiverbatim}
+  CREATE TABLE Persons (
+     email  varchar(100) \textbf{PRIMARY KEY},
+     name   varchar(100) NOT NULL
+  );
+\end{semiverbatim}
+\end{footnotesize}
+
+\item The following holds for primary keys:
+\begin{itemize}
+\item All columns in the primary key are automatically \texttt{not null}.
+\item A \texttt{UNIQUE INDEX} is automatically created on the
+  combination of columns of the primary key.
+\end{itemize}
+
+  \end{itemize}
+\end{frame}
+
+
+% \begin{frame}[fragile=singleslide]
+
+% \frametitle{Generating Unique ID Numbers In MySQL}
+
+
+% \begin{itemize}
+% \item In MySQL you can use \texttt{AUTO\_INCREMENT} to generate fresh
+%   ID numbers automatically when inserting new rows into a table:
+%   \begin{small}
+% \begin{verbatim}
+%   CREATE TABLE Users (id int AUTO_INCREMENT PRIMARY KEY,
+%                       name varchar(100) NOT NULL);
+%   INSERT INTO Users (name) VALUES ('Ken Friis Larsen');
+%   INSERT INTO Users (name) VALUES ('Jakob Grue Simonsen');
+% \end{verbatim}
+%   \end{small}
+
+%   (Other database systems provide similar functionality)
+
+% \end{itemize}
+% \end{frame}
+
+
+
+% \begin{frame}[fragile=singleslide]
+% \frametitle{Ensuring Referential Constraints} 
+
+% \begin{itemize}
+% \item The referential constraint between \texttt{Phone\_numbers.email}
+%   and \texttt{Persons.email} can be ensured by MySQL, but then
+%   the tables must be created using the \texttt{InnoDB} engine:
+% \begin{small}
+% \begin{semiverbatim}
+%   CREATE TABLE Persons (
+%      email  varchar(100) NOT NULL,
+%      name   varchar(100) NOT NULL,
+%      \textbf{INDEX(email)}
+%   ) \textbf{TYPE=InnoDB};
+%   CREATE TABLE Phone_numbers (
+%      email  varchar(100) NOT NULL,
+%      phone  varchar(20) NOT NULL,
+%      \textbf{FOREIGN KEY (email) REFERENCES Persons(email)}
+%   ) \textbf{TYPE=InnoDB};
+% \end{semiverbatim}
+% \end{small}
+
+% \item The foreign key and the referenced key must be of the same type
+%   (except that string lengths need not be identical)
+
+% \item \texttt{NULL} record values are not checked for referential
+%   integrity
+% \end{itemize}
+
+% \end{frame}
+
+\begin{frame}
+\frametitle{Overview Of The Most Important \sql{} Types}
+
+\begin{center}
+\begin{tabular}{@{}lll@{}}\hline\hline
+\textbf{Type}        & \textbf{Usage} & \textbf{Example value}\\\hline
+\texttt{int}         & integers & \texttt{117}\\
+\texttt{double}      & reals & \texttt{3.1415}\\
+\texttt{varchar(80)} & text (max 80 characters) & \texttt{'Ole
+  Jensen'}\\
+\texttt{text}        & text (unlimited, almost) & \texttt{'Ole Jensen'}\\
+\texttt{date}        & date & \texttt{'2007-09-15'}\\
+\texttt{time}        & time of day & \texttt{'22:59:17'}\\
+\texttt{datetime}    & date and time of day & \texttt{2002-03-10 22:59:17}\\\hline\hline
+\end{tabular}
+\end{center}
+
+Other types exist, but we will not be using them here.
+
+The types are used in the \texttt{CREATE TABLE} and \texttt{ALTER
+  TABLE} commands.
+ 
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Data Manipulation Language---\texttt{INSERT}} 
+
+Examples of \texttt{INSERT} commands:
+
+\begin{small}
+\begin{verbatim}
+  INSERT INTO Persons (name, email)
+  VALUES ('Ken Friis Larsen', 'kflarsen@diku.dk');
+
+  INSERT INTO Persons (name, email)
+  VALUES ('Jakob Grue Simonsen', 'simonsen@diku.dk');
+
+  INSERT INTO Phone_numbers (email, phone)
+  VALUES ('kflarsen@diku.dk', '35 32 14 24');
+
+  INSERT INTO Phone_numbers (email, phone)
+  VALUES ('simonsen@diku.dk', '35 32 14 39');
+
+  INSERT INTO Phone_numbers (email, phone)
+  VALUES ('kflarsen@diku.dk', '51 94 65 45');
+\end{verbatim}
+\end{small}
+
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Data Manipulation Language---\texttt{SELECT}} 
+
+The  \texttt{SELECT} command is used to extract data from a database
+
+Examples:
+
+\begin{small}
+\begin{verbatim}
+  SELECT * FROM Persons;
+\end{verbatim}
+\end{small}
+
+
+\begin{small}
+\begin{verbatim}
+  SELECT name FROM Persons;
+\end{verbatim}
+\end{small}
+
+A \texttt{WHERE} clause is used to extract only some of the rows:
+
+\begin{small}
+\begin{verbatim}
+  SELECT name 
+  FROM Persons 
+  WHERE email = 'kflarsen@diku.dk;
+\end{verbatim}
+\end{small}
+
+Sorting---\texttt{ORDER BY}:
+\begin{small}
+\begin{verbatim}
+  SELECT * FROM Persons ORDER BY name;
+\end{verbatim}
+\end{small}
+
+Reverse sorting---\texttt{ORDER BY \ldots{} DESC}:
+\begin{small}
+\begin{verbatim}
+  SELECT * FROM Persons ORDER BY name DESC;
+\end{verbatim}
+\end{small}
+
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Data Manipulation Language---\texttt{JOINS}}
+
+Join:
+
+\begin{small}
+\begin{verbatim}
+  SELECT * FROM Persons, Phone_numbers;
+\end{verbatim}
+\end{small}
+
+A better join:
+
+\begin{small}
+\begin{verbatim}
+  SELECT * FROM Persons, Phone_numbers
+  WHERE Persons.email = Phone_numbers.email;
+\end{verbatim}
+\end{small}
+
+Or even better:
+
+\begin{small}
+\begin{verbatim}
+  SELECT name, Persons.email, phone  
+  FROM Persons, Phone_numbers
+  WHERE Persons.email = Phone_numbers.email;
+\end{verbatim}
+\end{small}
+
+\end{frame}
+
+\begin{frame}[fragile=singleslide]
+\frametitle{Data Manipulation Language---\texttt{DELETE} and \texttt{UPDATE}}
+
+\begin{itemize}
+\item The command \texttt{DELETE} is used to delete rows from a table:
+
+\begin{small}
+\begin{verbatim}
+  DELETE FROM Persons WHERE email = 'simonsen@diku.dk'; 
+\end{verbatim}
+\end{small}
+\textbf{Beware:} The database can enter an inconsistent state when
+doing this.
+
+\item For instance, it is better to do it correctly, by first deleting from
+  \texttt{Phone\_numbers}:
+\begin{small}
+\begin{verbatim}
+  DELETE FROM Phone_numbers WHERE email = 'simonsen@diku.dk';
+  DELETE FROM Persons WHERE email = 'simonsen@diku.dk'; 
+\end{verbatim}
+\end{small}
+
+\item The command \texttt{UPDATE} is used to change columns in a table:
+\begin{small}
+\begin{verbatim}
+  DELETE FROM Phone_numbers WHERE email = 'kflarsen@diku.dk';
+
+  UPDATE Persons
+  SET email = 'ken@friislarsen.net'
+  WHERE email = 'kflarsen@diku.dk';
+\end{verbatim}
+\end{small}
+
+\item Be careful with the  \texttt{WHERE}-constraints.
+
+\end{itemize}
+\end{frame}
+
+\begin{frame}
+\frametitle{Constructing Database Supported Web Sites} 
+
+\begin{enumerate}[Step 1:]
+  \item Make a data model
+    \begin{itemize}
+    \item Which information should be stored and how should it be
+      represented?
+    \item Activity: write \texttt{CREATE TABLE} queries.
+    \end{itemize}
+
+
+  \item Develop data transactions
+    \begin{itemize}
+    \item How do we insert data into the database?
+    \item How do we extract data from the database?
+    \item Activity: Write sample \sql{} queries \textcolor{gray}{and perhaps wrap these
+      in Python functions}
+    \end{itemize}
+
+
+  \item \textcolor{gray}{Construct site-map and web-forms for implementing data transactions}
+
+
+
+  \item \textcolor{gray}{Code Python-files for implementing data transactions in the
+    site-map}
+
+\end{enumerate}
+\end{frame}
+
+
+
+\begin{frame}
+
+\frametitle{Exercises}
+
+\begin{itemize}
+\item BBC country information 
+%\item Course database
+%\item Extra exercise: modulo-11 check of CPR numbers
+\end{itemize}
+
+
+\begin{block}{Next time}
+  \begin{itemize}
+  \item \sql{} continued\ldots
+  \end{itemize}
+\end{block}
+\end{frame}
+
+\end{document}
+
+
