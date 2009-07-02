@@ -1,0 +1,85 @@
+Målbeskrivelse:
+
+Efter gennemførelse af kurset vil du kunne:
+
+
+* Du skal kunne forklare og udvikle programmer i programmeringssproget
+  Python.
+
+* Du skal kunne anvende løkker; funktionsdefinitioner; samt
+  sammensatte data som for eksempel: tupler, lister og træer.
+
+* Du skal kunne forstå programmeringssprogsbegreberne binding,
+  omgivelse og typer.
+
+* Du skal kunne opdele et computer system/program i separate
+  komponenter med beskrevne grænseflader.
+
+* Du skal kunne anvende SQL til at opdatere og hente data fra en
+  relationel database.
+
+* Du skal kunne konstruere web-applikationer med dynamisk indhold
+  hentet en database.
+
+* Du skal kunne forklare hvad kompleksitetsanalyse er, og hvordan det
+  bruges til at analysere programmer.
+
+* Du skal kunne forklare og anvende graf-algoritmer til, fx, at
+  implementere relevant funktionalitet i en socialt netværkstjeneste.
+
+
+Semesterplan
+
+Grovplan: Kurset består af tre dele:
+
+1. Introduktion til programmering, baseret på Mark Guzdials bog
+  "Introduction to computing and programming with Python: A Multimedia
+  Approach"
+
+2. Introduktion til web-applikationer og SQL
+
+3. Algoritmer og data-strukturer
+
+Hvor del 1. tager halvdelen af kurset.
+
+
+Ufærdig skitse til forlæsninger
+
+=== Intro til programmering
+
+# Funktionskald
+
+# Løkker
+
+# ...
+
+=== SQL
+
+# Introduction to SQL
+
+# More SQL
+
+=== Web apps & SW Eng
+Prereq: Can write Python functions, can call std. lib.
+
+# Web apps with Python
+
+# SQL from Python
+
+# Structured approach to (db-driven web) app construction
+
+=== Statistical methods
+Prereq: Can use build in hashes, can do IO
+
+# Norvig spellchecker
+
+=== Data structures and Algorithms
+Prereq: Can make composite datatypes
+
+# Complexity analysis
+
+# Red-Black trees
+
+# Graphs and graph algorithms
+
+# Priority queues
