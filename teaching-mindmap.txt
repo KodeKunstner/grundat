@@ -1,0 +1,313 @@
+- Indhold
+  - Noter om dette mindmap
+  - Praktisk
+  - Todo
+  - Kursusoversigt
+  - Litteratur forkortelser
+  - Opgaver
+
+- Noter om dette mindmap
+  - very much in progress...
+  - tager udgangspunkt i semesterplanen, og bygger videre/reviderer denne
+  - startet 090702.
+  - Keywords: 
+    - TODO:
+    - Opgaver:
+    - Notemateriale: 
+
+- Praktisk
+  - Tirsdag/torsdag, 8-12, lokale 18.1.59
+
+- Todo
+  - Skal afklares
+    - Evt. lokaler om eftermiddagen
+    - Sikr at bogen kan skaffes
+    - Er der enkelt-blok-only-studerende
+    - Server til anden del af kurset, i.e. python
+      - kan de studerende lege videre dér efter kurset
+        - evt. i hvilken grad kompatibelt m. appengine som alternativ legeplads :-)
+  - Noter
+    - Dokumentation
+    - Code review
+    - Debugging
+      - Baseret på THINK
+    - Test/afprøvning
+      - 
+    - JavaScript
+      - Kort intro til JavaScript, links til andre resourcer
+      - JavaScript <-> Python
+        - Gennemgang/repetition af gennemgået stof
+        - Eksempler på kode i hhv. Python og JavaScript
+      - Om programmeringssprog generelt
+    - Web/SQL
+    - Grafer
+  - Evt. Videoer
+    - I gang med GIT
+  
+  
+- Kursusoversigt
+  - To add
+    - open source
+    - Begreber potentielt fra anden halvdel, der kun er begrænset dækkede i første halvdel, og skal sikres er ok.
+      - %
+      - brug af objekter
+      - måske regex
+      - tuples
+      - list comprehension
+  - Intro (u1.1)
+    - Forelæsning:
+      - Hvad er programmering, hvorfor er det nyttigt, smagsprøver på hvor det er sjovt...
+      - Demo:
+        - Brug af JES
+        - Udtryk, variable, funktionsdefinitioner
+      - Om funktioner
+        - nye ord, ordforråd (Husk growing a language)
+      - Om variable
+        - Perhaps a bit on roles
+    - Litt.: Guz1-2
+    - Opgaver: 
+      - Få python/JES op at køre
+      - Så mange I kan nå af: 2.2, 2.3, 2.4, 2.1, 1.5, 1.2, 1.3
+  - Billeder (u1.2-3.2)
+    - Læringsmål:
+      - billeder
+      - betingelser
+      - løkker
+      - dokumentation
+    - u1.2
+      - Forelæsning:
+        - Introduktion til billeder
+          - farvemodeller 
+            - rgb, biologisk baggrund
+          - pixels
+            - matrix 
+        - Dokumentation
+          - programmer som litterær genre :-)
+          - skal både kunne læses af maskiner og af mennesker
+      - Litt.:
+        - Guz2-3
+        - Notemateriale 
+          - docstring
+          - code review
+      - Opgaver:
+        - Hovedformål: Kom igang med billeder, og lav noget pythonkode der kan virke som basis til code review øvelserne næste uge.
+          - Øvelser fra bogen: 2.1, 3.1
+          - Lille pixelbaseret tegning, i.e. smiley (forståelse af position af pixels, samt grundlæggende farver) 
+          - Lav et program der genererer eller ændrer et billede, tag eventuelt udgangspunkt i nogle af opgaverne 3.3-3.10
+    - u2.1 Code review, løkker, betingelser
+      - Med code review menes uformelle code reviews.
+      - Forelæsning:
+        - at læse kildekode
+          - håndkøring
+          - fornemmelse af den overordnede struktur
+        - code review
+          - Eksempel m. review af en (egen for ikke at træde nogen over tæerne) løsning af sidste uges opgave. 
+          - Fremhævelse af gode aspekter fra de afleverede løsninger
+        - Demo:
+          - grafikeksempler fra bla. bog
+      - Opgaver:
+        - Review and rewrite recipe 28.
+        - Gå sammen i grupper, og kig på afleveringerne fra sidste gang, udleverede kodeeksempler, samt opg. 3.2, 4.2, 4.3, 4.7, 4.8
+      - Litt.:
+        - Guz 3-4
+        - Noter om code reviews
+    - u2.2
+      - Forelæsning:
+        - Diskussion/demo af dele af kapitel 4, filtre, blur.
+        - Opfølgning på øvelser -  lidt om debugging og programdesign.
+        - Kort introduktion til versionskontrolsystemer som værktøj(nb: hav også mere detaljeret webcast om dette).
+        - Variabel størrelse blur, skala.
+        - evt. test/afprøvning
+        - evt. begynd at bruge funktioner som metoder som forberedelse til oop
+      - Opgaver:
+        - Lav et programmer der ændrer et billeder, i.e. byg videre på billedbehandlingsportfølje fra forrige uge. Eksempelvis:
+          - Træk en uskarp, formørket udgave af billedet fra det selv.
+          - Tag udgangspunkt i 4.1, 4.6, og 4.10.
+      - Litt.:
+        - Guz4
+        - Noter/screencast om versionskontrol
+    - u3.1
+      - Forelæsning:
+        - Opfølgning på øvelser, debugging med udgangspunkt i øvelsen med subtraktion af uskarpt billede.
+        - Debugging og programdesign. 
+        - Spot a bug
+        - Test/afprøvning
+        - evt lidt om performance eksemplificeret ved variabel størrelse blur
+      - Opgaver:
+        - 9.1, 9.2
+        - eksempler på programstumper
+        - testkode...
+      - Litt.:
+        - Guz5,9
+        - Noter om debugging
+        - Noter om afprøvning
+    - u3.2
+      - Forelæsning:
+        - Afrunding af billeder, repetition.
+        - evt fold/map på pixels, eksempel brugerdefineret funktion til ændring af farver, mappet på billede, samt illustreret med histogram
+      - Opgaver:
+        - Lav et programmer der ændrer et billeder, eksempelvis lokal ændring af farver, øget skarphed, byg videre på øvelsen i uge 2.2
+      - Litt.:
+        - Guz 1-5 (evt. dele af 9 og 14)
+  - Tekst, lister og hashtabeller (u4.1-4.2)
+    - u4.1
+      - Forelæsning:
+        - Lister, for-løkker over lister etc. (opsamling af kendte sprogkonstruktioner på lister i stedet for billeder).
+        - Tekst, søgning, ...
+        - Struktureret tekst, i.e. xml, (html, tex,) 
+        - Idle
+        - Test/afprøvning
+      - Opgaver:
+        - Installer idle, evt. ipython
+        - Generering af tilfældige ord/sætninger
+        - Templatede breve/skriverier
+      - Litt.:
+        - Guz10-10.5, 11-11.2
+        - Noter om test
+    - u4.2
+      - Forelæsning:
+        - Mere om lister.
+        - Hashtabeller, lidt om performance
+      - Opgaver:
+        - Ordfrekvens.
+        - Direkte oversættelse
+      - Litt.:
+  - Objekter (u5.1-5.2)
+    - u5.1
+      - Forelæsning:
+        - Objekter, klasser
+        - evt. moduler, minidom
+      - Opgaver:
+        - Måske: 14.4, 14.7, 14.8.
+      - Litt.:
+        - Noter dom 
+        - THINK - objekter...
+        - Guz 14.3
+    - u5.2
+      - Forelæsning:
+        - Rekursion over struktur
+        - Mere om objekter
+      - Opgaver:
+        - Udtræk af data fra xml(html) via rekursiv funktion
+      - Litt.:
+        - Guz 14-14.3
+        - Noter..?
+  - JavaScript (u6.1)
+    - u6.1
+      - Forelæsning:
+        - Forskellige former for programmeringssprog.
+        - Introduktion til JavaScript, og repetition af python ved at gennemgå kendte konstruktioner i Python, og demonstration af hvorledes de udføres i JavaScript.
+      - Opgaver:
+        - Reimplementer øvelser fra uge 4.1 i JavaScript.
+      - Litt.:
+        - Notemateriale
+          - JavaScript
+          - Guz16
+  - Repetition og perspektivering(u6.2)
+    - u6.2
+      - Forelæsning:
+      - Opgaver:
+      - Litt.:
+  - Web/SQL (u7.1-8.2)
+    - Notemateriale
+      - Første udkast baseres på slides fra data&algorithms
+    - SQL (u7.1-8.1)
+    - Web (u7.1,u8.2) TODO: måske udvid dette lidt 
+      - Bygger videre på intro til HTML (u4.1)
+    - u7.1
+      - Forelæsning:
+        - Introduktion og i gang med databaser og webapplikationer.
+        - 3-tier model. Grænseflader/api.
+      - Opgaver:
+        - Få sql og cgi op at køre med python
+        - Simpelt program med at gemme/hente data via SQL.
+        - Python CGI script med random quotes (ikke nødvendigvis SQL).
+        - evt. Kig på YouText del 1 hvis der er tid.
+      - Litt.:
+        - Noter, Guz
+    - u7.2
+      - Forelæsning:
+        - Databaser, grundlæggende SQL.
+      - Opgaver:
+        - SQL øvelser (i.e. eksempler på SQL kode - hvad gør det, spot en bug, etc.).
+        - YouText del 1, trin 1+2.
+      - Litt.:
+    - u8.1
+      - Forelæsning:
+        - Opsamling på øvelser
+        - Mere om SQL, og den underliggende model
+      - Opgaver:
+        - YouText del 1
+      - Litt.:
+    - u8.2
+      - Forelæsning:
+        - Webapplikationer, html, css, python-cgi
+      - Opgaver:
+        - YouText del 1
+      - Litt.:
+  - Statistisk stavekontrol (u9.1-9.2)
+    - u9.1
+      - Forelæsning:
+        - Opfølgning på Youtext del 1
+        - Statistisk stavekontrol
+        - Mere python, i.e. list comprehension
+        - Lidt statistik
+      - Opgaver:
+        - YouText del 2
+      - Litt.:
+        - Norvig
+    - u9.2
+      - Forelæsning:
+        - Statistisk stavekontrol
+      - Opgaver:
+        - YouText del 2 
+      - Litt.:
+        - Norvig
+  - Algoritmer og datastrukturer (10.1-12.1)
+    - u10.1 Lister, stakke 
+      - Forelæsning:
+      - Litt.:
+      - Opgaver:
+    - u10.2 Grafer
+      - Forelæsning:
+      - Litt.:
+      - Opgaver:
+    - u11.1 Grafer og grafalgoritmer
+      - Forelæsning:
+      - Litt.:
+      - Opgaver:
+    - u11.2 Beregningskompleksitets
+      - Forelæsning:
+        - Performance, beregningskompleksitet  (u11.2)
+        - eksemplificeret ved bla. søgning og evt. sortering
+      - Litt.:
+      - Opgaver:
+    - u12.1 Prioritetskøer, træer
+      - Forelæsning:
+      - Litt.:
+      - Opgaver:
+    - u12.2 Opsamling
+      - Forelæsning:
+      - Litt.:
+      - Opgaver:
+
+- Litteratur forkortelser
+  - GUZ: ...multimedia approach, 1.ed.
+    - Nb. 2nd ed. ved at blive trykt, men når ikke at være der til kurset, TODO: verificér at bogladen får 1.ed. hjem. 
+  - THINK: How to Think Like a Computer Scientist
+  - CROCKFORD: javascript.crockford.net
+  - EJS: eloquentjavascript.net
+      - Er blevet brugt tidligere
+  - NORVIG: Statistisk stavekontrol...
+
+- Opgaver
+  - Obligatoriske 7
+    - Billedprojekt (u3.2)
+    - ... (u6.2)
+      - Sandsynligvis et program der genererer en form for statisk hjemmeside, med billeder etc.
+      - Samler billedbehandling, tekst, 
+      - Forbereder de studerende til næste del af kurset
+    - YouText del 1
+    - YouText del 2
+    - Udvidelse af YouText, måske i retning af soc. netværk, (grafalgoritmer)
+  - Idéer
