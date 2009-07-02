@@ -54,6 +54,8 @@
       - måske regex
       - tuples
       - list comprehension
+    - patterns...
+    - Om at studere/tænke datalogisk/sætte sig ind i nyt stof/læring af viden vs. dannelse ell. modning.
   - Intro (u1.1)
     - Forelæsning:
       - Hvad er programmering, hvorfor er det nyttigt, smagsprøver på hvor det er sjovt...
