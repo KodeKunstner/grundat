@@ -2,6 +2,7 @@
   - Noter om dette mindmap
   - Praktisk
   - Todo
+  - Intro 27/8
   - Kursusoversigt
   - Litteratur forkortelser
   - Opgaver
@@ -19,13 +20,20 @@
   - Tirsdag/torsdag, 8-12, lokale 18.1.59
 
 - Todo
+  - Next action
+    - Fill out mindmap for intro
+    - Make notes to intro
+      - try out latest version of JES, and write overview
   - Skal afklares
+    - Hvem laver forelæsningerne på blok 2?
     - Evt. lokaler om eftermiddagen
     - Sikr at bogen kan skaffes
+    - Navneliste til brug ifbm. intro - navnefotoeksempel til de studerende
     - Er der enkelt-blok-only-studerende
     - Server til anden del af kurset, i.e. python
       - kan de studerende lege videre dér efter kurset
         - evt. i hvilken grad kompatibelt m. appengine som alternativ legeplads :-)
+          - appengine baserer sig på python-cgi, men med andet databaselag. Abstraktion burde være overkommelig.
   - Noter
     - Dokumentation
     - Code review
@@ -44,6 +52,36 @@
   - Evt. Videoer
     - I gang med GIT
   
+- Intro 27/8
+  - Plan
+    - Introduktion 
+      - Hvad er datalogi
+        - IT...
+        - perspektivering
+        - lære at tænke datalogisk
+      - Navnefoto, - praktisk eksempel
+        - praktisk eksempel  
+      - Kurset "Grundlæggende Datalogi" 
+        - Overblik over kurset
+        - (Maybe Ken, while I prepare continuation of navnefoto)
+        - præsentation af underviserteamet
+        - undervisningsform
+        - basisviden, grundlag
+      - I gang... 
+        - Hvad er programmering og programmeringssprog
+        - Introduktion til JES
+          - Gennemgang af brugergrænsefladen...
+          - "Hello world"
+  - Navnefoto
+    - Maybe: Opstilling alfabetisk - træn hinandens navne
+    - foto -> script til at lære navne, inklusiv demo
+  - Installation af JES...
+    - Forbered usb-stick/CD med software på, samt eksempelbilleder...
+    - Intro-noter
+      - Hvad er grundlæggende datalogi...
+      - Overblik over JES
+        - eksperimenter med den interaktive prompt
+      - Små øvelser, gennemløb af billede
   
 - Kursusoversigt
   - To add
@@ -152,6 +190,7 @@
       - Litt.:
         - Guz 1-5 (evt. dele af 9 og 14)
   - Tekst, lister og hashtabeller (u4.1-4.2)
+    - NB: Rusturen ligger: 29. september til 2. oktober, i.e. efter uge 4., så der skal nok ikke ligge nogle større afleveringer ifbm. den weekend...
     - u4.1
       - Forelæsning:
         - Lister, for-løkker over lister etc. (opsamling af kendte sprogkonstruktioner på lister i stedet for billeder).

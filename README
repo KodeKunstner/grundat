@@ -7,6 +7,12 @@ teaching-mindmap.txt        - Mindmap med plan over undervisningen
 noter/                      - Diverse noter i forbindelse med kurset
 plan/                       - Udkast til semesterplan for kurset,
                               udarbejdet før kurset, i.e. juni/juli.
-slides/                     - Slides fra kurset Data&Algorithms (E2008)
+reference_material/         - Diverse materiale der kan tages udgangspunkt 
+                              i for undervisningen.
+                              Slides fra kurset Data&Algorithms (E2008)
                               som anden halvdel af dette kursus bliver
                               delvist baseret på. 
+weeks/                      - Indhold til de enkelte uger,
+                              ugenummer angivet med to cifre, 
+                              [ab] angiver tirsdag/torsdag.
+                                  Uge 00b er introtorsdag
