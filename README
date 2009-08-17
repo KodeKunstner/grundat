@@ -12,7 +12,4 @@ reference_material/         - Diverse materiale der kan tages udgangspunkt
                               Slides fra kurset Data&Algorithms (E2008)
                               som anden halvdel af dette kursus bliver
                               delvist baseret på. 
-weeks/                      - Indhold til de enkelte uger,
-                              ugenummer angivet med to cifre, 
-                              [ab] angiver tirsdag/torsdag.
-                                  Uge 00b er introtorsdag
+weeks/                      - noter, slides og handout, nummereret efter undervisningsgang

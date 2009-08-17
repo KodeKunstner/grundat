@@ -1,0 +1,30 @@
+- Møde d. 18/8
+  - Before:
+    - Ken, - udmelding?
+  - Praktisk
+    - Hjemmeside
+      - domænet kommunikationogit.dk tilknyttet til kurset
+        - forwarder til kommit.ku.dk (TODO: www. også)
+        - grundat.kommunikationogit.dk ved at blive sat op med diverse noter til grundlæggende-datalogi-kurset
+          - mulighed for underdomæne, til server etc.
+      - server til anden halvdel af grundat
+    - Lokale (besigtigelse efter mødet?)
+      - Projektor?
+      - WiFi/netværk til de studerende?
+      - foregår introen d. 27/8 også i dette lokale? TODO: evt find selv ud af dette
+    - Status for litteratur, ankommet i boglade? 
+  - Samarbejde på tværs af kurser, - følgen med i parallelt kursus
+  - Presentation: Grundat
+    - Overblik over kursus og indhold
+      - Hurtig gennemgang fra kursusoversigt
+    - Status
+      - Præsentation af indhold, i.e. fra ugeplan
+      - Form
+        - 2x4hr, interleaved undervisning/øvelser, frem for 2xforelæsning og 2xøvelser.
+      - Givne rammer/udgangspunkt
+        - To halvdele (beskrevet som at skulle kunne følges blokvist også?
+        - Første halvdel
+          - Bog: Introduction to programming in python, a multimedia approach TODO: correct title
+        - Anden halvdel
+          - Webprogrammering 
+          - Algoritmer

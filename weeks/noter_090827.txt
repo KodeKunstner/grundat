@@ -1,0 +1,54 @@
+Plan
+- Introduktion Datalogi/IT
+  - Hvorfor datalogi
+  - Hvad er datalogi
+  - Introduktion til kurset
+  - Introduktion til programmering
+  - Installation af JES
+  - Navne
+  - Introduktion til JES, gennemgang af brugerfladen
+  
+- Intro 27/8
+  - Plan
+    - Introduktion 
+      - Hvad er datalogi
+        - IT...
+        - perspektivering
+        - lære at tænke datalogisk
+      - Navnefoto, - praktisk eksempel
+        - praktisk eksempel  
+      - Kurset "Grundlæggende Datalogi" 
+        - Overblik over kurset
+        - (Maybe Ken, while I prepare continuation of navnefoto)
+        - præsentation af underviserteamet
+        - undervisningsform
+        - basisviden, grundlag
+      - I gang... 
+        - Hvad er programmering og programmeringssprog
+        - Introduktion til JES
+          - Gennemgang af brugergrænsefladen...
+          - "Hello world"
+  - Navnefoto
+    - Maybe: Opstilling alfabetisk - træn hinandens navne
+    - foto -> script til at lære navne, inklusiv demo
+  - Installation af JES...
+    - Forbered usb-stick/CD med software på, samt eksempelbilleder...
+    - Intro-noter
+      - Hvad er grundlæggende datalogi...
+      - Overblik over JES
+        - eksperimenter med den interaktive prompt
+      - Små øvelser, gennemløb af billede
+  
+    - Forelæsning:
+      - Hvad er programmering, hvorfor er det nyttigt, smagsprøver på hvor det er sjovt...
+      - Demo:
+        - Brug af JES
+        - Udtryk, variable, funktionsdefinitioner
+      - Om funktioner
+        - nye ord, ordforråd (Husk growing a language)
+      - Om variable
+        - Perhaps a bit on roles
+    - Litt.: Guz1-2
+    - Opgaver: 
+      - Få python/JES op at køre
+      - Så mange I kan nå af: 2.2, 2.3, 2.4, 2.1, 1.5, 1.2, 1.3
