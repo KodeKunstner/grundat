@@ -1,4 +1,52 @@
-Plan
+- Forelæsning
+  - Velkommen
+  - Hvad er programmering, datalogi. Hvorfor.
+  - Introduktion til kurset
+    - Overblik over forløb
+    -
+  - Navne og billeder
+  - I gang med JES
+  - Studieteknik...
+    - Effektiv læsning
+    - Self review
+
+- Øvelser
+  - Installation af JES
+    - Hent og installer JES 3
+    - Hjælp hinanden
+    - Gå videre til eksperimenter/leg
+  - Upload billede af jer selv for at lære navne
+  - Eksperimenter/leg/at blive fortrolig med JES og programmering
+    - Overblik
+      - Fortolker-vindue
+      - Program-vindue
+      - Hjælp-vindue
+    - Udtryk 
+      - aritmetik
+      - strenge 
+        - """
+        - \n
+        - +
+    - Navngivning - variable
+      - øvelse
+        - parametriseret invitation
+    - Kald af funktioner
+      - requestString
+      - requestInteger
+      - showInformation
+      - øvelse
+        - find fødselsår ud fra alder, eller omvendt
+        - personliggjort hilsen 
+    - Billeder
+      - Eksempel smiley
+      - Koordinatsystem
+    - Egne funktioner
+
+
+- TODO
+  - Handouts til øvelser
+    - læs til næste gang
+
 - Introduktion Datalogi/IT
   - Hvorfor datalogi
   - Hvad er datalogi
@@ -28,9 +76,6 @@ Plan
         - Introduktion til JES
           - Gennemgang af brugergrænsefladen...
           - "Hello world"
-  - Navnefoto
-    - Maybe: Opstilling alfabetisk - træn hinandens navne
-    - foto -> script til at lære navne, inklusiv demo
   - Installation af JES...
     - Forbered usb-stick/CD med software på, samt eksempelbilleder...
     - Intro-noter
