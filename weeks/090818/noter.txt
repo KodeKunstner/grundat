@@ -1,20 +1,27 @@
 - Møde d. 18/8
-  - Before:
+  - Jakob
+    - Algoritmer og datastrukturer - blok, ekstra studerende?
+      - Blok-struktur og semesterstruktur
+      - Estimat af antal additional studerende 
+      - Yderligere studerendes baggrund, koordinering...
+      - Overblik over sammenhæng og andre kurser?
     - Ken, - udmelding?
-  - Praktisk
+    - Ansættelse
+    - Refusion af bog, evt. togbillet?
+    - Server til anden halvdel af grundat, eller evt. appengine
+  - Fælles
     - Hjemmeside
       - domænet kommunikationogit.dk tilknyttet til kurset
-        - forwarder til kommit.ku.dk (TODO: www. også)
+        - forwarder til kommit.ku.dk
         - grundat.kommunikationogit.dk ved at blive sat op med diverse noter til grundlæggende-datalogi-kurset
           - mulighed for underdomæne, til server etc.
-      - server til anden halvdel af grundat
     - Lokale (besigtigelse efter mødet?)
       - Projektor?
       - WiFi/netværk til de studerende?
       - foregår introen d. 27/8 også i dette lokale? TODO: evt find selv ud af dette
     - Status for litteratur, ankommet i boglade? 
-  - Samarbejde på tværs af kurser, - følgen med i parallelt kursus
-  - Presentation: Grundat
+    - Samarbejde på tværs af kurser, - følgen med i parallelt kursus
+  - Præsentation
     - Overblik over kursus og indhold
       - Hurtig gennemgang fra kursusoversigt
     - Status
