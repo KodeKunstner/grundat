@@ -1,0 +1,127 @@
+Så jeg skal sige et par ord om grundlæggende datalogi.
+
+Kurset grundlæggende datalogi handler om at lære tænke
+- datalogisk.
+
+Det handler om at tilegne sig
+den tankegang der skal til
+for at kunne instruere maskinen.
+
+Det handler om at få en forståelse
+af data, af computeren, af det digitale medie.
+
+Det handler om at lege.
+- computeren er det vildeste sæt lego man kan forstille sig,
+og datalogien er hvordan man sætter det sammen på nye måder.
+
+Datalogien er læren om data,
+det er de modeller, den teori, den videnskab
+der grundlag for hele den digitale verden
+
+Kurset grundlæggende datalogi
+giver en smagsprøve på dette.
+
+------
+
+Som det næste vil jeg svare
+på tre vigtigt spørgsmål
+omkring kurset:
+Hvad, hvorfor og hvorledes.
+
+Hvad indeholder kurset grundlæggende datalogi,
+og hvad er data, computere og programmering?
+
+Dernæst hvorfor er det interessant at beskæftige sig med?
+Kan det bruges senere hen?
+
+og til sidst: Hvorledes gribes kurset an,
+- alle de praktiske informationer.
+
+
+#1
+
+Så først: hvad indeholder kurset?
+
+G
+Datalogi er dovenskab.
+
+Hvad computere og programmering er.
+Dernæst mere om hvorfor det er interessant.
+Hvordan
+
+Vi starter med grundlæggende programmering og billedbehandling,
+dernæst kommer en introduktion til webapplikationer og databaser,
+og til sidst kigger vi på datastrukturer og algoritmer.
+
+
+Computere er på en gang noget af det simpleste og mest komplicerede der findes,
+det er noget af det simpleste, fordi alt hvad der foregår i den er enkle beregninger som bliver udført efter en udførligt beskreven opskrift, trin for trin, læg ro tal sammen, ...
+Alligevel er det samtidigt noget af
+
+med billeder, med lyd¸ med tekst
+algoritme eller opskrift
+
+Hvor mange her har hørt om programmeringssproget python?
+Hvor mange ved hvad et programmeringssprog er?
+
+Som redskab, som udviklingsværktøj i vores studie i datalogien bruger vi python,
+python er det sprog, det programmeringssprog som vi starter med at lære
+
+vi kommer også ind og kigger på webprogrammering, ser på hvordan at man laver applikationer der kører over world wide web, over internettet, og her både på hvordan det at kører hos brugeren men også hvordan det ligger bagved, hvordan at man arbejde med databaser og strukturerer store mængder data og gør dem tilgængelige
+
+ganske vist lærer vi programmeringssproget python, men det er ikke python som sprog vi lærer, 
+men det er nogle grundlæggende konstruktioner der virker på tværs af andre programmeringssprog også,
+så alt hvad vi lærere, selvom det har python som objekt og python som redskab, så er det generelle ideer der går på tværs af andre sprog, og det vil sige at det også vil kunne bruges i andre sprog, uan
+
+
+# 2
+
+konkrete værktøj
+
+fundament at bygge videre på
+
+ikke begrænset af andres programmer
+# formål, vis hvorfor datalogi er sjovt
+
+Det at kunne programmere og det at kende til grundlæggende datalogi,
+er også med til at komme ud over de begrænsninger som der er i eksisterende software,
+når man ved hvordan man selv bygger videre, selv skaber ny software, er man ikke længere begrænset af hvad andre har lavet, men den eneste begrænsning der er med hvad man kan gøre, det er faktisk ens egen fantasi
+
+# 3
+
+Undervisning på tordag, kl 8, 
+lokale 18.1.59
+medbring computer.
+
+grundat@kommunikationogit.dk
+(Rasmus og Johan)
+grundat.kommunikationogit.dk
+
+
+
+
+om lidt installere vi python,
+så gå hjem og eksperimenter med det,
+- Udfordring: lav et program der spiller en melodi, eller tegner et billede...
+
+Send en email med et par ord om jer selv,
+Jeres forhold til IT, om I har programmeret før, 
+og hvad et cetera.
+
+------
+
+Nu har jeg givet en introduktion til
+hvad grundlæggende datalogi er
+hvorfor det interessant,
+og hvordan vi gør i praksis.
+
+Der er 3 minutter tilbage,
+så brug dem således:
+find noget at skrive med
+Vælg og notér tre af de ting jeg har sagt,
+Og når I har gjort det,
+find ud af hvilke tre ting jeres sidemænd har valgt,
+og hvorfor netop disse.
+
+
+

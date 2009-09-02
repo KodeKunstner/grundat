@@ -1,0 +1,13 @@
+\section{General}
+Wrong spelling of "======= Loading Progam =======".
+
+Cursor can go to the left of '>>>' in interpreter, meaning that for example the home-key cannot be used for start writing at the beginning of the line.
+
+No integration with docstrings.
+
+\section{Turtle}
+Does not support fractional degrees, limits it significantly (most of DiSessa/Abelson would not work).
+
+No default world object, making it unsuitable for introduction.
+
+

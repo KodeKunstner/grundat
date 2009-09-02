@@ -1,4 +1,5 @@
 - Indhold
+  - inbox
   - Noter om dette mindmap
   - Praktisk
   - Todo
@@ -6,6 +7,17 @@
   - Kursusoversigt
   - Litteratur forkortelser
   - Opgaver
+
+- inbox
+  - flere studerende til anden halvdel
+    - fra introduktion til datalogi - python programmering - af nils andersen
+    - estimat: mellem 5 og 20 nye studerende
+  - pensum: 1200 sider (ell. 600 pga teknisk litteratur)
+  - erhverv: 
+    - find ud af mere 
+    - potentielle virksomheder
+      - dbc
+      - maaske digital storylab
 
 - Noter om dette mindmap
   - very much in progress...
@@ -15,6 +27,7 @@
     - TODO:
     - Opgaver:
     - Notemateriale: 
+
 
 - Todo
   - Next action
@@ -29,6 +42,8 @@
     - Server til anden del af kurset, i.e. python
       - opsættes sandsynligvis selv hos humaniora
         - NB: permanent? - så de studerende kan lege videre efter kurset
+    - Litteratur til anden halvdel
+      - got recommended pymotw, doug hellmann
   - Noter
     - Dokumentation
     - Code review
@@ -221,6 +236,7 @@
   - Web/SQL (u7.1-8.2)
     - Notemateriale
       - Første udkast baseres på slides fra data&algorithms
+      - check http://www.w3schools.com/sql/default.asp
     - SQL (u7.1-8.1)
     - Web (u7.1,u8.2) TODO: måske udvid dette lidt 
       - Bygger videre på intro til HTML (u4.1)
