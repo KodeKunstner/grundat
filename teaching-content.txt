@@ -1,0 +1,23 @@
+introduktion til JES
+introduktion til programmering
+udtryk
+variable
+kald af funktioner
+funktionsdefinitioner
+variables roller
+introduktion til billeder
+farvemodel - rgb
+øjets funktion
+pixels
+dokumentation - kommentarer
+løkker
+betingelser
+docstrings
+code review
+håndkøring
+fornemmelse af overordnet programstruktur
+debugging
+programdesign - inkremental udvikling
+spot a bug
+
+

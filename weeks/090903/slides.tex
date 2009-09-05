@@ -17,9 +17,9 @@
 \addtolength{\voffset}{-060pt}
 \addtolength{\textheight}{060pt}
 
-\title{Introduktion til programmering}
+\title{Grundlæggende datalogi}
 \author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
-\date{Uge ..}
+\date{2009-09-03}
 \lstset{language=python}
 \begin{document}
 \maketitle
@@ -27,58 +27,272 @@
 
 \begin{slide}
 	\begin{center} {\large 
-		Dagens forelæsning
+            Plan for i dag
 	} \end{center}
 	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
-    		\item Opsamling på emnerne i forløbet
-    		\item Andre sprog
-    		\item Videre studier
+    		\item[08:15] Velkommen, opsamling fra sidst, introduktion til programmering, billed-koordinatsystem
+    		\item[09:00] Praktisk om kurset, pixels, gennemløb af billede
+    		\item[09:45] Repræsentation af data i computeren, farvemodeller, mere om billeder
+    		\item[10:45] Dokumentation, opsummering
+    		\item[11:45] Sammenfatning, næste gang...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Velkommen og god morgen
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Plan for i dag
+		\item Introduktion til programmering
+		\item JES
+                \item Billeder, koordinater og øvelse
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Introduktion til programmering
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Kald af funktioner ()
+		\item Datatyper og beregninger
+		\item Variable
+		\item Definition af funktioner
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Definition af funktioner
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Indrykning har betydning
+		\item Parametre
+		\item Lokale variable
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            JES
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Fortolker
+		\item Editor
+		\item Hjælp
+		\item Python-filer
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Billeder og koordinator
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item (0,0) i øverste venstre hjørne
+		\item Omvendt y-akse 
+		\item NB: (0,0) vs. (1,1) 1.ed vs 2.ed
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Øvelse: lav funktion der tegner en trekant 
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item[08:15] Velkommen, opsamling fra sidst, introduktion til programmering, billed-koordinatsystem
+    		\item[09:00] Praktisk om kurset, pixels, gennemløb af billede
+    		\item[09:45] Repræsentation af data i computeren, farvemodeller, mere om billeder
+    		\item[10:45] Dokumentation, opsummering
+    		\item[11:45] Sammenfatning, næste gang...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Praktisk om kurset, pixels, gennemløb af billede
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling på øvelse med trekant
+		\item Overblik over kursusforløb
+                \item Praktisk om kurset: litteratur, omfang
+	                afleveringsopgaver, eksamen, undervisningsform
+                \item Lidt mere om billeder
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Overblik over kursusforløb
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Del 1: Grundlæggende programmering, billeder
+		\item Del 2: Programmeringsteknikker, (ca. 24/9)
+		\item Del 3: Web-programmering (ca. 3/11)
+		\item Del 4: Algoritmer og datastrukturer (ca. 17/11)
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Praktisk om kurset
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Status for lærebog - forsinket, parallelt, nb.: dikt-noter
+		\item Afleveringsopgaver x 7, - afleveringsform
+		\item Eksamen
+		\item Omfang, undervisningsform
+                \item Stil spørgsmål, feedback
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Om Billeder
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Pixels
+		\item Eksempel med JES-explore, samt GIMP
+		\item for-løkker, gennemløb af billede, lav lysere
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Øvelse
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Lav billede mørkere, eller endnu lysere
+		\item Eksperimenter med at tegne oven på et billede
+                    -- enkelt pixels, samt figurer via JES-funktioner
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Videre plan
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item[08:15] Velkommen, opsamling fra sidst, introduktion til programmering, billed-koordinatsystem
+    		\item[09:00] Praktisk om kurset, pixels, gennemløb af billede
+    		\item[09:45] Repræsentation af data i computeren, farvemodeller, mere om billeder
+    		\item[10:45] Dokumentation, opsummering
+    		\item[11:45] Sammenfatning, næste gang...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Repræsentation af data, farvemodeller, mere om billeder
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Computer, binære tal
+		\item Tekst som tal
+		\item Farver
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Computere og binære tal
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Computer - forvokset regnemaskine
+		\item Binære tal, - detaljer
+                \item 1 10 100 1000 10000 ....
+                \item 1 2 4 8 16 32 64 ...
+                \item Øvelse: skriv som binære tal: 100, 42
+                \item Øvelse: skriv som decimaltal: 1101 101010
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Tekst som tal
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item kodning
+            \item ord, chr, unichr
+            \item Øvelse dit eget navn med tal.
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Farver som tal
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Lysstyrke og farvekomponenter
+		\item Rød, grøn, blå
+		\item Øjets tapceller
+		\item Lysfarver - additiv vs. subtraktiv farveblanding
+		\item Typisk 8 bit intensiteter per farvekanal
+		\item Lav hhv rødt, grønt, blåt, turkist, gult, gråt billede med makeEmptyPicture og makeColor
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Øvelse: lav funktion der ændrer farverne i et billede. Eksempler: lav billedet sort/hvidt eller sepia. Gør billedet varmere eller koldere ved at ændre den røde farveintensitet. Udtræk én af farvekanalerne. Ændre farven baseret på x eller y koordinat eller blanding af disse.
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item[08:15] Velkommen, opsamling fra sidst, introduktion til programmering, billed-koordinatsystem
+    		\item[09:00] Praktisk om kurset, pixels, gennemløb af billede
+    		\item[09:45] Repræsentation af data i computeren, farvemodeller, mere om billeder
+    		\item[10:45] Dokumentation, opsummering
+    		\item[11:45] Sammenfatning, næste gang...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Dokumentation
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Kommentarer
+		\item At læse kildekode
+		\item Docstrings
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Opsummering
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Funktionsdefinitioner
+		\item for-løkker
+                \item Binære tal
+		\item Billedkoordinater 
+		\item Farver
+		\item Praktiske informationer
+		\item Spørgsmål?
 	\end{itemize}
 \end{slide}
 
 
 \begin{slide}
 	\begin{center} {\large 
-		Kursets indhold, - tilbageblik
+            Øvelse: lav funktion der ændrer farverne i et billede. Eksempler: lav billedet sort/hvidt eller sepia. Gør billedet varmere eller koldere ved at ændre den røde farveintensitet. Udtræk én af farvekanalerne. Ændre farven baseret på x eller y koordinat eller blanding af disse. Husk dokumentation og læsbarhed
 	} \end{center}
 	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
-		\item Opsamling, hvorfor programmering.
-		\item Funktionsbiblioteker, variable, funktioner
-		\item Rekursion
-		\item Programdesign og dokumentation
-		\item Iteration
-		\item Datastrukturer - strenge, lister, tabeller
-		\item Projekt 
-		\item Programmering og programmer. Sammenhæng med eksisterende applikationer
+    		\item[08:15] Velkommen, opsamling fra sidst, introduktion til programmering, billed-koordinatsystem
+    		\item[09:00] Praktisk om kurset, pixels, gennemløb af billede
+    		\item[09:45] Repræsentation af data i computeren, farvemodeller, mere om billeder
+    		\item[10:45] Dokumentation, opsummering
+    		\item[11:45] Sammenfatning, næste gang...
 	\end{itemize}
 \end{slide}
 
-
 \begin{slide}
 	\begin{center} {\large 
-		Andre sprog
+            Sammenfatning, næste gang
 	} \end{center}
 	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
-		\item Typer - oversat versus fortolket, dynamisk versus statisk typet, imperative versus funktionsorienterede
-		\item Eksempel: Python
-		\item Eksempel: R og S
-		\item Eksempel: C og Fortran
-		\item Eksempel: MatLab og Octave
-		\item Eksempel: \LaTeX
-		\item Semantik versus syntaks!
-		\item Implicitte vs. eksplicitte blokke
-	\end{itemize}
-\end{slide}
-
-
-\begin{slide}
-	\begin{center} {\large 
-		Videre programmering
-	} \end{center}
-	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
-		\item ..
-		\item ..
-		\item ..
+		\item Fem minutter, noter hvad I kan huske som det vigtigste - noter til jer selv.
+		\item Fem minutter, diskuter det med sidekammerat, lav fælles noter, send kopi per mail.
+		\item Næste gang: betingelser, programdesign, debugning. Notesæt med uddrag fra ``How to Think Like a Computer Scientist'' kommer online i eftermiddag/aften.
 	\end{itemize}
 \end{slide}
 

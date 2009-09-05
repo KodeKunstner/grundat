@@ -1,0 +1,173 @@
+3:40:00
+Velkomen til, så går vi igang med undervisningen i for denne gang,
+så som sagt det er kurset grundlæggende datalogi
+jeg vil starte med at sige lidt om planen for i dag
+det der delt op på den måde at
+i stedet for at starte med to timer forelæsninger og to timers øvelser,
+hvor man nok ville gå i stå,
+så har jeg splittet det op
+så vi skifter mellem kortere forelæsninger og så øvelser
+og så forelæsninger og så øvelser, så vi skifter på den måde.
+Og i kan se at planen for idag er at vistarter her, nu lige med en velkomst
+med en opsamling fra sidst,
+hvor sidst var den der intro hvor vi installerede programmet,
+og hvor jeg gennemgik nogle af tingene med programmering,
+dem gennemgår jeg så igen så det lige kommer på plads og giver også
+lidt introduktion til billeder og hvad punkter på billed, koordinatsystmer i billeder er.
+så efter det er der lidt øvelser hvor at ja sidde og komme igang med det i praksis
+Og den måde man lære at programmere på når man starter med at lære at programmere er ved at gøre det i praksis end
+at ved at jeg står og taler, og så er det senre hen at teorien kommer på,
+så det skifter vi over til efter lidt introduktion her
+så efter det komme nogle praktiske informationer om kurset, 
+hvad gør vi med øvelser med afleveringer, hvordan er det hele struktureret, og det kommer kl ni,
+også kommer der lidt, en lille smule mere på om programmeringen, hvordan man gennemløber et billede og arbejder på farver og på hele billedet globalt, så vi kommer lidt ud over detder var til introduktionen sidste gang,
+og så er det igen lidt øvelser med det og så kommer det mere teoretiske idag, og det er noget med repræsentation af billeder og repræsentation af data i computeren, hvordan arbejder computeren med data, når vi har noget tekst, hvordan ser computeren det så, når vi har nogle billeder, hvordan ser computeren så det, så kommer der en introduktion til der, og så videre eksperimentering, leg med programmering, og så lidt om hvordan man skriver når man skriver programmer, at man ikke kun skriver til computeren, men også så andre kan læse det, dokumenterer det man laver, skriver kommentarer, så det er muligt at sætte sig ind i hvad andre har lavet. Og så noget opsummering, det ting der har måtte være vi har ved øvelser og så videre, og så til sidst en sammenfatning og smagsprøve på næste gang
+så det er planen for i dag.
+
+3:3730
+så allerført velkommen og godmorgen
+så her den første del,  her fra kl 8:15, 
+det er planen for i dag den har vi haft, 
+så gennemgang lige hurtigt af det vi havde sidst,
+så vi kan komme i gang med både udviklingsmiljø og også med introduktionen til programmering, og så til sidste lige lidt om koordinater, lidt om billeder og en øvelse vi kan gå igang med i praksis. så det næste det er introduktionen til programmering, og da, de ting vi startede med sidste gang, der havde vi kald af funktioner, - kan I huske hvad vi brugte funktionskald til, eller hvor vi brugte det - .... ja præcis, så al den funktionalit, vi har brugt,vi eksperimenterer med, det er via kald af dunktioner. så det er det, når vi bruger en af de funktioner der eksempelvis er bygget ind heroppe ... så er det vi skriver her et funktionskald, her show information parentes godmorgen parentes-slut. Og det der gør at den udfører noget, det der gør at den gør noget: det er parenteserne, det er dem der siger at her der starter vi, kalder funktionen , . Hvvis i blot havde skrevet show information, så gør den ingenting, fordi vi ikke havde kaldt funktionen. Så alstå der hvor parentesen er det er det sigeer at vi gerne vil have udført noget, 
+3:35:30
+ellers er det den gør er det at den siger ok showinformation det er een variable der indholeder en funktion vi kan kalde, så det er derfor den skriver function her, 
+så når vi vil have udført noget, så gør vi det vi a funktionskald
+og det der er indenfor parentesen, deter dt man kalder parametrene til funktionen, det er det man giver funktionen videre, det er det den skal arbejde med,
+så når jeg siger godmortgen til computeren her, så siger jeg,
+vi kalder funktionen, og så får den gormorgen besked med, og det der får den til at vide at den skal skrive gomorgen på skærmen heroppe
+og der hvar vi så, der er en del indbyggede funktioner, som vi kan finde frem til i udviklingsmiljøet her, eller man kan selv definerer funktionen, og hvis der er nogle spørgsmål til det jeg siger undervejs, eller der er noget hvor i lige tænker,... så må i lige ... så
+men det var lige kort om kald af funktioner.
+Så er der er også datatyper og beregninger,
+og det som vi havde
+det som jeg også nævnte sidste gang med datatyper og beregninger,
+python her opfører sig her som en lommeregner også f.eks, 
+hvis vi skal udregne et eller andet, for eksempel hvad er seks gange syv.. så skriver den 42, 
+så på den måde kan vi skrive beregningsudtryk
+
+det kan vi også
+her med show information
+beregningsudtryk kan man også putte ind i funktioner
+man kan også putte funktionskald ind i funktioner 
+
+...
+så regner den ud hvad resultatet er her
+der er så tilsvarende med at man kan regne med tal, så
+havde vi også eksemplet med hvo man kunne lægge strenge sammen
+...
+så laver den en ny streng,
+eller også blande dem sammen, så man kunne
+.....
+eksempelvis ved at gange et tal på en streng, så kunne man få stengen til at gentage sig,
+
+så det er det når at jeg sige at man kan lave beregninger.
+det kan også være jeg kommer til at bruge begrebt udtryk omkring det, fordi de beregninger
+eller kald af funktioner der returnerer en værdi det bruger man betegenelsen udtryk for
+så det er en anden term for stortset det samme.
+
+så det andet jeg har skrevet, det er datatyper,
+og det er som navnet siger, det er hvad man kan sige
+typer af data, typer af informationer man kan arbejde med,
+og der har jeg allerede lige vist to typer,
+er der nogele her der kan se hvilke to typer det er
+....
+præcist, så det vi har her
+integer, heltal,
+som vi kan vise her, 
+og så har vi tekststrenge,
+
+og der kan man så være opmærksom på at nogle gange
+så kræver funktioner specielle typer,
+for eksempel kræver show information at 
+at det er en streng, at det er en tekststreng den får 
+den skal vise på skærmen,
+den kan ikke finde ud af hvis vi bare giver den et tal
+så bliver den forvirret,
+så hvis I bare skriver show information
+7 gange 5, så brokker den sig 
+med en fejl og så kommer den med sådan en underlig
+besked om at first argument cannot be coerced to a string,
+coerced betyder at den ikke kan finde ud af at lave den om til en streng,
+bare, dens terminologi for det. 
+og det man så kan gøre i praksis der,
+det er, hvis man har 7 gange fem,
+da kan vi sige det tal,
+vi vil gerne have lavet det om til en streng
+og der bruger vi igen
+ligesom vi bruger funktioner til at vise ting på skærmen
+og til ar ændrer på billeder
+så kan man også bruge funktioner til at ændrer på tal,
+så hvis vi siger at vi gerne 
+at vi har syv gang fem, men så skriver str foran det
+så fortælle vi den at vi gerne vil have lavet det om til en streng,
+så str det er en funktion som tager et eller andet som parameter og laver det om til en streng
+så nu er det en streng
+..... [spørgsmål]
+...
+det er fordi at den funktion der hedder showinformation, her
+den har nogle begrænsininger,
+den kan ikke finder ud af 
+den kan kun finde ud af at vise almindelig tekst på skærmen,
+den er ikke så smart at den kan finde ud af at det her det er 
+et tal, så skal jeg vise det på skærmen
+den skal have det som tekst
+så på den måde kan funktioner have begrænsninger
+.....
+...[spørgsmål]
+mellemregningerne?
+....
+...
+det ville man kunne gøre,
+der kan man først lave en streng der hedder syv gange fem er lig med,
+3:30
+og så har vi det at vi kan lægge strenge sammen, det havde vi tidligere,
+og så lægger vi en ny streng til, og det er den streng der er syv gange fem,
+så det er den måde det.
+og da er det så vigtigt her at jeg skriver
+at dette skal laves om til en streng,
+for hvis jeg prøver bare at skrive syv gange fem
+
+...
+hvis jeg prøver her at tage en streng der siger syv gange fem er lig med, og så lægger syv gang fem til, så kommer den med en fejl igen, 
+og det er igen fordi at det her det er et tal, og dette er en tekststreng, 
+og dem kan den ikke finde ud af atlægge sammen, så derfor er vi nød til at sige at det her syv gange fem resultatet af det, det vil vi have lavet om til en streng
+inden vi forsøger at lægge de to ting sammen, så der er det med datatyper
+og begrænsninger med dem, ja netop, at der er begrænsninger på hvorman kan bruge dem,
+så i det her tilfælde så kommer den med en fejl
+
+så det var lige kort introduktion til datatyper og beregninger.
+en anden ting vi stødte på, også i torsdags, det er variable
+variable, det er navngivning, når vi giver et nyt navn til vores mellemregning eller mellemresultater
+og det er simpelthen at vi kan
+... sige  det her, nu har vi skrevet syv gange fem så mange gange, nu skal vi bruge den beregning st sted, 
+så kan vi sige ...
+f.ex. x lig med syv gange fem, og så har vi navngivet at x det betyder simpelthen 35.
+med en simpel beregning som her har det måske ikke den store betydning,
+men hvis vi har en variabel, noget vi vi lbruge, noget vi vil arbejde på,
+eksempelvis hvis vi har et billede
+....
+her der laver jeg et nyt billede
+med makeemptypicture.
+makeemptypicture returnerer et billede
+det kan jeg lige vise først
+....
+så make empty picture er en funktion som tager to parametre,
+parametre det var det funktionerne arbejder med, det er det vi så tidligere ku være godmorgen,
+som fik det til at skrive godmorgen på skærmen
+og i det her tilfælde, make empty picture, 
+da siger man så stort vil jeg have billedet er,
+100 gang 100 punkter på skærmen,
+og det funktionen her så gør er,
+i stedet for at vise noget på skærmen,
+så laver den et nyt billede og returnerer det
+og det,
+3:27
+hvis vi vil arbejde på det billde,
+så bliver vi nød til at give det et navn
+og den måde man giver det et navn
+er at lave en ny varibel, picture
+og der siger vi picture, det sætter vi lig med
+det er det nye billde
+så kan vi se den skriver så ikke noget resultat
+men sætter picture til at være det nye billede
+

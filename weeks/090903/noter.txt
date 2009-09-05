@@ -1,0 +1,106 @@
+- praktisk information
+  - 
+- Repetition og opfølgning
+  - funktionskald
+  - variable
+  - definition af funktioner
+  - JES
+    - NB: programmering og tekstfiler
+- praktisk information
+  - transkription
+  - bog
+  - ugeopgaver
+  - eksamen
+- introduktion til billeder
+  - koordinatsystemr
+  - farver
+- nye sprogkonstruktioner
+  - for
+  - if
+- dokumentation
+  - kommentarer, docstrings
+
+
+8:15 Velkommen, JES, introduktion til programmering, opsamling fra sidst
+  - Velkommen
+    - Dagens program og struktur
+  - Introduktion til programmering
+    - kald af funktioner
+    - udtryk, datatyper og beregninger
+    - variable
+    - definition af funktioner
+      - parametre, lokale variable
+  - JES 
+    - fortolker
+    - editor
+    - hjælp
+    - python-filer
+  - Koordinater
+  - Opgave
+    - Lav funktion der tegner en trekant, tag eventuelt billede og størrelse som parametre
+
+- Praktiske informationer, 
+  - Eksempel med trekant, diskussion af opgaven...
+  - praktisk information
+    - overblik over kurset
+    - bog/litteratur
+    - afleveringsopgaver
+      - denne uge tegning
+      - 1. projekt ... et billede
+    - eksamen
+    - arbejdsindsats
+    - undervisningsform
+    - feedback
+  - Lidt om billeder
+    - explore, gimp...
+    - pixels
+    - for-løkker
+  - Øvelse
+    - eksperimenter lidt med funktionerne
+    - lav et billede mørkere eller lysere
+    - eksperimenter med hvad I ellers kan tegne på det...
+
+
+- Repræsentation i computeren
+  - eksempel med at lave et billed lysere
+  - Computere binære tal, og tekstrepresentationer
+    - programtekst, og computerens virkemåde
+  - tekstrepresentation
+    - ord, char
+  - jeres navn med tal...
+  - hvor mange kombinationer med 8 bit
+  - hvor mange kombinationer med 2, 3, 4 bytes
+  - farver som tal
+  - rød, grøn, blå
+  - øjet og farveperception
+  - additiv og subtraktiv farveblanding
+  - makeEmptyImage(100, 100, color(...)
+    - rød
+    - grøn
+    - blå
+    - turkis
+    - gul
+    - grå
+  - abstraktion, 3d, andre farverum...
+  - farver som tal
+  - ændre farverne i et billede
+
+  - billeder, pixels og koordinatsystemer
+  - hvad er et billede
+  - tegne på et billede
+  - ændre farve baseret på position
+
+- Dokumentation
+  - kommentarer
+  - programtekst som litterær form
+  - docstrings
+
+- Sammenfatning
+  - ... summation af ovenstående
+  - find tre ting I kan huske af det der er sagt, send dem i en mail
+
+8:15 Velkommen, intro til programmering, koordinater
+9:00 Praktisk om kurset, for-løkker
+9:45 Farvemodeller, mere
+10:45 Dokumentation
+11:30 Sammenfatning, teaser
