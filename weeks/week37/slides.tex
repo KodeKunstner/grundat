@@ -1,0 +1,244 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-09-03}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Sidste uge, feedback på opgaver. Indbygget dokumentation, og eksperimentering
+    		\item Problemløsning. Strenge, docstrings, lister, mere om for-løkker
+    		\item Læsevejledning/studieteknik ifbm. noter. Filer, filsystem. Dokumentation og brug af indbyggede funktioner
+    		\item Betingelser, boolske værdier.
+    		\item Revy
+    		\item Sammenfatning, afrunding
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Sidste uge
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Funktionsdefinitioner
+		\item For-løkker
+		\item Kommetarer
+		\item Kald af indbyggede funktioner
+                \item Billeder
+                \item Afleveringer (NB.: film, spil)
+	\end{itemize} 
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Genopfriskning, samt indbyggede funktioner
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Husk: overblik over JES-funktioner, samt indbygget dokumentation
+		\item Lav funktion der inverterer et billede. Sort (0,0,0) til hvid (255,255,255), rød(255,0,0) til turkis(0,255,255), mørkeblå(0,0,70) til lysegul(255,255,185), etc.
+		\item Find ud af hvorledes man gemmer et billede fra JES
+		\item Find ud af hvordan man sammensætter billeder til en kort film
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Sidste uge, feedback på opgaver. Indbygget dokumentation, og eksperimentering
+    		\item Problemløsning. Strenge, docstrings, lister, mere om for-løkker
+    		\item Læsevejledning/studieteknik ifbm. noter. Filer, filsystem. Dokumentation og brug af indbyggede funktioner
+    		\item Betingelser, boolske værdier.
+    		\item Revy
+    		\item Sammenfatning, afrunding
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Problemløsning (Pólya)
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Forstå opgaven/udfordringen
+		\item Find tilgang / læg en plan for løsningen
+		\item Gennemfør det
+		\item Review det der er gjort
+		\item \emph{Find/start med en enklere opgave}
+                \item Inkrementel udvikling
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Addendum til sidste uge
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Strenge, """..."""
+            \item for-løkker på andet end billeder
+            \item Lister
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Øvelse
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Kombinerede ord, - find sammensatte ord, og generer kombinationerne af prefiks og suffiks.
+            \item Lav program der spiller en melodi på baggrund af et navn - bogstav til tone
+            \item Hav en liste af koordinatpar, og tegn linje mellem disse
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Sidste uge, feedback på opgaver. Indbygget dokumentation, og eksperimentering
+    		\item Problemløsning. Strenge, docstrings, lister, mere om for-løkker
+    		\item Læsevejledning/studieteknik ifbm. noter. Filer, filsystem. Dokumentation og brug af indbyggede funktioner
+    		\item Betingelser, boolske værdier.
+    		\item Revy
+    		\item Sammenfatning, afrunding
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Læsevejledning, øvelser, aflevering og filer
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Skimning vs. læsning
+            \item In-progress
+            \item Praktisk ifbm. aflevering
+            \item om filer...
+            \item skema, rss
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Indbyggede funktioner og dokumentation
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item JES, python, Jython, other.
+		\item Python funktioner via import
+                \item At læse funktionsdokumentation
+		\item Objektnotation
+                \item Dokumentation
+                \item ord, chr, random.choice, range.
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Øvelser
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item 100 bottles of beer
+    		\item Tegn manuelt et fyldt rektangel
+    		\item Lav et billede ægte sort/hvidt
+    		\item Blur og sharpen
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Sidste uge, feedback på opgaver. Indbygget dokumentation, og eksperimentering
+    		\item Problemløsning. Strenge, docstrings, lister, mere om for-løkker
+    		\item Læsevejledning/studieteknik ifbm. noter. Filer, filsystem. Dokumentation og brug af indbyggede funktioner
+    		\item Betingelser, boolske værdier.
+    		\item Revy
+    		\item Sammenfatning, afrunding
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Betingelser
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Sandhedsværdier
+		\item if, elseif, else
+                \item and, or, not
+                \item Lidt mere om billeder
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Øvelser
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Lav billede ægte sort/hvidt
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                    \item Automatisk omkring gennemsnitsfargven
+	\end{itemize}
+                \item Posterisering
+    		\item Simpel regnequiz
+    		\item Markér over/under-belysning
+    		\item Lav funktion der finder den lyseste farve i et billede, og en der finder den mørkeste.
+    		\item Forøg kontrasten såden mørkeste bliver sort og den lyseste hvid.
+    		\item Lav blur, skarphed
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Sidste uge, feedback på opgaver. Indbygget dokumentation, og eksperimentering
+    		\item Problemløsning. Strenge, docstrings, lister, mere om for-løkker
+    		\item Læsevejledning/studieteknik ifbm. noter. Filer, filsystem. Dokumentation og brug af indbyggede funktioner
+    		\item Betingelser, boolske værdier.
+    		\item Revy
+    		\item Sammenfatning, afrunding
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Sammenfatning, næste gang
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Fem minutter, noter hvad I kan huske som det vigtigste - noter til jer selv.
+		\item Fem minutter, diskuter det med sidekammerat, lav fælles noter, send kopi per mail.
+		\item Næste gang: whileløkker
+	\end{itemize}
+\end{slide}
+
+
+\end{document}

@@ -1,0 +1,93 @@
+- Opsamling fra sidst og supplering
+  - funktionsdefinitioner
+  - kommentarer
+  - for
+  - kald af funktioner
+- opsamling på afleveringerne
+  - film
+  - brædtspil
+- biblioteksfunktioner
+
+Øvelse:
+- lav funktion der inverterer et billede
+- find ud af hvorledes man gemmer et billede
+- find ud af hvorledes man laver en kort film
+
+- eksempel
+- problemløsning - udgangspunkt i kort film med violinzoom.
+  - inkrementel udvikling
+- Mere af det samme
+  - strenge, """..."""
+  - tekst
+  - datatype: liste
+  - for-løkker på tværs af lister
+
+Øvelse:
+  - kombination af ord
+  - navn som melodi
+
+- Litteratur - hvordan hints til læsning...
+  - overblik over noterne...
+- Om filer, filsystemer
+  - tekst
+  - billeder
+  - om at gemme filer
+  - afleveringer generelt
+- Om kald af indbyggede funktioner og dokumentation
+  - file().read()
+  - docs.python.org
+  - ord, chr
+  - import
+  - range
+  - random.choice()
+
+- Øvelser
+  - 100 bottles of beer
+  - tegn selv et fyldt rektangel
+  - lav et billede sort eller hvidt.
+  - blur
+  - sharpen...
+  - tilfældig sætning
+
+- Betingelser
+  - Eksempel sort/hvidt
+  - else, elseif
+  - Eksempel hovedfarve
+  - boolske værdier
+    - logik, negation, and, or
+  - øvelser
+    - lav et billede sort/hvidt
+      - automatisk omkring gennemsnitsfarven
+      - posterisering
+    - regneprogram
+    - marker over/under-belysning
+
+    - lav funktion der finder den lyseste nuance i et billede
+    - lav funktion der finder den mørkeste nuance i et billede
+    - lav funktion der strækker kontrasten, så det lyseste punkt bliver hvidt
+      og det mørkeste bliver sort.
+
+
+
+Ugeseddel
+- Første obligatoriske opgave
+  - local color normalisation
+  - Hent s/h billede der ligger som fil...
+  - lav funktion der gør billede uskarpt
+  - lav funktion der får funktion til at se skarpere ud
+
+Tirsdag
+- betingelser - if
+  - boolske værdier - sandhedsværdier
+- filer, tekst, binær, billeder, ... hent billede
+- Om læsning og opgaveløsning
+- om python og programmeringssprog
+- lister, range og for-løkker
+- inkrementel udvikling
+- brug af funktioner, why it matters...
+- Lister
+- debugging
+- Filer
+
+Opgave
+- 
