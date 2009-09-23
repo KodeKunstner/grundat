@@ -1,0 +1,23 @@
+- Introduktion til algoritmer og datastrukturer med python
+
+- Maskinmodeller
+  - Beregningskompleksitet
+    - worst case
+    - skalerbarhed
+  - Lagerhierakier
+
+- Searching
+  - eksempel, find et navn i en liste
+
+- Divide and conquer
+  - eksempel med sortering
+    - del elementerne op i bunker, afhængingt af hvor 
+    - del elementerne op i bunker, sorter hver bunke og sæt dem sammen i gen
+
+- træer, hobe, b-træer, prioritetskøer
+
+- Randomiseret kompleksitet, vs. worst case.
+
+- Grafer
+  - perhaps all pairs shortest path 
+    - dynamisk programmering

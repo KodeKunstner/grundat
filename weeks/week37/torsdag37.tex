@@ -1,0 +1,243 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-09-09}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+\begin{comment}
+- Genopfriskning
+  - betingelser
+    - greenscreen
+  - gentagelse med for-løkker
+    - movie
+
+  - while-løkker
+    - gentaget spørgsmål
+  - brug af pythons indbyggede funktioner
+    - Eksempel: random walk
+      - udvid random walk med farve der ændrer sig
+
+- sandhedsværdier, boolske udtryk og logik
+  - and or not, negation af logiske udtryk
+  - \verb|<| \verb|<=| == 
+- øvelse
+
+- maskinmodeller og programmeringssprog
+  - maskinkode
+  - fortolkere og oversættere
+  - Python - dynamisk typet scriptingsprog
+
+- variable og deres roller
+  - fixed value
+  - stepper
+  - gatherer
+    - eksempel farve-gennemsnit
+
+- filer og filsystemer
+  - binære filer og tekstfiler
+  - repetition - binære tal
+  - stier, seperatorer
+  - ascii, latin1 og utf-8
+  - indlæsning af filer i python
+- torsdagskode - film og illusioner
+  - Øvelse
+    - gem negativt billede
+    - kort film
+\end{comment}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Genopfriskning
+    		\item While-løkker
+    		\item Opgave
+    		\item Sandhedsværdier
+    		\item Maskinmodeller og programmeringssprog
+    		\item Variable og deres roller.
+    		\item Data og filsystemer
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Genopfriskning
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Betingelser
+    		\item Eksempel greenscreen
+    		\item Gentagelse med for-løkker
+    		\item Eksempel: Kortfilm
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            While løkker og brug af indbyggede funktioner
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item import module
+                \item docs.python.org
+                \item while
+    		\item Eksempel: keep asking
+    		\item Øvelse: tilfældigt citat
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Genopfriskning
+    		\item While-løkker
+    		\item Opgave
+    		\item Sandhedsværdier
+    		\item Maskinmodeller og programmeringssprog
+    		\item Variable og deres roller.
+    		\item Data og filsystemer
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Sandhedsvædier - boolske variable
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item and or not
+                \item ==, <, <= , ...
+                \item negation af udtryk.
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Opgave
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Farvereduktion til tre farver
+                \item Spejling, på langs og diagonalt
+                \item Quiz-program
+                \item + hangman for de avancerede
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Genopfriskning
+    		\item While-løkker
+    		\item Opgave
+    		\item Sandhedsværdier
+    		\item Maskinmodeller og programmeringssprog
+    		\item Variable og deres roller.
+    		\item Data og filsystemer
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Maskinmodeller og programmeringssprog
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Maskinkode
+                \item Fortolkere og oversættere
+                \item Python - dynamisk typet scriptingsprog
+                \item Programfiler
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Genopfriskning
+    		\item While-løkker
+    		\item Opgave
+    		\item Sandhedsværdier
+    		\item Maskinmodeller og programmeringssprog
+    		\item Variable og deres roller.
+    		\item Data og filsystemer
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Variable og deres roller
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Fixed value
+                \item Stepper
+                \item Gatherer
+
+                \item Eksempel - farvegennemsnit og normalisering
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+    		\item Genopfriskning
+    		\item While-løkker
+    		\item Opgave
+    		\item Sandhedsværdier
+    		\item Maskinmodeller og programmeringssprog
+    		\item Variable og deres roller.
+    		\item Data og filsystemer
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Filer og filsystemer
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+           \item Filer og filsystemer
+           \item Binære filer og tekstfiler
+           \item Repetition - binære tal
+           \item Stier, seperatorer
+           \item Ascii, latin1 og utf-8
+           \item Indlæsning af filer i python
+	\end{itemize}
+\end{slide}
+\begin{slide}
+	\begin{center} {\large 
+            Afrunding
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+           \item 5 minutters samling / hvad har vi lært i dag
+               \item Eksempel: inverteret billede og animation
+	\end{itemize}
+\end{slide}
+
+\end{document}

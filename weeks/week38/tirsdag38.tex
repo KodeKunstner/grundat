@@ -1,0 +1,219 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-09-14}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling
+		\item Biblioteksfunktioner
+                \item Lister og strenge
+		\item Problemløsning - hvordan man kommer i gang
+                \item Dictionaries
+		\item Idle
+		\item Rekursion
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Opsamling
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Kald af funktioner
+                \item Billeder, farvemodeller
+                \item Variable
+                \item Definition af funktioner: def
+                \item Gentagelse: while, for
+                \item Problemløsning, inkrementel udvikling
+                \item Lister, strenge, heltal
+                \item Brug af biblioteksfunktioner, import ...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Biblioteksfunktioner
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Builtin, standard biblioteket, eksterne api'er, python integreret som scriptingsprog.
+                \item Moduler, samling af funktioner etc.  \verb|import ...| Kald af funktioner med .-notation.  \verb|from ... import ...|
+                \item docs.python.org, google, ...
+                \item Øvelse: lav program der henter en hjemmeside, solsort.com, og udskriver den på skærmen (hint: urllib2)
+                \item Udfordring: lav en funktion der gentager sig selv, uden brug af while/for-loops...
+	\end{itemize}
+        \begin{verbatim}
+        Den er stor som véd, men større,
+        den som ved hvor man kan spørre,
+                               - Kumbel
+        \end{verbatim}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling
+		\item Biblioteksfunktioner
+                \item Lister og strenge
+		\item Problemløsning - hvordan man kommer i gang
+                \item Dictionaries
+		\item Idle
+		\item Rekursion
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Lister og strenge
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Repetition: definition af strenge og lister, for, random.choice
+                \item Udvælgelse af elementer, subscript, slice
+                \item Mutable - kan ændres
+		\item Sekvens - itererbar
+                \item Funktioner: split, strip, 
+                \item Øvelse/eksempel - form-brev
+                \item Øvelse/eksempel - quiz med spørgsmål
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling
+		\item Biblioteksfunktioner
+                \item Lister og strenge
+		\item Problemløsning - hvordan man kommer i gang
+                \item Dictionaries
+		\item Idle
+		\item Rekursion
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Problemløsning, - at komme i gang med programmeringen
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Beskriv hvad programmet skal kunne gøre
+		\item Start eventuelt med kommentarer
+                \item Inkrementel udvikling
+                \item Øvelse/eksempel - quiz med spørgsmål
+                \item Øvelse/eksempel - fortune-program
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling
+		\item Biblioteksfunktioner
+                \item Lister og strenge
+		\item Problemløsning - hvordan man kommer i gang
+                \item Dictionaries
+		\item Idle
+		\item Rekursion
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Dictionaries/hashtabeller
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Konstanter i stedet for tal som indices. Større fleksibilitet
+		\item NB: \verb|has_key|
+                \item Øvelse/eksempel: Simpelt direkte oversættelsesprogram.
+                \item Eksempel på hvad det svarer til med lister (langsom implementation). Hashtabeller.
+                \item Øvelse/eksempel: Ordfrekvens
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling
+		\item Biblioteksfunktioner
+                \item Lister og strenge
+		\item Problemløsning - hvordan man kommer i gang
+                \item Dictionaries
+		\item Idle
+		\item Rekursion
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Idle
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Om python miljøer, fortolker vs. editor
+                \item JES, IPython, Idle
+                \item Jython, CPython, IronPython, ...
+		\item Sammenligning mellem JES og Idle
+                \item NB: 2.6 vs. 3.1
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Rekursion
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Funktion der kalder sig selv
+                \item Stop-betingelse via if
+                \item Praktisk hvis man itererer over struktur
+		\item Eksempel med fraktal - koch-kurve
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Sammenfatning, næste gang
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Fem minutter, noter hvad I kan huske som det vigtigste - noter til jer selv.
+		\item Fem minutter, diskuter det med sidekammerat
+	\end{itemize}
+\end{slide}
+
+
+\end{document}

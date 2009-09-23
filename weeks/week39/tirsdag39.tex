@@ -1,0 +1,202 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-09-21}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+\begin{comment}
+- Opsamling
+  - Lister, dictionaries, sekvenser
+  - Skildpaddegrafik
+  - NB: tupler
+  - Øvelse: n-kant - rekursivt og iterativt
+  - Øvelse: Sierpinski trekant
+  - Øvelse: polygonspiral
+
+- Objekter
+  - Skildpadder og skildpaddegrafik
+  - Filer
+  - Objekter
+  - Hvad er et objekt
+  - metoder og properties
+  - funktionalitet koblet til data
+  - Øvelse: Program der læser en fil med tegneinstruktioner og tegner den
+
+- Deklaration af objekter
+  - Modellering
+  - Øvelse: quiz-objekt
+  - Øvelse: familietræ - NB: overvej hvordan I ville implementerer ancestor-funktion
+
+- Hvordan objekter virker
+  - \verb|__dict__|, \verb|__class__|
+
+- Eksempel: LightCycle
+  - Beskrivelse af opgaven
+
+- Mere om objekter:
+  - Nedarvning, \verb|__bases__|
+  - Interfaces og duck-typing
+  - Lookup-regler
+ 
+\end{comment}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling: dictionaries, beregningskompleksitet, skildpaddegrafik, rekursion
+		\item Supplement: tuples
+                \item Anvendelse af objekter
+		\item Klasser og egne objekter
+		\item Detaljer
+                \item Eksempel: lighecycle
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Opsamling
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Lister, dictionaries
+                \item Mutability
+                \item Sekvens
+                \item Beregningskompleksitet
+                \item Idle, python som tekst, NB:.py
+                \item Skildpaddegrafik
+                \item Rekursion - at kalde sig selv
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Supplement
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Tupler, - immutable lister
+                \item pygame
+                \item Øvelse: Sierpinskis trekant og koch-kurve
+                \item Øvelse: Polygonspiraler
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling: dictionaries, beregningskompleksitet, skildpaddegrafik, rekursion
+		\item Supplement: tuples
+                \item Anvendelse af objekter
+		\item Klasser og egne objekter
+		\item Detaljer
+                \item Eksempel: lighecycle
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Anvendelse af objekter
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Hvad er et objekt, - funktioner tilknyttet data-klasse
+                \item Eksempler: turtle, filer, strenge
+                \item Python: alt er objekter
+                \item .-notation
+                \item Øvelse: indlæsning af tegneinstruktioner
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling: dictionaries, beregningskompleksitet, skildpaddegrafik, rekursion
+		\item Supplement: tuples
+                \item Anvendelse af objekter
+		\item Klasser og egne objekter
+		\item Detaljer
+                \item Eksempel: lighecycle
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Klasser
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item class...
+		\item funktioner og metodekald
+                \item properties vs. klasse-variable vs. lokale variable 
+		\item Eksempel/øvelse: Quiz med objekter
+		\item Eksempel/øvelse: Familietræ - overvej ancester-funktion
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling: dictionaries, beregningskompleksitet, skildpaddegrafik, rekursion
+		\item Supplement: tuples
+                \item Anvendelse af objekter
+		\item Klasser og egne objekter
+		\item Detaljer
+                \item Eksempel: lighecycle
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Mere om Objekter
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Hvordan objekter virker: \verb|__class__|, \verb|__dict__| 
+                \item Duck-typing, interfaces, klasser
+                \item Nedarvning, \verb|__bases__|, resolve-mekanisme
+                \item Abstraktion
+                \item Modellering
+                \item \verb|__getitem__|..., \verb|__add__|, \verb|__str__|, ...
+                \item Eksempel: lightcycle
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling: dictionaries, beregningskompleksitet, skildpaddegrafik, rekursion
+		\item Supplement: tuples
+                \item Anvendelse af objekter
+		\item Klasser og egne objekter
+		\item Detaljer
+                \item Eksempel: lighecycle
+	\end{itemize}
+\end{slide}
+
+\end{document}

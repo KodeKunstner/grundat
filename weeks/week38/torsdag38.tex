@@ -1,0 +1,222 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-09-16}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst: afleveringer, feedback, samt dictionaries
+                \item Code review
+		\item Diskussion af createCollage...
+                \item Binær søgning og beregningskompleksitet
+		\item Kommandoprompt, samt IPython
+		\item Skildpaddegrafik 
+                \item Rekursion
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Opsamling siden sidst: Afleveringsopgaven, feedback, samt dictionaries
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Spejling i diagonalen - designvalg
+                \item Tak for feedback, stil spørgsmål, sig til når det går for hurtigt, hjælp hinanden, noter/hjemmeside/feedback, lokale/programmeringscafe.
+                \item Idle/JES: indbyggede funktioner i JES
+                \item Øvelse fra sidst: direkte oversættelse
+                \item Øvelse: Hyppighed af bogstaver i en tekst
+                \item Øvelse: Funktion der gentager sig selv uden brug af for eller while-løkker...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst: afleveringer, feedback, samt dictionaries
+                \item Code review
+		\item Diskussion af createCollage...
+                \item Binær søgning og beregningskompleksitet
+		\item Kommandoprompt, samt IPython
+		\item Skildpaddegrafik 
+                \item Rekursion
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Code review
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Kodekonventioner, opsætning, navngivning, kommentarsprog, læsbarhed
+                \item Dokumentation, docstrings
+                \item Dont repeat yourself - DRY
+                \item Not Invented Here - NIH
+                \item At læse ved at følge flowet.
+                \item Længde af funktioner
+                \item Test/afprøvning
+                \item Code review som redskab ifbm. udvikling, øvelse: læs hinandens kode
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Createcollage - gennemgang af koden
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Læsbarhed ifbm. opsætning, linjeskift/luft
+                \item 0/1-indeksstart
+                \item Navngivningskonventioner Java vs Python
+                \item Refaktorering
+                \item \verb|copyInto(...)|
+                \item Rækkefølge af hvad koden gør, i.e. først redigering så skrivning af billeder. Opdeling i logisk afsnit
+                \item Docstring/kommentar der fortæller hvad funktionen gør
+                \item Kommentarer undervejs
+                \item Længde af funktion
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst: afleveringer, feedback, samt dictionaries
+                \item Code review
+		\item Diskussion af createCollage...
+                \item Binær søgning og beregningskompleksitet
+		\item Kommandoprompt, samt IPython
+		\item Skildpaddegrafik 
+                \item Rekursion
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+             Binær søgning og beregningskompleksitet
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Gæt-et-tal-eksemplet 10: 4, 100: 7, 1000: 10, 10000: 14. 
+                \item Binær søgning
+                \item Intervalstørrelse for gæt. $x_0 = 1$,  $x_n = 2x_{n-1} + 1$
+                \item Beregning via python
+                \item Worst case og $\mathcal{O}$-notation. Afslappet i forhold til konstanter.
+                \item Binær søgning: beregningskompleksit $\mathcal{O}(\log(n))$
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst: afleveringer, feedback, samt dictionaries
+                \item Code review
+		\item Diskussion af createCollage...
+                \item Binær søgning og beregningskompleksitet
+		\item Kommandoprompt, samt IPython
+		\item Skildpaddegrafik 
+                \item Rekursion
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Kommandoprompt samt ipython
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item A la fortolkervinduet i Python
+                \item \verb|cd| \verb|ls| \verb|cp| \verb|mv| \verb|rm| \verb|pwd| \verb|python| \verb|ipython|
+                \item Udførsel af programmer, argumenter
+                \item Work directory, path, scripts, \verb|#!/usr/bin/env python|
+                \item Pipes, redirection, variable
+                \item Shells, sh-varianter, Windows PowerShell
+                \item Hvorfor: sekvens af tekst i stedet for klik, analogi-tifingersystemet.
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst: afleveringer, feedback, samt dictionaries
+                \item Code review
+		\item Diskussion af createCollage...
+                \item Binær søgning og beregningskompleksitet
+		\item Kommandoprompt, samt IPython
+		\item Skildpaddegrafik 
+                \item Rekursion
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Skildpaddegrafik
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Vektorgrafik vs. rastergrafik
+		\item Øvelse: lav funktion der tegner en trekant med skildpaddegrafik, en der tegner en firkant
+                \item Skildpadde som et objekt
+		\item Øvelse: lav funktion der tegner en n-kant med skildpaddegrafik
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst: afleveringer, feedback, samt dictionaries
+                \item Code review
+		\item Diskussion af createCollage...
+                \item Binær søgning og beregningskompleksitet
+		\item Kommandoprompt, samt IPython
+		\item Skildpaddegrafik 
+                \item Rekursion
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Rekursion
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Funktion der kalder sig selv
+                \item Stop-betingelse via if
+                \item Praktisk hvis man itererer over struktur
+		\item Eksempel små til store bogstaer i liste af lister/strenge
+		\item Eksempel med fraktal - koch-kurve
+		\item Øvelse: lav program der tegner sierpinskis trekant
+	\end{itemize}
+\end{slide}
+
+\end{document}
