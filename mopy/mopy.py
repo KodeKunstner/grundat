@@ -1,11 +1,26 @@
 class Token:
     def __init__(self, type, val, start, end):
+        # The type and content of the token,
+        # possible types include string, longstring, symbol, num
         self.type = type
         self.val = val
+
+        # Position of the token in the file
         self.start = start
         self.end = end
+
+        # Indent if token comes right after a newline.
+        self.indent = None
+
+        # Comment text, standing on the line above the token
+        self.comment = ""
     def __repr__(self):
-        return "token(" + self.type + ", " + str(self.val) + ")"
+        result = "token(" + self.type + ", " + str(self.val) + ")"
+        if not self.indent == -1:
+            result += "@" + str(self.indent)
+        if not self.comment == "":
+            result += ":" + str(self.comment)
+        return result
 
 class TokenStream:
     def __init__(self, src):
@@ -51,17 +66,13 @@ class TokenStream:
 
     def token(self, type, val):
         return Token(type, val, self.start_pos, [self.line, self.pos])
-        return {"type": type,
-                "val": val,
-                "start": self.start_pos,
-                "end": [self.line, self.pos]}
                 
     def __iter__(self):
         """Needed to make the object iterable"""
         return self
 
-    def next(self):
-        """Retrieve the next token"""
+    def next_with_newline(self):
+        """Retrieve the next token - newlines and comments included"""
 
         # Character set definitions
         whitespace = " \t\r"
@@ -147,6 +158,24 @@ class TokenStream:
 
         else: 
             raise Exception("Unexpected symbol: " + self.peek(1))
+
+    def next(self):
+        """Retrieve the next token"""
+        indent = -1
+        comment = ""
+
+        token = self.next_with_newline()
+        while token.type == "newline" or token.type == "comment":
+            if token.type == "newline":
+                indent = token.val
+            else:
+                comment += "\n" + token.val
+            token = self.next_with_newline()
+
+        token.comment = comment[1:]
+        token.indent = indent
+        return token
+        
 
 
 if __name__ == "__main__":
