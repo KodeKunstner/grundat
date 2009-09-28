@@ -1,0 +1,148 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-09-23}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+\begin{comment}
+- Opsamling
+  - Objekter
+
+- Øvelser
+   - Lav et program der tegner en "random walk". Start i et punkt på skærmen og tegn/gå i en tilfældig retning. I det nye punkt tegnes derefter i en ny tilfældig retning og så fremdeles.
+     - Sikr at programmet ikke tegner uden for skærmen.
+     - Ændr programmet, så det ikke tegner i punktet, men i stedet gør punktet lysere
+
+  - Ændr lightcycle: 
+    - så det skrive ud hvem der har vundet
+    - så der er tre spillere i stedet for to
+    - så man skal angive antallet af spillere i starten
+    - så man spiller 3 runder, og den først derefter skriver ud hvem der har vundet
+
+  - Lav en klasse der kan repræsentere en dato. Tag eventuelt udgangspunkt i tids-eksemplet i noterne.
+    - Lav en metode (funktion i klassen) så man kan lægge et antal dage til en dato og derved få en ny dato.
+    - Lav en metode til at finde antallet af dage mellem to datoer.
+  
+
+  - Lav et funktion der gennemløber en streng og skriver hvert enkelt bogstav ud
+    - ændr funktion , så det fortolker hvert bogstav som en tegneinstruktion, i.e. 'f' betyder tegn fremad, 'r' betyder drej til højre, 'l' betyder drej til venstre, og andre bogstaver ignoreres. Vinklen der drejes kan eksempelvis være 60 grader.
+    - Brug programmet til at tegne strengen 'flfrrflf'
+    - Lav en ny funktion der tager en streng som parameter, og retunerer en ny streng hvor alle 'f' i den oprindelige streng er erstattet med 'flfrrflf'.
+    - Kald erstatnings-funktionen nogle gange på strengen "frrfrrf", og brug derefter tegne-funktionen til at tegne den resulterende streng
+    - Eksperimenter med andre substitioner...
+
+- Kommandoprompt og versionskontrol
+
+- Introduktion til web og internet.
+
+- Strukturerede data, XML, html
+ 
+\end{comment}
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling
+		\item Øvelser
+		\item Om web, internet og netværk
+                \item Strukturerede data, xml, html
+		\item Exceptions
+		\item Afprøvning
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Opsamling
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Objekter og klasser
+		\item Hvordan man definerer klasser
+                \item Hvad er en klasse
+		\item Modellering
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Introduktion til web
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Hvad sker der ved visning af en hjemmeside
+                \item Client/server
+                \item HTTP
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Mere om internet
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item DNS - Domain Name System
+                \item Routing, data mellem maskiner, IP-adresser
+                \item Protokoller, IP-TCP-HTTP, maskiner og porte
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Strukturerede data, XML, HTML
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Strukturerede data, træstrukturer
+                \item Abstraktion af indhold og layout
+                \item HTML
+                \item XML (samt SGML)
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Return og exceptions
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item return
+		\item Exceptions, afbrydelse af kørsel med fejl
+                \item raise
+		\item try, except
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Afprøvning og guards
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Hvorfor afprøve kode?
+                \item Doc-test
+                \item antagelser ifbm. programkode
+                \item assert
+	\end{itemize}
+\end{slide}
+
+\end{document}

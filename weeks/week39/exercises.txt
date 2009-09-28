@@ -1,0 +1,5 @@
+- Udvidelse af lightcyclespillet
+  - Ændr programmet, så det udskriver hvem der har vundet
+  - Ændr programmet, så der er tre spillere i stedet for to
+  - Ændr programmet, så der er tre spillere i stedet for to
+- U

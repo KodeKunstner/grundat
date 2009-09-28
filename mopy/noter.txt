@@ -2,41 +2,35 @@ LightScript version 2.0.0
 
     Node properties
         - node type
-        - data type
-        - children nodes
+        - node subtype
+        - node value
+        - child nodes
         - position in file
         - comment (line above, lasting until next comment)
 
-    Statement types
-        - pass
-        - global ...
-        - def (def ...)
-            - default value
+    Node types:
+        - literal
+            - subtype: (string, boolean, number, void, array, dictionary)
+        - function definition
+            - name
             - docstring
-        - class (class Name:)
-            - class properties
-            - methods
-        - for (for ... in ... )
-          - limited to lists, strings, tables
-        - while 
-        - cond (if ... elif ... else ... )
-        - try (try ... except ExceptionClass, name ... )
+            - locals
+        - for
+        - while
+        - cond
+        - try-except
         - raise
         - return
-        - assignment (... = ...)
-        - subscript-assignment (bhjbh.hjh = ... , nnjnj[123] = ...)
-        - (expression)
-
-    Expression types
-        - subscript
-        - slice[:]
-        - comparison: (< > == <= >= in)
-        - self/this
-        - variable-resolve
+        - set (x = blah)
+        - put (x.foo = blah)
+        - get (x.foo)
+        - comparisons (< > === <= >=)
+        - this
+        - identifier / variable-resolve
         - method call
         - function call
-        - arithmetic (+ - * /)
-        - literal ("string", True/False, 123, None)
+        - operator
+            - subtype: (+, -, *, /)
 
     Builtin functions
         - str(obj)
