@@ -1,1 +1,1 @@
-rm -f *.aux *.idx *.log *.pdf *.pybak *.pylog *.toc *.pyc
+rm -f *.aux *.idx *.log *.pdf *.pybak *.pylog *.toc *.pyc *~

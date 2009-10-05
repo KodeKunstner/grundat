@@ -8,8 +8,9 @@ import os
 import shutil
 import glob
 
-if not os.path.exists("upload"):
-        os.makedirs("upload")
+destdir = "/home/www/grundat.kommunikationogit.dk/"
+if not os.path.exists(destdir):
+        os.makedirs(destdir)
 
 def make_pages(pages):
 
@@ -43,7 +44,7 @@ def make_pages(pages):
     menu += "</ul>"
 
     for name in pages:
-        file("upload/" + name + ".html", "w").write(
+        file(destdir + "/" + name + ".html", "w").write(
                 template % (name, menu, name, pages[name]))
 
 
@@ -66,7 +67,7 @@ for week in range(53, 34, -1):
             for _ in range(3): # repeat to get cross-references right
                 os.system("pdflatex " + texfile);
             pdffile = texfile.replace(".tex", ".pdf")
-            shutil.copy(pdffile, "../upload")
+            shutil.copy(pdffile, destdir)
             ugeseddel += '<a href="%s">%s</a> ' % (pdffile, pdffile)
         ugeseddel += "</p>"
 
@@ -74,14 +75,14 @@ for week in range(53, 34, -1):
             ugeseddel += file("thisweek.html").read()
 
         weekdir = "u" + str(week)
-        if not os.path.exists("../upload/" + weekdir):
-            os.makedirs("../upload/" + weekdir)
+        if not os.path.exists(destdir + "/" + weekdir):
+            os.makedirs(destdir + "/" + weekdir)
         ugeseddel += "<p>Eksempler: "
         for pyfile in glob.glob("*.py"):
-            shutil.copy(pyfile, "../upload/"+ weekdir)
-            ugeseddel += '<a href="%s">%s</a> ' % (weekdir + "/" + pyfile, pyfile)
+            shutil.copy(pyfile, destdir + "/"+ weekdir)
+            ugeseddel += '<a href="%s">%s</a> ' % ("u41/view_python_file.py?filename=" + weekdir + "/" + pyfile, pyfile)
         for imgfile in glob.glob("*.jpg"):
-            shutil.copy(imgfile, "../upload")
+            shutil.copy(imgfile, destdir)
             ugeseddel += '<a href="%s">%s</a> ' % (imgfile, pyfile)
         ugeseddel += "</p>"
 
@@ -182,7 +183,7 @@ billeder, variable, dokumentation/kommentarer, repræsentation af data
 </tr>
 <tr>
 <td style="width: 71px; height: 38px;">Uge 43</td>
-<td style="width: 641px; height: 38px;">Hvorledes de samme principper gå igen i forskellige sprog, JavaScript, syntaks vs. semantik. <br>
+<td style="width: 641px; height: 38px;">Hvorledes de samme principper går igen i forskellige sprog, JavaScript, syntaks vs. semantik. <br>
 </td>
 </tr>
 <tr>
@@ -227,5 +228,5 @@ Søgning og sortering, beregningskompleksitet og konstruktion af algoritmer - di
 </table>
 """
 make_pages(files)
-os.chdir("upload")
+os.chdir(destdir)
 shutil.copy("Ugesedler.html", "index.html")
