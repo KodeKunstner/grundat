@@ -89,38 +89,35 @@ for week in range(53, 34, -1):
         os.chdir("..")
 
 files["Ugesedler"] = ugeseddel
-files["Praktisk"] = """Undervisningen foregår tirsdag og torsdag, kl 8-12, i lokale 18.1.59,<br>
+files["Praktisk"] = """
+<p>Undervisningen foregår tirsdag og torsdag, kl 8-12, i lokale 18.1.59,<br>
 med en kombination af forelæsninger og øvelser.<br>
 Første undervisningsgang er torsdag d. 3/9-2009.<br>
 Til øvelserne skal I medbringe bærbar computer.<br>
-<br>
-I første del af kurset anvendes bogen<br>
-<span>"Introduction to Computing and Programming in Python, A Multimedia Approach"</span> <br>
-af Mark Guzdial, 2. udgave. <br>
-<br>
-Lærebogen er forsinket<br>
-- endnu ikke kommet til bogladen,<br>
-så foreløbigt anvendes noter.<br>
-<h3><a name="TOC-Undervisningsmaterialer"></a></h3>
+</p>
+
 <h3><a name="TOC-Kontaktinformation"></a>Kontaktinformation</h3>
 Spørgsmål, afleveringer, kommentarer, etc.<br>
 sendes til <a href="mailto:grundat@kommunikationogit.dk">grundat@kommunikationogit.dk</a>, <br>
 der er en fælles email for underviserne på kurset:<br>
 Rasmus J. og Johan.
+
+<p>Rasmus kan også fanges på kontor 24.5.48, almindeligvis tirsdag, onsdag og torsdag, men aftal helst per mail inden, for ikke at gå forgæves.
+
 """
 files["Undervisningsmaterialer"] = """<h2>Litteratur</h2>
-I første del af kurset anvendes: <a href="http://www.greenteapress.com/thinkpython/thinkCSpy/thinkCSpy.pdf" rel="nofollow">http://www.greenteapress.com/thinkpython/thinkCSpy/thinkCSpy.pdf</a> (da den&nbsp; oprindelige lærebog ikke ser ud til at ankomme)<br>
-<br>
-Herudover anvendes også uddrag af <br>
-<ul><li>"How To Think Like a Computer Scientist, Learning with Python" af Allan Downey, Jeffry Elkner og Chris Meyers. <a href="http://www.greenteapress.com/thinkpython/" rel="nofollow">http://www.greenteapress.com/thinkpython/</a></li>
-<li>Den officielle python dokumentation på: <a href="http://docs.python.org" rel="nofollow">http://docs.python.org</a><br>
-</li>
-<ul><li><a href="http://docs.python.org/library/doctest.html" rel="nofollow">http://docs.python.org/library/doctest.html</a></li></ul></ul>
+Til den grundlæggende programmering anvendes:
+<ul>
+    <li>Lærebogen "<a href="http://www.greenteapress.com/thinkpython/thinkCSpy/thinkCSpy.pdf">How to Think Like a Computer Scientist</a>" af Allen Downey et al. (Da den oprindelige lærebog ikke kunne skaffes er udvalgte uddrag af denne tidligere lagt her på siden. Selve bogen erstatter disse uddrag. </li>
+    <li>Som supplement anvendes også tutorials fra <a href="http://www.tutorialspoint.com/python/">http://www.tutorialspoint.com/python/</a>: Python basics</li>
+    <li>Dele af den officielle Python dokumentation fra <a href="http://docs.python.org/">http://docs.python.org/</a>.
+<ul>
 <div>
 <div><br>
 Litteraturen for anden halvdel af kurset er ved at blive fastlagt<br>
 <div>
 <h2>Software</h2>
+
 Til introduktionen til Python og billeder anvendes JES, der kan hentes fra: <a href="http://coweb.cc.gatech.edu/mediaComp-plan/26" rel="nofollow">http://coweb.cc.gatech.edu/mediaComp-plan/26</a>.<br>
 <br>
 Senere hen i forløbet bliver følgende relevante:<br>
@@ -128,7 +125,7 @@ Senere hen i forløbet bliver følgende relevante:<br>
 </li>
 <li><a href="http://ipython.scipy.org/moin/Download" rel="nofollow">http://ipython.scipy.org/moin/Download</a></li>
 <li>En ssh-klient til at forbinde til web-serveren - følger automatisk med OS-X og nyere linux, på windows-platformen kan <a href="http://www.chiark.greenend.org.uk/%7Esgtatham/putty/download.html" rel="nofollow">http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html</a> anvendes.</li>
-<li>Versionsstyringssoftware, git <a href="http://git-scm.com/" rel="nofollow">http://git-scm.com/</a><br>
+<li>Versionsstyringssoftware, svn</li>
 </li></ul>
 <br>
 <br>
@@ -188,14 +185,15 @@ billeder, variable, dokumentation/kommentarer, repræsentation af data
 </tr>
 <tr>
 <td style="width: 71px; height: 24px;">Uge 44</td>
-<td style="width: 641px; height: 24px;">Repetition og opsamling. Buffer<br>
+<td style="width: 641px; height: 24px;">Repetition og opsamling.
+I gang med anden del af kurset: Data og algoritmer. <br>
+Søgning og sortering, beregningskompleksitet og konstruktion af algoritmer - divide and conqueor.<br>
 </td>
 </tr>
 <tr>
 <td style="width: 71px; height: 57px;">Uge 45</td>
-<td style="width: 641px; height: 57px;">I gang med anden del af kurset: Data og algoritmer. <br>
+<td style="width: 641px; height: 57px;">Efterårsferie.
 Der kommer ekstra studerende fra IT og Kognition til kurset. <br>
-Søgning og sortering, beregningskompleksitet og konstruktion af algoritmer - divide and conqueor.<br>
 </td>
 </tr>
 <tr>
