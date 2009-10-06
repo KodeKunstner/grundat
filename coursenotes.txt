@@ -1,0 +1,53 @@
+# Topics within the course so far
+
+## Datalogisk dannelse
+- Problem solving
+    - Inkrementel udvikling
+    - Problem solving a la polya
+    - Bits on debugging
+    - Variables roller
+    - Studie/læseteknik
+- Billeder
+    - farverepræsentation
+    - billeder som mængde af punkter
+- Algoritmik
+    - smagsprøve på binær søgning - gæt et tal
+    - lidt om kompleksitet ifbm. gæt et tal.
+    - lidt rekursion
+    - binære tal
+- Kommandoprompt
+    - Unix
+    - At anvende ekstern server
+- Maskiner og sprog - lidt om oversættere, maskinkode etc.
+- Code review, refaktorering i.e. create
+    - NIH - not invented here
+    - DRY - dont repeat yourself
+- Netværk og web
+    - Netværkslag: http - tcp - ip
+    - HTML, xml
+    - Lidt http/cgi
+- Brug af *forskellige* python-miljø'er, samt læsning af dokumentation
+  
+## Python programming
+- Basic functionality
+    - function calls
+    - assignment of variables
+    - usage of variables
+- Datatypes
+    - integers
+    - booleans / boolske udtryk / sandhedsværdier
+    - strings
+    - lists (also called arrays)
+    - dictionaries (also called hashtables)
+    - (a little bit about tuples, but not much)
+- Language constructs
+    - `def`
+    - `for`
+    - `while`
+    - `if` `elif` `else`
+    - `return`
+    - `class`
+- Moduler
+    - indbyggede - random, turtle, ...
+    - kald af egen kode med import
+    - eksterne moduler - pygame, JES
