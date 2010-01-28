@@ -1,0 +1,157 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-11-9}
+\lstset{language=python}
+\begin{document}
+\maketitle
+\begin{comment}
+* Praktisk
+** Forum, - gerne m. spørgsmål/svar.
+** Dagens gennemgående eksempel: søgetræer
+** Præsentationer af IDE'er etc. til næste torsdag.
+** Sig til når det går for hurtigt, og hvis der er emner I trænger til at får uddybet.
+** IT-projekter, planlægning, inkrementel udvikling, design vs. kodning, dokumentation 
+** Hvad kan det bruges til: sammenhæng med den `rigtige' verden. Underliggende forståelse/dannelse, samt konkrete færdigheder.
+* Databaser og træstrukturer. Klasser og objekter
+** Tabeller vs. databaser
+** Motivation: Databaser, hvordan fungerer de... Query optimiser, Indeks, 
+** Start på eksempel med binære søgetræer.
+** Design og overvejelser, træ-strukturer
+* Søgetræer (fortsat)
+** Praktisk implementation og test
+** Unit-test, intern afprøvning
+** API og afgrænsning
+* Opsamling og perspektivering
+** Databaser og søgetræer in real life, hukommelseshierakier
+** Syntaks og semantik, standardiserede sprog, HTML vs. Python vs. SQL
+** Modularisering af programmer, selvstændige dele.
+\end{comment}
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Praktisk/indledning - gennemgående eksempel med træstruktur
+            \item Databaser og træstrukturer. Klasser og objekter
+            \item Søgetræer - fortsat
+            \item Opsamling og perspektivering
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Praktisk
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Forum, - gerne m. spørgsmål/svar. 
+                \item Dagens gennemgående eksempel: søgetræer 
+                \item Præsentationer af IDE'er etc. på næste torsdag. 
+                \item Sig til når det går for hurtigt, og hvis der er emner I trænger til at får uddybet. 
+                \item IT-projekter, planlægning, inkrementel udvikling, design vs. kodning, dokumentation 
+                \item Hvad kan det bruges til: sammenhæng med den `rigtige' verden. Underliggende forståelse/dannelse, samt konkrete færdigheder. 
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Praktisk/indledning - gennemgående eksempel med træstruktur
+            \item Databaser og træstrukturer. Klasser og objekter
+            \item Søgetræer - fortsat
+            \item Opsamling og perspektivering
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Databaser og træstrukturer. Klasser og objekter 
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Tabeller vs. databaser 
+            \item Motivation: Databaser, hvordan fungerer de... Query optimiser, Indeks, 
+            \item Start på eksempel med binære søgetræer. 
+            \item Design og overvejelser, træ-strukturer 
+            \item Unit-test, intern afprøvning
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Praktisk/indledning - gennemgående eksempel med træstruktur
+            \item Databaser og træstrukturer. Klasser og objekter
+            \item Søgetræer - fortsat
+            \item Opsamling og perspektivering
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Søgetræer (fortsat) 
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Praktisk implementation og test 
+            \item NB: Kapitel 20
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Praktisk/indledning - gennemgående eksempel med træstruktur
+            \item Databaser og træstrukturer. Klasser og objekter
+            \item Søgetræer - fortsat
+            \item Opsamling og perspektivering
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Opsamling og perspektivering 
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Databaser og søgetræer in real life, hukommelseshierakier 
+            \item Syntaks og semantik, standardiserede sprog, HTML vs. Python vs. SQL 
+            \item Modularisering af programmer, selvstændige dele. API og grænseflader
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Praktisk/indledning - gennemgående eksempel med træstruktur
+            \item Databaser og træstrukturer. Klasser og objekter
+            \item Søgetræer - fortsat
+            \item Opsamling og perspektivering
+	\end{itemize}
+\end{slide}
+
+
+\end{document}

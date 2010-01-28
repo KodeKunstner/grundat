@@ -1,0 +1,213 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-10-19}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+\begin{comment}
+
+- Opsamling samt praktisk
+    - Spørgsmål
+    - Oprettelse af database - både via python og sqlite3-kommando
+    - NB: SQL kommandoer kan lægges i fil
+    - Midtvejsevaluering næste uge.
+    - Evt. SQL-eksempel adressebog+tilknytning
+- Øvelse: Bruger/login-system
+    - Lav et python cgi-script, der sender en hjemmeside med loginformular til webbrowseren. Action på scriptet skal være selve programmet. (En del af øvelsen er at de forskellige sider ligger i en og samme fil.)
+    - Lav en database med brugernavne, kodeord og login-id
+    - Udvid cgi-scriptet så det tjekker om brugernavn+kodeord er i databasen og skriver en fejlmeddelse hvis det er forkert.
+    - Lav en formular der kun kan udfyldes hvis brugernavn+koderord er korrekt.
+    - Gem resultatet af formularen i databasen sammen med login-id. Hint: login-id kan overføres via et hidden-inputfelt.
+
+- Database design (normalisering)
+    - Eksempel adressebog+tilknytning
+    - Separate tabeller for hvert sæt af egenskaber
+    - Primær nøgle
+    - Flyt data gentaget i rækker til separate tabeller
+    - Eliminér kolonner der ikke afhænger af nøgle.
+
+- Mere SQL
+    - Agregate functions
+    - Nested selects 
+- Tilstand i program
+    - Flere sider fra samme program, - dispatch
+    - Stateful vs. stateless connection, - hidden fields
+
+- Programmeringssprog
+    - Generelle programmeringsteknikker vs. konkrete sprog
+    - Syntaks og semantik
+    - Scriptingsprog, systemprogrammeringssprog
+    - Programmeringsparadigmer: procedural programmering, OOP, funktionsorienteret programmering, logikprogrammering.
+    - Dynamisk og statiske typer.
+    - Torsdag: JavaScript
+
+- Spørgsmål?
+
+
+\end{comment}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling. Dagens øvelse
+                \item Database design
+                \item SQL. Tilstand i applikationer
+                \item Programmeringssprog. 
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Opsamling samt praktisk
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Udførsel af SQL - python vs. sqlite3-kommando
+            \item NB: SQL kommandoer kan lægges i fil
+            \item Midtvejsevaluering næste uge.
+            \item SQL-eksempel adressebog+tilknytning
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Øvelse: Bruger/login-system
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Lav et python cgi-script, der sender en hjemmeside med loginformular til webbrowseren. Action på scriptet skal være selve programmet. (En del af øvelsen er at de forskellige sider ligger i en og samme fil.)
+            \item Lav en database med brugernavne, kodeord og login-id
+            \item Udvid cgi-scriptet så det tjekker om brugernavn+kodeord er i databasen og skriver en fejlmeddelse hvis det er forkert.
+            \item Lav en formular der kun kan udfyldes hvis brugernavn+koderord er korrekt.
+            \item Gem resultatet af formularen i databasen sammen med login-id. Hint: login-id kan overføres via et hidden-inputfelt.
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling. Dagens øvelse
+                \item Database design
+                \item SQL. Tilstand i applikationer
+                \item Programmeringssprog. 
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Database design (normalisering)
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Eksempel adressebog+tilknytning
+            \item Separate tabeller for hvert sæt af egenskaber
+            \item Primær nøgle
+            \item Flyt data gentaget i rækker til separate tabeller
+            \item Eliminér kolonner der ikke afhænger af nøgle.
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling. Dagens øvelse
+                \item Database design
+                \item SQL. Tilstand i applikationer
+                \item Programmeringssprog. 
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Mere SQL
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Agregate functions
+            \item SUM COUNT AVG
+            \item Nested SELECTs
+            \item SELECT a, b FROM table WHERE b IN (SELECT x FROM table)
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling. Dagens øvelse
+                \item Database design
+                \item SQL. Tilstand i applikationer
+                \item Programmeringssprog. 
+	\end{itemize}
+\end{slide}
+\begin{slide}
+	\begin{center} {\large 
+            Tilstand i program
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Flere sider fra samme program
+            \item Stateful vs. stateless kommunikation / forbindelse
+            \item State: hidden fields, cookies, javascript, ...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling. Dagens øvelse
+                \item Database design
+                \item SQL. Tilstand i applikationer
+                \item Programmeringssprog. 
+	\end{itemize}
+\end{slide}
+\begin{slide}
+	\begin{center} {\large 
+            Programmeringssprog
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Generelle programmeringsteknikker vs. konkrete sprog
+            \item Syntaks og semantik
+            \item Scriptingsprog, systemprogrammeringssprog
+            \item Programmeringsparadigmer: procedural programmering, OOP, funktionsorienteret programmering, logikprogrammering.
+            \item Dynamisk og statiske typer.
+            \item Torsdag: JavaScript
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Afrunding
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Videre med opgave
+            \item Fælles spørgsmål?
+	\end{itemize}
+\end{slide}
+
+
+\end{document}

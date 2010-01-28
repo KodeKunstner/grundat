@@ -1,3 +1,54 @@
+# Notes for next to come lectures and notes
+
+- Opgaver
+    - Baseret paa youtext?
+
+- topics-reorder
+    - Strukturerede data, html, tex, MarkDown
+        - Indhold vs. layout
+        - HTML/CSS the right way (tm)
+            - standarder - w3.org
+            - cssgarden, wai, nielsen, w3.org
+            - list of tags, description
+            - programs reading sites
+            - accessability
+    - Python users...
+    - Status, opsamling, redesign
+    - Praktisk om eksamen
+    - NB: Hvad kan det bruges til!
+
+- notes
+    - tekstbaseret brugergrænseflade
+        - hvorfor
+        - model 
+            - mappe-struktur
+            - current directory
+            - pipes
+            - path
+        - basale kommandoer
+            - cd
+            - ls 
+            - cp
+            - mv
+            - grep
+            - cat
+            - less
+            - pwd
+            - ssh
+            - scp
+        - sprog
+            - python
+            - ipython
+        - editor
+            - nano
+            - emacs
+            - vim
+        - avanceret
+            - screen
+            - git
+    - Repetitionsøvelser
+
+
 # Topics within the course so far
 
 ## Datalogisk dannelse
@@ -19,7 +70,8 @@
     - Unix
     - At anvende ekstern server
 - Maskiner og sprog - lidt om oversættere, maskinkode etc.
-- Code review, refaktorering i.e. create
+- Programmeringsskik
+    - Code review, refaktorering, og at arbejde i / læse kode
     - NIH - not invented here
     - DRY - dont repeat yourself
 - Netværk og web

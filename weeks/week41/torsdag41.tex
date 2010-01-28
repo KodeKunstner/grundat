@@ -1,0 +1,160 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-10-7}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Formularer i html
+		\item Formularer til python
+		\item Struktureret tekst og data
+		\item HTML
+		\item Python, tekst og kommandoprompt
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            HTML og forms
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item {\tt html head title body div p form input br }
+                \item {\tt <form action="program.py" method="get">... </form> }
+                \item {\tt <input type="text" name="variabelnavn" value="default-værdi" />}
+                \item HTTP method: get vs. put
+                \item Input types: text/checkbox/radio/submit/hidden/...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Forms til Python
+	} \end{center}
+\begin{verbatim}
+import cgi, cgitb
+cgitb.enable()
+print("Content-Type: text/html\n")
+
+fields = cgi.FieldStorage()
+for name in fields:
+    print(name + ": " + fields[name] + "<br />")
+\end{verbatim}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Formularer i html
+		\item Formularer til python
+		\item Struktureret tekst og data
+		\item HTML
+		\item Python, tekst og kommandoprompt
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Struktureret tekst og data 1/2
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Data med struktur: 
+            \item Eksempel: navneliste
+            \item Eksempel: tekstdokument
+            \item Repetition: Lister (Arrays)
+            \item Repetition: Dictionaries (Hashtables)
+            \item Øvelse: Generering af liste med navne og login
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Struktureret tekst og data 2/2
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Abstraktion mellem form og indhold
+		\item Eksempler på tekstformater: html, markdown, latex, docbook
+		\item Eksempler på dataformater: xml, json
+		\item Tekst vs. binære formater
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Formularer i html
+		\item Formularer til python
+		\item Struktureret tekst og data
+		\item HTML
+		\item Python, tekst og kommandoprompt
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            HTML 
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Hold indhold (HTML) og layout (CSS) adskildt 
+		\item Graceful degradation
+		\item Tekniske standarder
+                \item Et par korte ord om webdesign
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Formularer i html
+		\item Formularer til python
+		\item Struktureret tekst og data
+		\item HTML
+		\item Python, tekst og kommandoprompt
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Python, tekst og kommandoprompt
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Repetition: fortolker og editor
+                \item Editorer: notepad, idle, nano, emacs, vim, ...
+                \item python og ipython
+                \item Kommandoer: cp, mv, ls, rm, man, grep, find
+                \item Upload og tilgang til hjemmesiden ssh-login: scp, sftp, filezilla
+	\end{itemize}
+\end{slide}
+
+
+\end{document}

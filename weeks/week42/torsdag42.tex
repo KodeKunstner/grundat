@@ -1,0 +1,180 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-10-15}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst
+		\item SQL
+		\item CGI og tilstand
+		\item Repetition
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Opsamling fra sidst
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item SQL - tilgang til database via sqlite3-programmet - tilgang via python
+            \item Gennemgang af opgaven fra tirsdag - indlæsning af tekst til XML og JSON
+            \item Udvidelse - at gemme data i SQL
+            \item Struktur ifbm. pauser.
+            \item Afleveringsopgave til mandag d. 26 (uge 44).
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst
+		\item SQL
+		\item CGI og tilstand
+		\item Repetition
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            SQL 1/2
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+           \item CREATE TABLE tablename (field type, ...)
+           \item INSERT INTO tablename (col1, col2, ..., coln) VALUES ( val1, val2,  ..., valn)
+           \item SELECT col1, col2, ... coln FROM tablename WHERE condition
+           \item DROP TABLE tablename 
+           \item UPDATE tablename SET col1=val1, ... coln=valn WHERE condition
+           \item DELETE FROM tablename WHERE condition
+	\end{itemize}
+\end{slide}
+\begin{slide}
+	\begin{center} {\large 
+            SQL 2/2
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+           \item Column modifiers: NOT NULL, PRIMARY KEY, KEY, UNIQ
+           \item Data types: INT, FLOAT, VARCHAR(n), DATE, ...
+            \item Relationer på tværs af tabeller
+            \item Nøgler
+           \item Nested queries
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst
+		\item SQL
+		\item CGI og tilstand
+		\item Repetition
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+        Mere om CGI
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+           \item Tilstand
+           \item Hidden inputs
+           \item Cookies
+           \item Session-id sammenkoblet med database
+           \item Grafer over tilstande, tilstandsmaskiner
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst
+		\item SQL
+		\item CGI og tilstand
+		\item Repetition
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+        Repetition
+        \\
+        ~ \\
+    Gennemgang af emner - repetitionsslides
+	} \end{center}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst
+		\item SQL
+		\item CGI og tilstand
+		\item Repetition
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+Relationelle Databaser - hvordan virker de
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+           \item Tabeller og indeks
+           \item Reminder binær søgning
+           \item Query optimiser
+           \item SQL - standard og variationer
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Opsamling fra sidst
+		\item SQL
+		\item CGI og tilstand
+		\item Repetition
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+
+\end{document}

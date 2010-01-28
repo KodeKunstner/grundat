@@ -1,0 +1,186 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-10-12}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+\begin{comment}
+- Opsamling
+    - repetition
+        - Indlæsning af tekst...
+    - afleveringsopgave
+- Tilstand, udgangspunkt i cgi
+- Relationelle Databaser
+    - DBMS - Database Management Systems
+    - Eksempler på DBMS'er: PostgreSQL, MySQL, SQLite, Oracle, ...
+    - Tabeller, forespørgsler, nøgler
+    - Database, SQL, abstraktion
+    - Scaleability
+- SQL NB: ref fra sqlite
+    - Standardiseret sprog, variationer mellem databaser
+    - SELECT col1, col2, ... coln FROM tablename WHERE condition
+    - INSERT INTO tablename (col1, col2, ..., coln) VALUES ( val1, val2,  ..., valn)
+    - UPDATE tablename SET col1=val1, ... coln=valn WHERE condition
+    - CREATE TABLE tablename (field type, ...)
+    - DELETE tablename WHERE condition
+    - DROP TABLE tablename 
+    - Column modifiers: NOT NULL, PRIMARY KEY, KEY, UNIQ
+    - Data types: INT, FLOAT, VARCHAR(n), DATE, ...
+
+- Relationelle Databaser - hvordan virker de
+    - Tabeller og indeks
+    - Reminder binær søgning
+    - Query optimiser
+
+
+\end{comment}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Repetition
+		\item Filer
+		\item Databaser
+		\item SQL
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Repetition
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item Læsning af tekster
+                \item Øvelser
+                \item Litteratur
+		\item Gennemløb af gennemgået stof (webslide)
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Repetition
+		\item Filer
+		\item Databaser
+		\item SQL
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Filer
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Repetition: Læsning af filer
+		\item Øvelse: Læs data fra en fil, skriv data til en fil
+		\item Læse og skrive-rettigheder
+		\item Problemer: Flere der tilgår samme filer, søgning og strukturering af data
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Repetition
+		\item Filer
+		\item Databaser
+		\item SQL
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Relationsdatabaser
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Model: Tabeller - rækker og kolonner.
+		\item Særligt sprog til at søge i dem - SQL
+                \item Typer på de enkelte kolonner
+		\item Skalérbarhed, søgning, join
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Repetition
+		\item Filer
+		\item Databaser
+		\item SQL
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            SQL
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Oprettelse af tabeller: CREATE TABLE
+		\item Indsættelse af værdier: INSERT INTO
+                \item Hentning af værdier: SELECT ... FROM ... WHERE ...
+                \item Øvelse: Lav database over bøger
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+		\item Repetition
+		\item Filer
+		\item Databaser
+		\item SQL
+		\item Mere om databaser
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Mere om databaser
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+                \item DBMS - Database Management Systems
+                \item Eksempler på DBMS'er: PostgreSQL, MySQL, SQLite, Oracle, ...
+		\item Standarder og afvigelser
+		\item Indeks og søgetræer
+		\item Query optimiser
+	\end{itemize}
+\end{slide}
+
+\end{document}

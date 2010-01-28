@@ -1,0 +1,71 @@
+% Repetition - Grundlæggende datalogi
+% Rasmus Jensen
+% 2009-10-12
+
+# Grundlag
+
+- Funktionskald
+- Tildeling og brug af variable
+- Aritmetik
+- Sammensætning af strenge
+
+# Datatyper
+
+- Tal
+- Sandhedsværdier
+- Strenge
+- Lister/array
+- Dictionaries / hashtabeller
+- Et par ord om tupler
+
+# Sprogkonstruktioner
+
+- `def`
+- `for`
+- `while`
+- `if` `elif` `else`
+- `return`
+- `class`
+
+# Moduler
+
+- Indbyggede - random, turtle, ...
+- Kald af egen kode med import
+- Eksterne moduler - pygame, JES
+
+# Problem solving
+
+- Inkrementel udvikling
+- Forstå problemet, læg en plan, udfør planen, review (Polya)
+- Bits on debugging
+- Variables roller
+- Studie/læseteknik
+
+# Algoritmik
+
+- Smagsprøve på binær søgning - gæt et tal
+- Lidt om kompleksitet ifbm. gæt et tal.
+- Lidt rekursion
+- Binære tal
+
+# Diverse
+
+- Kommandoprompt, unix, arbejde på server
+- Brug af python-miljø'er, samt læsning af dokumentation
+- Maskiner og sprog - lidt om oversættere, maskinkode etc.
+- Billeder som mængde af punkter
+- Farverepræsentation
+
+# Programmeringsskik
+
+- Code review, refaktorering, og at arbejde i / læse kode
+- NIH - not invented here
+- DRY - dont repeat yourself
+- Adskild indhold og præsentation
+- Graceful degradation
+
+# Netværk og web
+
+- Netværkslag: http - tcp - ip
+- HTML, xml
+- Http/cgi

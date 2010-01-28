@@ -1,0 +1,208 @@
+\documentclass[a4paper,landscape]{slides} 
+%\usepackage{a4} 
+\usepackage[danish]{babel} 
+\usepackage[utf8]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\pagestyle{plain}
+
+\addtolength{\voffset}{-060pt}
+\addtolength{\textheight}{060pt}
+
+\title{Grundlæggende datalogi}
+\author{Rasmus Jensen\footnote{\url{grundat@kommunikationogit.dk}}}
+\date{2009-10-21}
+\lstset{language=python}
+\begin{document}
+\maketitle
+
+\begin{comment}
+
+- Opsamling, debugging og wiki
+  - html-forms-navne, variabel-navne og kolonne-navne
+  - wiki
+  - dagens opgave: afleveringsopgaven til næste uge.
+  - spørg også gerne hinanden om hjælp
+  - debugging
+
+- Tilstand i program
+    - Flere sider fra samme program, - dispatch
+    - Stateful vs. stateless connection, - hidden fields
+- Evt. opsamling om programdesign
+  - Inkrementel udvikling
+
+- Programmeringssprog
+    - Hvor bruges python...
+    - Generelle programmeringsteknikker vs. konkrete sprog
+    - Syntaks og semantik
+    - Scriptingsprog, systemprogrammeringssprog
+    - Programmeringsparadigmer: procedural programmering, OOP, funktionsorienteret programmering, logikprogrammering.
+    - Dynamisk og statiske typer.
+
+- JavaScript og python
+- Spørgsmål?
+
+
+
+\end{comment}
+
+
+
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Indledning, wiki, debugging
+            \item Tilstand i programmer
+            \item Programmeringssprog 1/2
+            \item Programmeringssprog 2/2
+            \item Opsamling
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Indledning, wiki
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Html-form-navne vs. python-navne vs. kolonne-navne
+            \item Hjælp hinanden
+            \item Programmering vs. teknisk funktionalitet
+            \item Wiki wiki wiki
+            \item Dagens opgave - afleveringen til næste uge. 
+	\end{itemize}
+\end{slide}
+
+
+\begin{slide}
+	\begin{center} {\large 
+           Debugging
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Debugning - syntaksfejl, køretidsfejl, semantiske fejl
+            \item Confessional debugging, ekstra par øjne
+            \item Læs programmet, vær sikker på i ved hvorfor det gør som det gør.
+            \item Læs fejlbeskederne, forstå fejlen
+            \item Eksperimentér i fortolkeren
+            \item Test
+            \item Fejl i Python?
+	\end{itemize}
+\end{slide}
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Indledning, wiki, debugging
+            \item Tilstand i programmer
+            \item Programmeringssprog 1/2
+            \item Programmeringssprog 2/2
+            \item Opsamling
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Tilstand i program
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Flere sider fra samme program
+            \item Stateful vs. stateless kommunikation / forbindelse
+            \item State: hidden fields, cookies, javascript, ...
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Indledning, wiki, debugging
+            \item Tilstand i programmer
+            \item Programmeringssprog 1/2
+            \item Programmeringssprog 2/2
+            \item Opsamling
+	\end{itemize}
+\end{slide}
+\begin{slide}
+	\begin{center} {\large 
+            Programmeringssprog 1/2
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Syntaks og semantik
+            \item Repetition af Python
+            \item Introduktion til \emph{programmeringssproget} JavaScript 
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Indledning, wiki, debugging
+            \item Tilstand i programmer
+            \item Programmeringssprog 1/2
+            \item Programmeringssprog 2/2
+            \item Opsamling
+	\end{itemize}
+\end{slide}
+\begin{slide}
+	\begin{center} {\large 
+            Programmeringssprog 2/2
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Dynamisk og statiske typer.
+            \item Scriptingsprog, systemprogrammeringssprog
+            \item Generelle programmeringsteknikker vs. konkrete sprog
+            \item Programmeringsparadigmer: procedural programmering, OOP, funktionsorienteret programmering, logikprogrammering.
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Indledning, wiki, debugging
+            \item Tilstand i programmer
+            \item Programmeringssprog 1/2
+            \item Programmeringssprog 2/2
+            \item Opsamling
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Afrunding
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Videre med opgave
+            \item Fælles spørgsmål?
+	\end{itemize}
+\end{slide}
+
+\begin{slide}
+	\begin{center} {\large 
+            Plan for i dag
+	} \end{center}
+	\begin{itemize} \addtolength{\itemsep}{-\baselineskip}
+            \item Indledning, wiki, debugging
+            \item Tilstand i programmer
+            \item Programmeringssprog 1/2
+            \item Programmeringssprog 2/2
+            \item Opsamling
+	\end{itemize}
+\end{slide}
+
+\end{document}

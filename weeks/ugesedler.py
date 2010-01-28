@@ -80,7 +80,7 @@ for week in range(53, 34, -1):
         ugeseddel += "<p>Eksempler: "
         for pyfile in glob.glob("*.py"):
             shutil.copy(pyfile, destdir + "/"+ weekdir)
-            ugeseddel += '<a href="%s">%s</a> ' % ("u41/view_python_file.py?filename=" + weekdir + "/" + pyfile, pyfile)
+            ugeseddel += '<a href="%s">%s</a> ' % ("u42/view_python_file.py?filename=" + weekdir + "/" + pyfile, pyfile)
         for imgfile in glob.glob("*.jpg"):
             shutil.copy(imgfile, destdir)
             ugeseddel += '<a href="%s">%s</a> ' % (imgfile, pyfile)
@@ -111,11 +111,9 @@ Til den grundlæggende programmering anvendes:
     <li>Lærebogen "<a href="http://www.greenteapress.com/thinkpython/thinkCSpy/thinkCSpy.pdf">How to Think Like a Computer Scientist</a>" af Allen Downey et al. (Da den oprindelige lærebog ikke kunne skaffes er udvalgte uddrag af denne tidligere lagt her på siden. Selve bogen erstatter disse uddrag. </li>
     <li>Som supplement anvendes også tutorials fra <a href="http://www.tutorialspoint.com/python/">http://www.tutorialspoint.com/python/</a>: Python basics</li>
     <li>Dele af den officielle Python dokumentation fra <a href="http://docs.python.org/">http://docs.python.org/</a>.
-<ul>
-<div>
-<div><br>
+</ul>
+
 Litteraturen for anden halvdel af kurset er ved at blive fastlagt<br>
-<div>
 <h2>Software</h2>
 
 Til introduktionen til Python og billeder anvendes JES, der kan hentes fra: <a href="http://coweb.cc.gatech.edu/mediaComp-plan/26" rel="nofollow">http://coweb.cc.gatech.edu/mediaComp-plan/26</a>.<br>
@@ -161,7 +159,7 @@ billeder, variable, dokumentation/kommentarer, repræsentation af data
 </tr>
 <tr>
 <td style="width: 71px; height: 24px;">Uge 39</td>
-<td style="width: 641px; height: 24px;">Klasser og objekter. Introduktion til versionsstyring. <br>
+<td style="width: 641px; height: 24px;">Klasser og objekter.<br>
 </td>
 </tr>
 <tr>
@@ -170,7 +168,7 @@ billeder, variable, dokumentation/kommentarer, repræsentation af data
 </tr>
 <tr>
 <td style="width: 71px; height: 22px;">Uge 41</td>
-<td style="width: 641px; height: 22px;">Webapplikationer, CGI. Strukturerede data, html, xml, DOM, LaTeX.<br>
+<td style="width: 641px; height: 22px;">Webapplikationer, CGI. Strukturerede data, html, xml<br>
 </td>
 </tr>
 <tr>
@@ -185,7 +183,7 @@ billeder, variable, dokumentation/kommentarer, repræsentation af data
 </tr>
 <tr>
 <td style="width: 71px; height: 24px;">Uge 44</td>
-<td style="width: 641px; height: 24px;">Repetition og opsamling.
+<td style="width: 641px; height: 24px;">
 I gang med anden del af kurset: Data og algoritmer. <br>
 Søgning og sortering, beregningskompleksitet og konstruktion af algoritmer - divide and conqueor.<br>
 </td>
@@ -198,27 +196,27 @@ Der kommer ekstra studerende fra IT og Kognition til kurset. <br>
 </tr>
 <tr>
 <td style="width: 71px; height: 24px;">Uge 46</td>
-<td style="width: 641px; height: 24px;">Stakke, træer, hobe/prioritetskøer, hashtabeller<br>
+<td style="width: 641px; height: 24px;">Repetition omkring webapplikationer, samt introduktion til algoritmer og datastrukturer<br>
 </td>
 </tr>
 <tr>
 <td style="width: 71px; height: 24px;">Uge 47</td>
-<td style="width: 641px; height: 24px;">Maskinmodeller, beregnelighed. Cache. Genopfriskning om representation af data. Grådige algoritmer. Evt. entropi og kodning.<br>
+<td style="width: 641px; height: 24px;">Mere om objekter og klasser<br>
 </td>
 </tr>
 <tr>
 <td style="width: 71px; height: 24px;">Uge 48</td>
-<td style="width: 641px; height: 24px;">Introduktion til grafer og grafalgoritmer, repræsentation, DAGs, shortest path, lidt om centralitet.<br>
+<td style="width: 641px; height: 24px;">Introduktion til træer og grafer<br>
 </td>
 </tr>
 <tr>
 <td style="width: 71px; height: 24px;">Uge 49</td>
-<td style="width: 641px; height: 24px;">Repetition og opsamling. Buffer<br>
+<td style="width: 641px; height: 24px;">Grafer<br>
 </td>
 </tr>
 <tr>
 <td style="width: 71px; height: 24px;">Uge 50</td>
-<td style="width: 641px; height: 24px;">Eksamen: Ugeopgave 10/12-17/12 eller 11/12-18/12<br>
+<td style="width: 641px; height: 24px;">Repetition, spørgetime, sidste undervisningsgang er 8/12 Eksamen: Ugeopgave 10/12-17/12 <br>
 </td>
 </tr>
 

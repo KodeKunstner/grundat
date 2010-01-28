@@ -1,0 +1,91 @@
+<h1 id="strukturerede-data-og-tekst"
+>Strukturerede data og tekst</h1
+><ul
+><li
+  >Abstraktion mellem form og indhold</li
+  ><li
+  >Kan parses/bearbejdes af computere</li
+  ><li
+  >Tekst-eksempler: html, markdown, latex, docbook</li
+  ><li
+  >Data-eksempler: xml, json</li
+  ><li
+  >Semantik vs. syntaks</li
+  ></ul
+><h1 id="html-og-forms"
+>HTML og Forms</h1
+><ul
+><li
+  ><p
+    >Væsentlige tags i denne omgang: <code
+      >html</code
+      >, <code
+      >head</code
+      >, <code
+      >title</code
+      >, <code
+      >body</code
+      >, <code
+      >div</code
+      >, <code
+      >p</code
+      >, <code
+      >form</code
+      >, <code
+      >input</code
+      >, <code
+      >br</code
+      ></p
+    ></li
+  ><li
+  ><p
+    >Forms og kommunikation med webserveren:<br /> <code
+      >&lt;form action=&quot;script.py&quot; method=&quot;get&quot;&gt;</code
+      ><br /> <code
+      >&lt;input type=&quot;text&quot; name=&quot;variabelnavn&quot; value=&quot;default-værdi&quot; /&gt;</code
+      ></p
+    ></li
+  ><li
+  >Methods: get/put. Input-types: text/checkbox/radio/submit/hidden/...</li
+  ><li
+  >Hold indhold og design adskildt. Graceful degradation.</li
+  ><li
+  ><p
+    >Supplerende links: <a href="http://csszengarden.com/"
+      >csszengarden.com</a
+      >, <a href="http://w3schools.com"
+      >w3schools.com</a
+      >, <a href="http://w3.org/TR/REC-html32"
+      >w3.org/TR/REC-html32</a
+      >, <a href="http://useit.com"
+      >useit.com</a
+      >, <a href="http://w3.org"
+      >w3.org</a
+      >, <a href="http://webstyleguide.com/"
+      >webstyleguide.com</a
+      ></p
+    ></li
+  ></ul
+><h1 id="forms-til-python"
+>Forms til python</h1
+><ul
+><li
+  >Kommunikation via HTTP-protokollen, håndteret via pythons cgi-modul</li
+  ><li
+  >Eksempel:</li
+  ></ul
+><p
+><code
+  >import cgi, cgitb</code
+  ><br /> <code
+  >cgitb.enable()</code
+  ><br /> <code
+  >print(&quot;Content-Type: text/html\n&quot;)</code
+  ><br /> <code
+  >fields = cgi.FieldStorage()</code
+  ><br /> <br /> <code
+  >for name in fields:</code
+  ><br />   <code
+  >print(name + &quot;: &quot; + fields[name] + &quot;&lt;br /&gt;&quot;)</code
+  ><br /></p
+>
