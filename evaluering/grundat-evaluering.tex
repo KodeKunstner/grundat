@@ -1,0 +1,101 @@
+\documentclass[11pt]{article} 
+\usepackage{a4} 
+\usepackage{makeidx}
+\usepackage[danish]{babel} 
+\usepackage[latin1]{inputenc}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{graphicx} 
+\usepackage{verbatim} 
+\usepackage{fancyhdr}
+\usepackage{listings} 
+\usepackage{url}
+\frenchspacing
+\makeindex
+\pagestyle{plain}
+\newtheorem{alg}{Algoritme}
+
+\newcommand{\keyword}[1]{#1\index{#1}}
+\newcommand{\ceil}[1]{\lceil{}#1\rceil{}}
+\newcommand{\floor}[1]{\lfloor{}#1\rfloor{}}
+\setcounter{tocdepth}{1}
+\newcommand{\doctitle}{
+
+}
+
+\title{\doctitle
+Evaluering af kurset
+Grundlæggende Datalogi på uddannelsen i Kommunikation og IT, efterår 2009
+}
+
+\author{
+  Rasmus Jensen\footnote{
+    rasmusjensen@solsort.dk
+  }
+} 
+
+\date{ 2010-01-26 }
+
+\begin{document}
+
+\maketitle
+
+
+Kurset er vel afholdt.
+Af de 33 studerende, der har afleveret eksamen i Grundlæggende Datalogi, er 32 bestået.
+Derudover har alle 4 studerende, der fulgte Data og Algoritmer, fået godkendt afleveringsopgaver og derved kurset.
+
+De følgende afsnit indeholder hurtig nedskrivning af mine subjektive noter i forbindelse med evaluering og erfaringsopsamling.
+
+
+\subsubsection*{Praktiske forhold}
+Hver afholdt lektion bestod typisk af en kort forelæsning direkte efterfulgt af øvelser. 
+Motivationen for mange korte forelæsninger afbrudt af øvelser er, at de studerendes koncentration typisk falder efter 20 minutter, samt at øvelserne giver mulighed for at arbejde med stoffet, som det bliver introduceret. 
+Sammenlignet med kurser hvor jeg har kørt den traditionelle forelæsnings/øvelses-model, synes jeg, at kombinationen af forelæsninger og øvelser i samme lektion fungerer bedre, og vil klart anbefale / benytte mig af det til andre kurser.
+
+Programmeringscafeen, som de studerende tog initiativ til, var en pædagogisk gevinst, både ved at de studerende kan sparre med hinanden, og også som en uformel sammenhæng for de studerende til at stille spørgsmål -- spørgsmål der ofte belyste hvilke emner der var behov for at repetere i kommende forelæsninger. Det kan klart anbefales en sådan i relation til kurser.
+
+Sammenhæng mellem dette kursus og fremtidige kurser på uddannelsen kan gøres tydeligere. Det virker som om at studerende ikke kommer til at bygge direkte videre på de datalogiske færdigheder fra dette kursus i de næste semestre, hvorved noget af deres nytilegnede viden risikerer at ruste. 
+
+Forholdene på universitetet var forbavsende ringe: 
+Der manglede informationer, såsom perioder med undervisningsfri og holdliste ved kursusstart.
+Jeg måtte finde alternative løsninger til lavpraktiske forhold, såsom \mbox{kursushjemmeside} og strømstik til studerende.
+Ansættelsen var så rodet, at det virkede demotiverende og beklageligvis måtte medføre en nedprioritering af kurset fra min side.
+
+Samkørslen af Data og Algoritmer og anden halvdel af Grundlæggende Datalogi gik i mine øjne ud over begge fag, da kurserne har betydeligt forskellige retninger.
+
+\subsubsection*{Undervisningsmateriale}
+Undervisningsmaterialet ved kurset var mangelfuldt, både på grund af forsinket bog i boglade og uheldig planlægning/sygdom fra min side.
+
+Bogen ``Introduction to Computing and Programming in Python: A Multimedia Approach'' blev kun anvendt i få uddrag da den var forsinket i bogladen.  Dens pædagogiske grundideer er rigtigt gode, men udførslen -- særligt kodeeksempler, hjemmestrikket udviklingsmiljø, samt gennemgåede emner -- er i mine øjne så uheldige, at jeg klart vil fraråde den.
+
+Bogen ``How to Think Like a Computer Scientist'' er også anvendt i uddrag. Den fungerede godt og kan overordnet anbefales. Den mangler dog øvelser.
+
+Python fungerede godt som introducerende programmeringssprog og kan anbefales fremover. 
+De eneste forbehold er, at der ikke er noget godt udviklingsmiljø rettet mod begyndere (Idle er foreløbigt mit bedste bud, og det er ikke imponerende), samt at det ikke umiddelbart virker velegnet til en web-tilgang hvis man ønsker at gå den vej.
+Et alternativt valg, som kan være interessant at prøve, er DrScheme, primært på grund at læringsvenligt udviklingsmiljø og to gode lærebøger (HTDP og SICP)
+
+
+\subsubsection*{Kursusindhold}
+Kursusindholdet var for bredt og nåede i mine øjne ikke tilstrækkeligt i dybden.
+%Det giver dog de studerende noget datalogisk modenhed.
+Jeg vil her anbefale at redesigne kurset med mere fokus på selve kursusbeskrivelsen, og ikke den oprindelige kursusskitse, som jeg tog udgangspunkt i.
+
+Multimedie- og web-tilgangen virkede motiverende på de studerende.  
+Brug af JES og python-cgi var desværre uheldige valg og kostede for meget tid/frustration, så denne tilgang kan kun anbefales, hvis der kan findes nogle mere strømlinede værktøj.
+Et problem med python-cgi var, at de studerende blev nød til aktivt at tænke over sessionhåndtering, hvilket ikke virkede hensigtsmæssig på dette tidspunkt. Skift mellem forskellige miljøer: JES, Idle, og ssh til server med python installeret tilføjede ekstra komplikationer.
+Jeg har tidligere fornuftige erfaringer med at starte med skildpaddegrafik i forbindelse med et introducerende datalogikursus, så jeg vil nok bruge dette til at fange de studerendes motivation i starten, hvis jeg kører et lignende kursus igen. Web/database-delen kan måske udelades eller blive kraftigt reduceret.
+
+\LaTeX{} blev gennemgået kursorisk på forespørgsel fra de studerende. Dette og andre værktøjsfærdigheder virkede givtige og kan klart anbefales til fremtidige udgaver.
+
+%Emner relateret program design, variables roller, problemløsning, rapportskrivning, strukturering af projektforløb, programmeringsskik, og udarbejdelse af dokumentation
+
+%\subsubsection*{Tak}
+%Tak til Johan Brinch for, udover de sædvanlige instruktoropgaver, også at tage hånd om størstedelen af de praktiske/tekniske aspekter med server til de studerende, samt udarbejdelse af supplerende noter og eksempler. Det har været en stor gevinst for kurset.
+%Tak til Jakob Grue Simonsen for både at tage hånd om eksamen og mange af de administrative besværligheder.
+%Tak til alle de initiativrige og motiverede studerende, samt studienævn for løbende evaluering.
+
+
+\end{document}
